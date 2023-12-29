@@ -44,7 +44,6 @@ struct AddUserView: View {
                     if let imageData = userImage?.jpegData(compressionQuality: 1.0) {
                         let base64String = imageData.base64EncodedString()
                         user.userImage = base64String
-                        UserDefaults.standard.set(imageData, forKey: "userImageKey")
                     }
                     
                     try? moc.save()

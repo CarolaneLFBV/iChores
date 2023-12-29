@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9223FB3F2B3F2C5400426148 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9223FB3E2B3F2C5400426148 /* FileManager-DocumentsDirectory.swift */; };
 		922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922C24F82B3DC61600896D7E /* iChores.xcdatamodeld */; };
 		922C25102B3DD92200896D7E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250A2B3DD92200896D7E /* User+CoreDataClass.swift */; };
 		922C25112B3DD92200896D7E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250B2B3DD92200896D7E /* User+CoreDataProperties.swift */; };
@@ -18,6 +19,7 @@
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
 		922C25202B3DE56000896D7E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
+		926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926079582B3F45830082F88A /* User+SwiftUI.swift */; };
 		92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D292B3F0114001F0D2E /* UsersListView.swift */; };
 		92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2B2B3F019B001F0D2E /* HomeView.swift */; };
 		92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */; };
@@ -49,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9223FB3E2B3F2C5400426148 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		922C24F92B3DC61600896D7E /* iChores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iChores.xcdatamodel; sourceTree = "<group>"; };
 		922C250A2B3DD92200896D7E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		922C250B2B3DD92200896D7E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		922C251F2B3DE56000896D7E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
+		926079582B3F45830082F88A /* User+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+SwiftUI.swift"; sourceTree = "<group>"; };
 		92946D292B3F0114001F0D2E /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		92946D2B2B3F019B001F0D2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsListView.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			children = (
 				922C251A2B3DDEF900896D7E /* DataController.swift */,
 				922C251F2B3DE56000896D7E /* ImagePicker.swift */,
+				9223FB3E2B3F2C5400426148 /* FileManager-DocumentsDirectory.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +175,14 @@
 			path = UserView;
 			sourceTree = "<group>";
 		};
+		926079572B3F45790082F88A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				926079582B3F45830082F88A /* User+SwiftUI.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		92F6A0812B3478CB0075879F = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +206,7 @@
 		92F6A08C2B3478CB0075879F /* iChores */ = {
 			isa = PBXGroup;
 			children = (
+				926079572B3F45790082F88A /* Extension */,
 				922C251C2B3DE0CF00896D7E /* View */,
 				922C25192B3DDEED00896D7E /* Controller */,
 				922C24F72B3DC60500896D7E /* Model */,
@@ -358,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9223FB3F2B3F2C5400426148 /* FileManager-DocumentsDirectory.swift in Sources */,
 				922C25132B3DD92200896D7E /* Room+CoreDataProperties.swift in Sources */,
 				92F6A0902B3478CB0075879F /* ContentView.swift in Sources */,
 				922C25142B3DD92200896D7E /* Task+CoreDataClass.swift in Sources */,
@@ -366,6 +381,7 @@
 				92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				922C25152B3DD92200896D7E /* Task+CoreDataProperties.swift in Sources */,
+				926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */,
 				922C251B2B3DDEF900896D7E /* DataController.swift in Sources */,
 				922C25102B3DD92200896D7E /* User+CoreDataClass.swift in Sources */,
 				92946D302B3F01EC001F0D2E /* UserProfileView.swift in Sources */,
