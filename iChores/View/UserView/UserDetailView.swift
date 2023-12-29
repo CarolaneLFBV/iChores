@@ -11,10 +11,11 @@ struct UserDetailView: View {
     @Environment(\.managedObjectContext) var moc
     let user: User
     
+    @State private var isEditing: Bool = false
+    @State private var name = ""
+    
     var body: some View {
         VStack {
-            Text(user.wrappedUserName)
-            
             if let userImage = user.getImage() {
                 userImage
                     .resizable()
@@ -27,6 +28,26 @@ struct UserDetailView: View {
                     .padding(8)
             } else {
                 Text("Failed to load image")
+            }
+            
+            if isEditing {
+                TextField("Name", text: $name)
+            } else {
+                Text(user.wrappedUserName)
+            }
+            
+        }
+        .toolbar {
+            if isEditing {
+                Button("Save") {
+                    user.name = name
+                    try? moc.save()
+                    isEditing = false
+                }
+            } else {
+                Button("Edit") {
+                    isEditing = true
+                }
             }
         }
     }
