@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct UserDetailView: View {
-    let user: User
     @Environment(\.managedObjectContext) var moc
-    
+    let user: User
+
     var body: some View {
         VStack {
             Text(user.wrappedUserName)
@@ -25,3 +25,4 @@ struct UserDetailView: View {
         }
     }
 }
+

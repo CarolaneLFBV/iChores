@@ -39,7 +39,6 @@ struct AddUserView: View {
                 
                 Button("Save") {
                     let user = User(context: moc)
-                    
                     user.id = UUID()
                     user.name = userName
                     if let imageData = userImage?.jpegData(compressionQuality: 1.0) {
