@@ -28,13 +28,7 @@ struct AddUserView: View {
                 
                 Image(uiImage: userImage ?? UIImage(systemName: "person.fill")!)
                     .resizable()
-                    .cornerRadius(50)
-                    .padding(.all, 4)
-                    .frame(width: 100, height: 100)
-                    .background(Color.black.opacity(0.2))
-                    .aspectRatio(contentMode: .fill)
-                    .clipShape(Circle())
-                    .padding(8)
+                    .avatarStyle()
                 
                 
                 Button("Save") {
