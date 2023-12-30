@@ -11,7 +11,7 @@ struct AddUserView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
-    @State private var userViewModel = UsersListViewModel()
+    @State private var userViewModel = UserViewModel()
     
     @State private var userName = ""
     @State private var image: Image?
