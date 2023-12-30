@@ -9,38 +9,20 @@ import SwiftUI
 
 struct UserDetailView: View {
     @Environment(\.managedObjectContext) var moc
-    let user: User
-    
-    @State private var userViewModel = UserViewModel()
-    
+    @State var userViewModel = UserViewModel()
     @State var isEditing: Bool = false
     @State var modifiedName = ""
     
+    let user: User
+    
     var body: some View {
         VStack {
-            if let userImage = user.getImage() {
-                userImage
-                    .resizable()
-                    .avatarStyle()
-            } else {
-                Text("Failed to load image")
-            }
-                     
-        }
-        .toolbar {
+            userProfileImage
+            
             if isEditing {
-                Button("Save") {
-                    do {
-                        try userViewModel.editUser(user: user, withModifiedName: modifiedName, context: moc)
-                    } catch {
-                        // TODO: turn into alert
-                        print("Error while editing: \(error)")
-                    }
-                }
+                userEdition
             } else {
-                Button("Edit") {
-                    isEditing = true
-                }
+                userDetail
             }
         }
     }

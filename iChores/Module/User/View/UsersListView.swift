@@ -13,7 +13,7 @@ struct UsersListView: View {
     @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
 
     @State private var isShowing = false
-    @State var userViewModel = UsersListViewModel()
+    @State var userViewModel = UserViewModel()
     
     var body: some View {
         Section {

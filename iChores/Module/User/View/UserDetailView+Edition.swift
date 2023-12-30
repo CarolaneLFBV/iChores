@@ -9,13 +9,42 @@ import SwiftUI
 
 extension UserDetailView {
     var userEdition: some View {
-        TextField("Name", text: $modifiedName)
+        Group {
+            TextField("Name", text: $modifiedName)
+        }
+        .toolbar {
+            Button("Save") {
+                do {
+                    try userViewModel.editUser(user: user, withModifiedName: modifiedName, context: moc)
+                } catch {
+                    // TODO: turn into alert
+                    print("Error while editing: \(error)")
+                }
+            }
+        }
     }
-}
-
-extension UserDetailView {
+    
     var userDetail: some View {
-        Text(user.wrappedUserName)
+        Group {
+            Text(user.wrappedUserName)
+        }
+        .toolbar {
+            Button("Edit") {
+                isEditing = true
+            }
+        }
+    }
+    
+    var userProfileImage: some View {
+        Group {
+            if let userImage = user.getImage() {
+                userImage
+                    .resizable()
+                    .avatarStyle()
+            } else {
+                Text("Failed to load image")
+            }
+        }
     }
 }
 
