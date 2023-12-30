@@ -11,25 +11,33 @@ import CoreData
 struct ContentView: View {
     var body: some View {
         TabView {
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
+            NavigationStack {
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+            }
             
-            RoomsListView()
-                .tabItem {
-                    Label("Rooms", systemImage: "square.split.bottomrightquarter")
+            NavigationStack {
+                RoomsListView()
+                    .tabItem {
+                        Label("Rooms", systemImage: "square.split.bottomrightquarter")
                 }
+            }
             
-            UsersListView()
-                .tabItem {
-                    Label("Users", systemImage: "person.2")
+            NavigationStack {
+                UsersListView()
+                    .tabItem {
+                        Label("Users", systemImage: "person.2")
                 }
+            }
             
-            UserProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
+            NavigationStack {
+                UserProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
                 }
+            }
         }
     }
 }
