@@ -9,11 +9,11 @@ import SwiftUI
 import CoreData
 
 @Observable
-class UsersListViewModel {
+class UserViewModel {
     var users: [User] = []
     
     enum UserError: Error {
-        case fetchUserError(Error), deleteUserError(Error), addUserError(Error)
+        case fetchUserError(Error), deleteUserError(Error), addUserError(Error), updateUserError(Error)
     }
     
     func fetchUsers(context: NSManagedObjectContext) throws {
@@ -55,5 +55,15 @@ class UsersListViewModel {
         } catch let error {
             throw UserError.addUserError(error)
         }
+    }
+    
+    func editUser(user: User, withModifiedName modifiedName: String, context: NSManagedObjectContext) throws {
+        user.name = modifiedName
+        do {
+            try context.save()
+        } catch let error {
+            throw UserError.updateUserError(error)
+        }
+        
     }
 }

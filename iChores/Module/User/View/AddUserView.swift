@@ -19,7 +19,6 @@ struct AddUserView: View {
     @State private var showingImagePicker = false
     
     var body: some View {
-        
         Form {
             TextField("User's name", text: $userName)
             

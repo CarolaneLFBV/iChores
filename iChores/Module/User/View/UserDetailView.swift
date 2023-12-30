@@ -11,8 +11,10 @@ struct UserDetailView: View {
     @Environment(\.managedObjectContext) var moc
     let user: User
     
-    @State private var isEditing: Bool = false
-    @State private var name = ""
+    @State private var userViewModel = UserViewModel()
+    
+    @State var isEditing: Bool = false
+    @State var modifiedName = ""
     
     var body: some View {
         VStack {
@@ -23,20 +25,17 @@ struct UserDetailView: View {
             } else {
                 Text("Failed to load image")
             }
-            
-            if isEditing {
-                TextField("Name", text: $name)
-            } else {
-                Text(user.wrappedUserName)
-            }
-            
+                     
         }
         .toolbar {
             if isEditing {
                 Button("Save") {
-                    user.name = name
-                    try? moc.save()
-                    isEditing = false
+                    do {
+                        try userViewModel.editUser(user: user, withModifiedName: modifiedName, context: moc)
+                    } catch {
+                        // TODO: turn into alert
+                        print("Error while editing: \(error)")
+                    }
                 }
             } else {
                 Button("Edit") {
