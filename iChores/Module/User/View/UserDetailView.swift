@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserDetailView: View {
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
     @State var userViewModel = UserViewModel()
     @State var isEditing: Bool = false
     @State var modifiedName = ""

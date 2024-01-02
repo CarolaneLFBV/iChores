@@ -23,5 +23,25 @@ extension UsersListView {
                 }
             })
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    isShowing.toggle()
+                } label: {
+                    Label("Add user", systemImage: "plus")
+                }
+            }
+        }
+        .sheet(isPresented: $isShowing) {
+            AddUserView()
+        }
+        .onAppear {
+            do {
+                try userViewModel.fetchUsers(context: moc)
+            } catch {
+                // TODO: turn into alert
+                print("Error while fetching users: \(error.localizedDescription)")
+            }
+        }
     }
 }
