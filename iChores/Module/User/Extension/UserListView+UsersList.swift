@@ -12,7 +12,9 @@ extension UsersListView {
         List {
             ForEach(users, id: \.self) { user in
                 NavigationLink(destination: UserDetailView(user: user)) {
-                    Text(user.wrappedUserName)
+                    VStack {
+                        Text(user.wrappedUserName)
+                    }
                 }
             }
             .onDelete(perform: { indexSet in
@@ -38,6 +40,7 @@ extension UsersListView {
         .onAppear {
             do {
                 try userViewModel.fetchUsers(context: moc)
+                print("test")
             } catch {
                 // TODO: turn into alert
                 print("Error while fetching users: \(error.localizedDescription)")
