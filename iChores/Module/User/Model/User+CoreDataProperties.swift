@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  iChores
 //
-//  Created by Carolane Lefebvre on 28/12/2023.
+//  Created by Carolane Lefebvre on 05/01/2024.
 //
 //
 
@@ -47,6 +47,7 @@ extension User {
             $0.wrappedTaskTitle < $1.wrappedTaskTitle
         }
     }
+
 }
 
 // MARK: Generated accessors for userToRoom

@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  iChores
 //
-//  Created by Carolane Lefebvre on 28/12/2023.
+//  Created by Carolane Lefebvre on 05/01/2024.
 //
 //
 
@@ -16,19 +16,19 @@ extension Task {
         return NSFetchRequest<Task>(entityName: "Task")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var title: String?
-    @NSManaged public var date: Date?
     @NSManaged public var category: String?
-    @NSManaged public var assignedUser: User?
-    @NSManaged public var assignedRoom: Room?
-    
+    @NSManaged public var date: Date?
+    @NSManaged public var idTask: UUID?
+    @NSManaged public var title: String?
+    @NSManaged public var taskToRoom: Room?
+    @NSManaged public var taskToUser: User?
+
     public var wrappedTaskTitle: String {
         title ?? "Unknown Title"
     }
     
     public var wrappedTaskID: UUID {
-        id ?? UUID()
+        idTask ?? UUID()
     }
     
     public var wrappedTaskDate: Date {
@@ -39,9 +39,4 @@ extension Task {
         category ?? "Unknown Category"
     }
     
-
-}
-
-extension Task : Identifiable {
-
 }

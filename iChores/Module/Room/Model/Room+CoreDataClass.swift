@@ -2,7 +2,7 @@
 //  Room+CoreDataClass.swift
 //  iChores
 //
-//  Created by Carolane Lefebvre on 28/12/2023.
+//  Created by Carolane Lefebvre on 05/01/2024.
 //
 //
 

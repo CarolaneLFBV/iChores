@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		9223FB3F2B3F2C5400426148 /* FileManager+SaveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9223FB3E2B3F2C5400426148 /* FileManager+SaveImage.swift */; };
 		922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922C24F82B3DC61600896D7E /* iChores.xcdatamodeld */; };
-		922C25102B3DD92200896D7E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250A2B3DD92200896D7E /* User+CoreDataClass.swift */; };
-		922C25112B3DD92200896D7E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250B2B3DD92200896D7E /* User+CoreDataProperties.swift */; };
-		922C25122B3DD92200896D7E /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250C2B3DD92200896D7E /* Room+CoreDataClass.swift */; };
-		922C25132B3DD92200896D7E /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250D2B3DD92200896D7E /* Room+CoreDataProperties.swift */; };
-		922C25142B3DD92200896D7E /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250E2B3DD92200896D7E /* Task+CoreDataClass.swift */; };
-		922C25152B3DD92200896D7E /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C250F2B3DD92200896D7E /* Task+CoreDataProperties.swift */; };
 		922C251B2B3DDEF900896D7E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251A2B3DDEF900896D7E /* DataController.swift */; };
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
@@ -22,6 +16,13 @@
 		924857792B403272006065DD /* User+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924857782B403272006065DD /* User+ViewModel.swift */; };
 		9248577B2B403D75006065DD /* UserListView+UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248577A2B403D75006065DD /* UserListView+UsersList.swift */; };
 		924857802B404A77006065DD /* UserDetailView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248577F2B404A77006065DD /* UserDetailView+SwiftUI.swift */; };
+		924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */; };
+		924E6D7F2B47794A00780EF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */; };
+		924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */; };
+		924E6D812B47794A00780EF4 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7B2B47794A00780EF4 /* Room+CoreDataProperties.swift */; };
+		924E6D822B47794A00780EF4 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7C2B47794A00780EF4 /* Task+CoreDataClass.swift */; };
+		924E6D832B47794A00780EF4 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7D2B47794A00780EF4 /* Task+CoreDataProperties.swift */; };
+		924E6D852B477B0D00780EF4 /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D842B477B0D00780EF4 /* UserProfileImage.swift */; };
 		926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926079582B3F45830082F88A /* User+SwiftUI.swift */; };
 		9260795C2B3F5E2E0082F88A /* AvatarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260795B2B3F5E2E0082F88A /* AvatarModifier.swift */; };
 		92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D292B3F0114001F0D2E /* UsersListView.swift */; };
@@ -57,12 +58,6 @@
 /* Begin PBXFileReference section */
 		9223FB3E2B3F2C5400426148 /* FileManager+SaveImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+SaveImage.swift"; sourceTree = "<group>"; };
 		922C24F92B3DC61600896D7E /* iChores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iChores.xcdatamodel; sourceTree = "<group>"; };
-		922C250A2B3DD92200896D7E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922C250B2B3DD92200896D7E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		922C250C2B3DD92200896D7E /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922C250D2B3DD92200896D7E /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		922C250E2B3DD92200896D7E /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922C250F2B3DD92200896D7E /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		922C251A2B3DDEF900896D7E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
@@ -70,6 +65,13 @@
 		924857782B403272006065DD /* User+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+ViewModel.swift"; sourceTree = "<group>"; };
 		9248577A2B403D75006065DD /* UserListView+UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListView+UsersList.swift"; sourceTree = "<group>"; };
 		9248577F2B404A77006065DD /* UserDetailView+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDetailView+SwiftUI.swift"; sourceTree = "<group>"; };
+		924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		924E6D7B2B47794A00780EF4 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		924E6D7C2B47794A00780EF4 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		924E6D7D2B47794A00780EF4 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		924E6D842B477B0D00780EF4 /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
 		926079582B3F45830082F88A /* User+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+SwiftUI.swift"; sourceTree = "<group>"; };
 		9260795B2B3F5E2E0082F88A /* AvatarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarModifier.swift; sourceTree = "<group>"; };
 		92946D292B3F0114001F0D2E /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
@@ -116,8 +118,8 @@
 		922C25162B3DDBBD00896D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				922C250A2B3DD92200896D7E /* User+CoreDataClass.swift */,
-				922C250B2B3DD92200896D7E /* User+CoreDataProperties.swift */,
+				924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */,
+				924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,8 +127,8 @@
 		922C25172B3DDBC100896D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				922C250C2B3DD92200896D7E /* Room+CoreDataClass.swift */,
-				922C250D2B3DD92200896D7E /* Room+CoreDataProperties.swift */,
+				924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */,
+				924E6D7B2B47794A00780EF4 /* Room+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,8 +136,8 @@
 		922C25182B3DDBC500896D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				922C250E2B3DD92200896D7E /* Task+CoreDataClass.swift */,
-				922C250F2B3DD92200896D7E /* Task+CoreDataProperties.swift */,
+				924E6D7C2B47794A00780EF4 /* Task+CoreDataClass.swift */,
+				924E6D7D2B47794A00780EF4 /* Task+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +148,7 @@
 				9260795A2B3F5DCD0082F88A /* Components */,
 				92946D292B3F0114001F0D2E /* UsersListView.swift */,
 				922C251D2B3DE0E400896D7E /* UserDetailView.swift */,
+				924E6D842B477B0D00780EF4 /* UserProfileImage.swift */,
 				922C25212B3DE75100896D7E /* AddUserView.swift */,
 				92946D2F2B3F01EC001F0D2E /* UserProfileView.swift */,
 			);
@@ -433,27 +436,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				9223FB3F2B3F2C5400426148 /* FileManager+SaveImage.swift in Sources */,
-				922C25132B3DD92200896D7E /* Room+CoreDataProperties.swift in Sources */,
 				92F6A0902B3478CB0075879F /* ContentView.swift in Sources */,
-				922C25142B3DD92200896D7E /* Task+CoreDataClass.swift in Sources */,
 				92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */,
 				922C25222B3DE75100896D7E /* AddUserView.swift in Sources */,
+				924E6D852B477B0D00780EF4 /* UserProfileImage.swift in Sources */,
 				92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				9248577B2B403D75006065DD /* UserListView+UsersList.swift in Sources */,
-				922C25152B3DD92200896D7E /* Task+CoreDataProperties.swift in Sources */,
+				924E6D812B47794A00780EF4 /* Room+CoreDataProperties.swift in Sources */,
+				924E6D822B47794A00780EF4 /* Task+CoreDataClass.swift in Sources */,
 				924857792B403272006065DD /* User+ViewModel.swift in Sources */,
 				926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */,
 				922C251B2B3DDEF900896D7E /* DataController.swift in Sources */,
-				922C25102B3DD92200896D7E /* User+CoreDataClass.swift in Sources */,
+				924E6D7F2B47794A00780EF4 /* User+CoreDataProperties.swift in Sources */,
 				92946D302B3F01EC001F0D2E /* UserProfileView.swift in Sources */,
-				922C25112B3DD92200896D7E /* User+CoreDataProperties.swift in Sources */,
-				922C25122B3DD92200896D7E /* Room+CoreDataClass.swift in Sources */,
 				922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */,
 				924857802B404A77006065DD /* UserDetailView+SwiftUI.swift in Sources */,
 				9260795C2B3F5E2E0082F88A /* AvatarModifier.swift in Sources */,
+				924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */,
+				924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */,
 				922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */,
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
+				924E6D832B47794A00780EF4 /* Task+CoreDataProperties.swift in Sources */,
 				92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

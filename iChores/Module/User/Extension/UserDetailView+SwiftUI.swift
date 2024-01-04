@@ -34,17 +34,4 @@ extension UserDetailView {
             }
         }
     }
-    
-    var userProfileImage: some View {
-        Group {
-            if let userImage = user.getImage() {
-                userImage
-                    .resizable()
-                    .avatarStyle()
-            } else {
-                Text("Failed to load image")
-            }
-        }
-    }
 }
-

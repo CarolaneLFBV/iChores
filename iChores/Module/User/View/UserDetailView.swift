@@ -18,7 +18,7 @@ struct UserDetailView: View {
     
     var body: some View {
         VStack {
-            userProfileImage
+            UserProfileImage(user: user)
             
             if isEditing {
                 userEdition

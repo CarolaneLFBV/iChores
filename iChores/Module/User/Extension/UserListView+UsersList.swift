@@ -13,6 +13,7 @@ extension UsersListView {
             ForEach(users, id: \.self) { user in
                 NavigationLink(destination: UserDetailView(user: user)) {
                     VStack {
+                        UserProfileImage(user: user)
                         Text(user.wrappedUserName)
                     }
                 }

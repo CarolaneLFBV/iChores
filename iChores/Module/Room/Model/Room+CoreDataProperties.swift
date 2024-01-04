@@ -2,7 +2,7 @@
 //  Room+CoreDataProperties.swift
 //  iChores
 //
-//  Created by Carolane Lefebvre on 28/12/2023.
+//  Created by Carolane Lefebvre on 05/01/2024.
 //
 //
 
@@ -16,19 +16,19 @@ extension Room {
         return NSFetchRequest<Room>(entityName: "Room")
     }
 
-    @NSManaged public var id: UUID?
+    @NSManaged public var idRoom: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var type: String?
     @NSManaged public var roomImage: String?
-    @NSManaged public var assignedUser: User?
+    @NSManaged public var type: String?
     @NSManaged public var roomToTask: NSSet?
-    
+    @NSManaged public var roomToUser: User?
+
     public var wrappedRoomName: String {
         name ?? "Unknown Room Name"
     }
     
     public var wrappedRoomID: UUID {
-        id ?? UUID()
+        idRoom ?? UUID()
     }
     
     public var wrappedRoomType: String {
@@ -45,7 +45,6 @@ extension Room {
             $0.wrappedTaskTitle < $1.wrappedTaskTitle
         }
     }
-
 }
 
 // MARK: Generated accessors for roomToTask
