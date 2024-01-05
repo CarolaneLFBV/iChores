@@ -18,16 +18,13 @@ struct AddUserView: View {
     @State private var userImage: UIImage?
     @State private var showingImagePicker = false
     
-    let screenWidth = UIScreen.main.bounds.size.width
-    let screenHeight = UIScreen.main.bounds.size.height
-    
     var body: some View {
         VStack {
             Spacer()
             
             Image(uiImage: userImage ?? UIImage(systemName: "person.fill")!)
                 .resizable()
-                .avatarStyle()
+                .imageStyle()
                 .onTapGesture {
                     showingImagePicker = true
                 }
@@ -36,10 +33,7 @@ struct AddUserView: View {
                 .frame(height: 50)
 
             TextField("User name", text: $userName)
-                .frame(width: screenWidth * 0.6)
-                .padding(15)
-                .background(.gray.opacity(0.2))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .textFieldStyle()
             
             Spacer()
             

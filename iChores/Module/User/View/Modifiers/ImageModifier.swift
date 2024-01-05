@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AvatarModifier: ViewModifier {
+struct ImageModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(.all, 4)
@@ -19,7 +19,7 @@ struct AvatarModifier: ViewModifier {
 }
 
 extension View {
-    func avatarStyle() -> some View {
-        modifier(AvatarModifier())
+    func imageStyle() -> some View {
+        modifier(ImageModifier())
     }
 }
