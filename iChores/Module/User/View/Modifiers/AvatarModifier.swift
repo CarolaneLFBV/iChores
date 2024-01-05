@@ -12,7 +12,7 @@ struct AvatarModifier: ViewModifier {
         content
             .padding(.all, 4)
             .frame(width: 100, height: 100)
-            .background(Color.black.opacity(0.2))
+            .background(.gray.opacity(0.1))
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(8)
     }

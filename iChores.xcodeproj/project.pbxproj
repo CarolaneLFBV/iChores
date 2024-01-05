@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358B2B4893D500A6B2F4 /* NoUserView.swift */; };
+		921F358E2B489CF000A6B2F4 /* PrimaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358D2B489CF000A6B2F4 /* PrimaryButtonModifier.swift */; };
+		921F35902B48A0FB00A6B2F4 /* SecondaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358F2B48A0FB00A6B2F4 /* SecondaryButtonModifier.swift */; };
 		9223FB3F2B3F2C5400426148 /* FileManager+SaveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9223FB3E2B3F2C5400426148 /* FileManager+SaveImage.swift */; };
 		922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922C24F82B3DC61600896D7E /* iChores.xcdatamodeld */; };
 		922C251B2B3DDEF900896D7E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251A2B3DDEF900896D7E /* DataController.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		921F358B2B4893D500A6B2F4 /* NoUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserView.swift; sourceTree = "<group>"; };
+		921F358D2B489CF000A6B2F4 /* PrimaryButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonModifier.swift; sourceTree = "<group>"; };
+		921F358F2B48A0FB00A6B2F4 /* SecondaryButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonModifier.swift; sourceTree = "<group>"; };
 		9223FB3E2B3F2C5400426148 /* FileManager+SaveImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+SaveImage.swift"; sourceTree = "<group>"; };
 		922C24F92B3DC61600896D7E /* iChores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iChores.xcdatamodel; sourceTree = "<group>"; };
 		922C251A2B3DDEF900896D7E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				9260795B2B3F5E2E0082F88A /* AvatarModifier.swift */,
+				921F358D2B489CF000A6B2F4 /* PrimaryButtonModifier.swift */,
+				921F358F2B48A0FB00A6B2F4 /* SecondaryButtonModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				922C25222B3DE75100896D7E /* AddUserView.swift in Sources */,
 				924E6D852B477B0D00780EF4 /* UserProfileImage.swift in Sources */,
 				92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */,
+				921F358E2B489CF000A6B2F4 /* PrimaryButtonModifier.swift in Sources */,
 				921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				9248577B2B403D75006065DD /* UserListView+UsersList.swift in Sources */,
@@ -471,6 +478,7 @@
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
 				924E6D832B47794A00780EF4 /* Task+CoreDataProperties.swift in Sources */,
 				92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */,
+				921F35902B48A0FB00A6B2F4 /* SecondaryButtonModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
