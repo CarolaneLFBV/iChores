@@ -9,22 +9,28 @@ import SwiftUI
 
 extension UsersListView {
     var usersList: some View {
-        List {
-            ForEach(users, id: \.self) { user in
-                NavigationLink(destination: UserDetailView(user: user)) {
-                    VStack {
-                        UserProfileImage(user: user)
-                        Text(user.wrappedUserName)
+        VStack {
+            if users.isEmpty {
+                NoUserView()
+            } else {
+                List {
+                    ForEach(users, id: \.self) { user in
+                        NavigationLink(destination: UserDetailView(user: user)) {
+                            VStack {
+                                UserProfileImage(user: user)
+                                Text(user.wrappedUserName)
+                            }
+                        }
                     }
+                    .onDelete(perform: { indexSet in
+                        do {
+                            try userViewModel.deleteUser(at: indexSet, context: moc)
+                        } catch {
+                            print("Error while deleting: \(error.localizedDescription)")
+                        }
+                    })
                 }
             }
-            .onDelete(perform: { indexSet in
-                do {
-                    try userViewModel.deleteUser(at: indexSet, context: moc)
-                } catch {
-                    print("Error while deleting: \(error.localizedDescription)")
-                }
-            })
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {

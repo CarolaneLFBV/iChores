@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358B2B4893D500A6B2F4 /* NoUserView.swift */; };
 		9223FB3F2B3F2C5400426148 /* FileManager+SaveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9223FB3E2B3F2C5400426148 /* FileManager+SaveImage.swift */; };
 		922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922C24F82B3DC61600896D7E /* iChores.xcdatamodeld */; };
 		922C251B2B3DDEF900896D7E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251A2B3DDEF900896D7E /* DataController.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		921F358B2B4893D500A6B2F4 /* NoUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserView.swift; sourceTree = "<group>"; };
 		9223FB3E2B3F2C5400426148 /* FileManager+SaveImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+SaveImage.swift"; sourceTree = "<group>"; };
 		922C24F92B3DC61600896D7E /* iChores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iChores.xcdatamodel; sourceTree = "<group>"; };
 		922C251A2B3DDEF900896D7E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921F358A2B4893C000A6B2F4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				924E6D842B477B0D00780EF4 /* UserProfileImage.swift */,
+				921F358B2B4893D500A6B2F4 /* NoUserView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		922C25162B3DDBBD00896D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,10 +156,10 @@
 		922C25232B3DE75700896D7E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9260795A2B3F5DCD0082F88A /* Components */,
+				921F358A2B4893C000A6B2F4 /* Components */,
+				9260795A2B3F5DCD0082F88A /* Modifiers */,
 				92946D292B3F0114001F0D2E /* UsersListView.swift */,
 				922C251D2B3DE0E400896D7E /* UserDetailView.swift */,
-				924E6D842B477B0D00780EF4 /* UserProfileImage.swift */,
 				922C25212B3DE75100896D7E /* AddUserView.swift */,
 				92946D2F2B3F01EC001F0D2E /* UserProfileView.swift */,
 			);
@@ -192,12 +203,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		9260795A2B3F5DCD0082F88A /* Components */ = {
+		9260795A2B3F5DCD0082F88A /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				9260795B2B3F5E2E0082F88A /* AvatarModifier.swift */,
 			);
-			path = Components;
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		9260795D2B3F76430082F88A /* User */ = {
@@ -441,6 +452,7 @@
 				922C25222B3DE75100896D7E /* AddUserView.swift in Sources */,
 				924E6D852B477B0D00780EF4 /* UserProfileImage.swift in Sources */,
 				92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */,
+				921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				9248577B2B403D75006065DD /* UserListView+UsersList.swift in Sources */,
 				924E6D812B47794A00780EF4 /* Room+CoreDataProperties.swift in Sources */,

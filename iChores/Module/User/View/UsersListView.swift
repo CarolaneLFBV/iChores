@@ -16,9 +16,7 @@ struct UsersListView: View {
     @State var userViewModel = UserViewModel()
     
     var body: some View {
-        Section {
-            usersList
-        }
+        usersList
     }
 }
 
