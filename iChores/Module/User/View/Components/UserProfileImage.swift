@@ -14,7 +14,7 @@ struct UserProfileImage: View {
             if let userImage = user.getImage() {
                 userImage
                     .resizable()
-                    .avatarStyle()
+                    .imageStyle()
             } else {
                 Image(systemName: "person")
             }
