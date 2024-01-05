@@ -19,7 +19,7 @@ struct AddUserView: View {
     @State private var showingImagePicker = false
     
     var body: some View {
-        Form {
+        Group {
             TextField("User's name", text: $userName)
             
             Text("Change Picture")
@@ -41,6 +41,7 @@ struct AddUserView: View {
                 }
                 dismiss()
             }
+            .disabled(!userViewModel.isValidName(userName))
             .navigationTitle("New User")
             .sheet(isPresented: $showingImagePicker) {
                 ImagePicker(image: self.$userImage)

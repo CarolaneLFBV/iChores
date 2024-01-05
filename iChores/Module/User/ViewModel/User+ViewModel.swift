@@ -26,7 +26,15 @@ class UserViewModel {
     }
     
     func deleteUser(at indexSet: IndexSet, context: NSManagedObjectContext) throws {
-        let selectedUsers = indexSet.map { users[$0] }
+        
+        guard !users.isEmpty else { return }
+        
+        let selectedUsers: [User] = indexSet.compactMap { index -> User? in
+            guard index < users.count else {
+                return nil
+            }
+            return users[index]
+        }
         
         for user in selectedUsers {
             context.delete(user)
@@ -65,5 +73,19 @@ class UserViewModel {
             throw UserError.updateUserError(error)
         }
         
+    }
+    
+    func isValidName(_ name: String) -> Bool {
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        do {
+            let regex = try NSRegularExpression(pattern: "^[a-zA-ZÀ-ÖØ-öø-ÿ]+(?: [a-zA-ZÀ-ÖØ-öø-ÿ]+){0,9}$", options: .caseInsensitive)
+            let range = NSRange(location: 0, length: trimmedName.utf16.count)
+            let matches = regex.numberOfMatches(in: trimmedName, options: [], range: range)
+            return matches > 0
+        } catch {
+            print("Erreur lors de la création de l'expression régulière : \(error.localizedDescription)")
+            return false
+        }
     }
 }

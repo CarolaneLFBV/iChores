@@ -16,7 +16,7 @@ struct UserProfileImage: View {
                     .resizable()
                     .avatarStyle()
             } else {
-                Text("Failed to load image")
+                Image(systemName: "person")
             }
         }
     }

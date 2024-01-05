@@ -10,11 +10,10 @@ import SwiftUI
 struct AvatarModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .cornerRadius(50)
             .padding(.all, 4)
             .frame(width: 100, height: 100)
             .background(Color.black.opacity(0.2))
-            .clipShape(Circle())
+            .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(8)
     }
 }

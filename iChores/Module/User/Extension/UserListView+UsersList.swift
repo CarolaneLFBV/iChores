@@ -41,7 +41,6 @@ extension UsersListView {
         .onAppear {
             do {
                 try userViewModel.fetchUsers(context: moc)
-                print("test")
             } catch {
                 // TODO: turn into alert
                 print("Error while fetching users: \(error.localizedDescription)")
