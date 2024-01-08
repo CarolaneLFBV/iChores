@@ -11,6 +11,7 @@ struct SecondaryButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
+            .frame(width: 100)
             .overlay(
                    RoundedRectangle(cornerRadius: 16)
                        .stroke(.blue, lineWidth: 2)

@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct PrimaryButtonModifier: ViewModifier {
+    var isEnabled: Bool
     func body(content: Content) -> some View {
         content
             .padding()
-            .background(.blue)
+            .frame(width: 100)
+            .background(isEnabled ? Color.blue : Color.blue.opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 
 extension View {
-    func primaryButtonStyle() -> some View {
-        modifier(PrimaryButtonModifier())
+    func primaryButtonStyle(isEnabled: Bool = true) -> some View {
+        modifier(PrimaryButtonModifier(isEnabled: isEnabled))
     }
 }

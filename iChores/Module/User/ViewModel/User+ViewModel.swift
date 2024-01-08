@@ -11,6 +11,7 @@ import CoreData
 @Observable
 class UserViewModel {
     var users: [User] = []
+    var isEditing: Bool = false
     
     enum UserError: Error {
         case fetchUserError(Error), deleteUserError(Error), addUserError(Error), updateUserError(Error)
@@ -82,7 +83,7 @@ class UserViewModel {
             let regex = try NSRegularExpression(pattern: "^[a-zA-ZÀ-ÖØ-öø-ÿ]+(?: [a-zA-ZÀ-ÖØ-öø-ÿ]+){0,9}$", options: .caseInsensitive)
             let range = NSRange(location: 0, length: trimmedName.utf16.count)
             let matches = regex.numberOfMatches(in: trimmedName, options: [], range: range)
-            return matches > 0
+            return matches > 0 && trimmedName.count <= 10
         } catch {
             print("Erreur lors de la création de l'expression régulière : \(error.localizedDescription)")
             return false

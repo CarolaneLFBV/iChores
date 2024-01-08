@@ -14,6 +14,10 @@ struct UsersListView: View {
 
     @State var isShowing = false
     @State var userViewModel = UserViewModel()
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
     
     var body: some View {
         usersList

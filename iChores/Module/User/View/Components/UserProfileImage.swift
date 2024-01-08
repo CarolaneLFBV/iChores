@@ -17,6 +17,7 @@ struct UserProfileImage: View {
                     .imageStyle()
             } else {
                 Image(systemName: "person")
+                    .imageStyle()
             }
         }
     }

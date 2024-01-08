@@ -22,12 +22,18 @@ struct AddUserView: View {
         VStack {
             Spacer()
             
-            Image(uiImage: userImage ?? UIImage(systemName: "person.fill")!)
-                .resizable()
-                .imageStyle()
-                .onTapGesture {
-                    showingImagePicker = true
-                }
+            VStack {
+                Image(uiImage: userImage ?? UIImage(systemName: "person.fill")!)
+                    .resizable()
+                    .imageStyle()
+                    .onTapGesture {
+                        showingImagePicker = true
+                    }
+                
+                Text("Tap to change the picture")
+                    .font(.caption)
+                    .foregroundStyle(.gray)
+            }
 
             Spacer()
                 .frame(height: 50)
@@ -63,7 +69,7 @@ struct AddUserView: View {
                         .foregroundStyle(.white)
                 }
                 .disabled(!userViewModel.isValidName(userName))
-                .primaryButtonStyle()
+                .primaryButtonStyle(isEnabled: userViewModel.isValidName(userName))
                 
                 Spacer()
             }
@@ -72,7 +78,6 @@ struct AddUserView: View {
             Spacer()
 
         }
-        .navigationTitle("New User")
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: self.$userImage)
         }
