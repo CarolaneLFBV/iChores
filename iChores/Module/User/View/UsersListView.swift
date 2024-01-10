@@ -12,7 +12,8 @@ struct UsersListView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
 
-    @State var isShowing = false
+    @State var showingAddUser = false
+    @State var showingDeleteAlert = false
     @State var userViewModel = UserViewModel()
     let columns = [
         GridItem(.flexible()),

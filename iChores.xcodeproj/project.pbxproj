@@ -29,6 +29,7 @@
 		924E6D852B477B0D00780EF4 /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D842B477B0D00780EF4 /* UserProfileImage.swift */; };
 		926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926079582B3F45830082F88A /* User+SwiftUI.swift */; };
 		9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260795B2B3F5E2E0082F88A /* ImageModifier.swift */; };
+		928B478D2B4C5C150067423B /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B478C2B4C5C150067423B /* BottomSheetView.swift */; };
 		92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D292B3F0114001F0D2E /* UsersListView.swift */; };
 		92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2B2B3F019B001F0D2E /* HomeView.swift */; };
 		92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */; };
@@ -82,6 +83,7 @@
 		924E6D842B477B0D00780EF4 /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
 		926079582B3F45830082F88A /* User+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+SwiftUI.swift"; sourceTree = "<group>"; };
 		9260795B2B3F5E2E0082F88A /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
+		928B478C2B4C5C150067423B /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		92946D292B3F0114001F0D2E /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		92946D2B2B3F019B001F0D2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsListView.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				92F6A08D2B3478CB0075879F /* iChoresApp.swift */,
 				92F6A08F2B3478CB0075879F /* ContentView.swift */,
 				92946D2B2B3F019B001F0D2E /* HomeView.swift */,
+				928B478C2B4C5C150067423B /* BottomSheetView.swift */,
 				9248577E2B403E17006065DD /* Module */,
 				9248577D2B403DF9006065DD /* Extensions */,
 				926079612B3F76EE0082F88A /* CoreData */,
@@ -479,6 +482,7 @@
 				924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */,
 				924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */,
 				922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */,
+				928B478D2B4C5C150067423B /* BottomSheetView.swift in Sources */,
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
 				924E6D832B47794A00780EF4 /* Task+CoreDataProperties.swift in Sources */,
 				92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */,

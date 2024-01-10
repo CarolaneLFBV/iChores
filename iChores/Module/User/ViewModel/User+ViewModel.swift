@@ -12,6 +12,10 @@ import CoreData
 class UserViewModel {
     var users: [User] = []
     var isEditing: Bool = false
+    var isSheetPresented: Bool = false
+    
+    var alertTitle = ""
+    var alertMessage = ""
     
     enum UserError: Error {
         case fetchUserError(Error), deleteUserError(Error), addUserError(Error), updateUserError(Error)
@@ -31,9 +35,7 @@ class UserViewModel {
         guard !users.isEmpty else { return }
         
         let selectedUsers: [User] = indexSet.compactMap { index -> User? in
-            guard index < users.count else {
-                return nil
-            }
+            guard index < users.count else { return nil }
             return users[index]
         }
         
@@ -44,6 +46,7 @@ class UserViewModel {
         do {
             try context.save()
             try fetchUsers(context: context)
+            alertTitle = "User Deleted"
         } catch let error {
             throw UserError.deleteUserError(error)
         }
@@ -61,6 +64,7 @@ class UserViewModel {
 
         do {
             try context.save()
+            alertTitle = "User Created"
         } catch let error {
             throw UserError.addUserError(error)
         }
@@ -80,10 +84,10 @@ class UserViewModel {
         let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
         
         do {
-            let regex = try NSRegularExpression(pattern: "^[a-zA-ZÀ-ÖØ-öø-ÿ]+(?: [a-zA-ZÀ-ÖØ-öø-ÿ]+){0,9}$", options: .caseInsensitive)
+            let regex = try NSRegularExpression(pattern: "^[a-zA-ZÀ-ÖØ-öø-ÿ-]+(?: [a-zA-ZÀ-ÖØ-öø-ÿ-]+){0,9}$", options: .caseInsensitive)
             let range = NSRange(location: 0, length: trimmedName.utf16.count)
             let matches = regex.numberOfMatches(in: trimmedName, options: [], range: range)
-            return matches > 0 && trimmedName.count <= 10
+            return matches > 0 && trimmedName.count <= 15
         } catch {
             print("Erreur lors de la création de l'expression régulière : \(error.localizedDescription)")
             return false

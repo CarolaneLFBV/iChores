@@ -59,6 +59,7 @@ struct AddUserView: View {
                 Button {
                     do {
                         try userViewModel.addUser(context: moc, name: userName, image: userImage)
+                        userViewModel.isSheetPresented = true
                     } catch {
                         // TODO: turn into alert
                         print("Error while creating user: \(error.localizedDescription)")
@@ -73,14 +74,15 @@ struct AddUserView: View {
                 
                 Spacer()
             }
-
-            
             Spacer()
-
         }
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: self.$userImage)
         }
+        .sheet(isPresented: $userViewModel.isSheetPresented) {
+            BottomSheetView(title: userViewModel.alertTitle)
+        }
+        .transition(.move(edge: .bottom))
     }
 }
 

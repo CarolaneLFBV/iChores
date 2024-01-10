@@ -49,7 +49,7 @@ extension UsersListView {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    isShowing.toggle()
+                    showingAddUser.toggle()
                 } label: {
                     Label("Add user", systemImage: "plus")
                 }
@@ -59,11 +59,11 @@ extension UsersListView {
                 Button {
                     userViewModel.isEditing.toggle()
                 } label: {
-                    Label("Edit", systemImage: "square.and.pencil")
+                    Label("Edit", systemImage: userViewModel.isEditing ? "checkmark" : "square.and.pencil")
                 }
             }
         }
-        .sheet(isPresented: $isShowing) {
+        .sheet(isPresented: $showingAddUser) {
             AddUserView()
         }
         .onAppear {
