@@ -25,7 +25,7 @@ extension UsersListView {
                             }
                             .overlay(
                                 userViewModel.isEditing ? Button {
-                                    deleteUser(at: users.firstIndex(of: user)!)
+                                    deleteUser(user)
                                 } label: {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(.red)
@@ -35,13 +35,6 @@ extension UsersListView {
                                 alignment: .topTrailing
                             )
                         }
-//                        .onDelete(perform: { indexSet in
-//                            do {
-//                                try userViewModel.deleteUser(at: indexSet, context: moc)
-//                            } catch {
-//                                print("Error while deleting: \(error.localizedDescription)")
-//                            }
-//                        })
                     })
                 }
             }
@@ -76,7 +69,12 @@ extension UsersListView {
         }
     }
     
-    private func deleteUser(at index: Int) {
+    private func deleteUser(_ user: User) {
+        guard let index = users.firstIndex(of: user) else {
+            print("User not found in the list.")
+            return
+        }
+
         do {
             try userViewModel.deleteUser(at: IndexSet([index]), context: moc)
         } catch {

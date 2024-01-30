@@ -64,6 +64,7 @@ class UserViewModel {
 
         do {
             try context.save()
+            try fetchUsers(context: context)
             alertTitle = "User Created"
         } catch let error {
             throw UserError.addUserError(error)

@@ -15,7 +15,7 @@ struct NoUserView: View {
                 .foregroundColor(.gray.opacity(0.7))
             
             Spacer()
-                .frame(height: 10)
+                .frame(height: 8)
             
             Text("No Users found")
                 .font(.title2)
