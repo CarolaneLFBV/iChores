@@ -14,19 +14,19 @@ extension FileManager {
         case documentsDirectoryNotFound, imageConversionFailed, fileWriteError(Error)
     }
 
-    func saveImageToDocumentsDirectory(image: UIImage, fileName: String) throws -> URL? {
+    func saveImageToDocumentsDirectory(_ image: UIImage, fileName: String) throws -> URL? {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             throw ImageSaveError.documentsDirectoryNotFound
         }
 
         let fileURL = documentsDirectory.appendingPathComponent("userImage").appendingPathComponent(fileName)
 
-        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
+        guard let data = image.pngData() else {
             throw ImageSaveError.imageConversionFailed
         }
 
         do {
-            try imageData.write(to: fileURL)
+            try data.write(to: fileURL)
             return fileURL
         } catch let error{
             throw ImageSaveError.fileWriteError(error)

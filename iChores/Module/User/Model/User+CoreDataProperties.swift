@@ -16,7 +16,7 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var id: UUID?
+    @NSManaged public var id: UUID
     @NSManaged public var name: String?
     @NSManaged public var userImage: String?
     @NSManaged public var userToRoom: NSSet?
@@ -25,11 +25,7 @@ extension User {
     public var wrappedUserName: String {
         name ?? "Unknown User Name"
     }
-    
-    public var wrappedUserID: UUID {
-        id ?? UUID()
-    }
-    
+
     public var wrappedUserImage: String {
         userImage ?? "No Image available"
     }

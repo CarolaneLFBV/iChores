@@ -23,17 +23,24 @@ struct AddUserView: View {
             Spacer()
             
             VStack {
-                Image(uiImage: userImage ?? UIImage(systemName: "person.fill")!)
-                    .resizable()
-                    .imageStyle()
-                    .onTapGesture {
-                        showingImagePicker = true
+                Group {
+                    if let userImage {
+                        Image(uiImage: userImage)
+                            .resizable()
+                    } else {
+                        Image(systemName: "person.fill")
+                            .resizable()
                     }
-                
-                Text("Tap to change the picture")
-                    .font(.caption)
-                    .foregroundStyle(.gray)
+                }
             }
+            .imageStyle()
+            .onTapGesture {
+                showingImagePicker = true
+            }
+            
+            Text("Tap to change the picture")
+                .font(.caption)
+                .foregroundStyle(.gray)
 
             Spacer()
                 .frame(height: 50)

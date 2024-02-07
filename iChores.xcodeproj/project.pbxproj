@@ -18,8 +18,6 @@
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
 		924857792B403272006065DD /* User+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924857782B403272006065DD /* User+ViewModel.swift */; };
-		9248577B2B403D75006065DD /* UserListView+UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248577A2B403D75006065DD /* UserListView+UsersList.swift */; };
-		924857802B404A77006065DD /* UserDetailView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248577F2B404A77006065DD /* UserDetailView+SwiftUI.swift */; };
 		924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */; };
 		924E6D7F2B47794A00780EF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */; };
 		924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */; };
@@ -72,8 +70,6 @@
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		924857782B403272006065DD /* User+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+ViewModel.swift"; sourceTree = "<group>"; };
-		9248577A2B403D75006065DD /* UserListView+UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListView+UsersList.swift"; sourceTree = "<group>"; };
-		9248577F2B404A77006065DD /* UserDetailView+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDetailView+SwiftUI.swift"; sourceTree = "<group>"; };
 		924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -165,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				921F358A2B4893C000A6B2F4 /* Components */,
-				9260795A2B3F5DCD0082F88A /* Modifiers */,
 				92946D292B3F0114001F0D2E /* UsersListView.swift */,
 				922C251D2B3DE0E400896D7E /* UserDetailView.swift */,
 				922C25212B3DE75100896D7E /* AddUserView.swift */,
@@ -205,8 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				926079582B3F45830082F88A /* User+SwiftUI.swift */,
-				9248577A2B403D75006065DD /* UserListView+UsersList.swift */,
-				9248577F2B404A77006065DD /* UserDetailView+SwiftUI.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -267,6 +260,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		9298A4B82B72635600633775 /* DS */ = {
+			isa = PBXGroup;
+			children = (
+				9260795A2B3F5DCD0082F88A /* Modifiers */,
+			);
+			path = DS;
+			sourceTree = "<group>";
+		};
 		92F6A0812B3478CB0075879F = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +291,7 @@
 		92F6A08C2B3478CB0075879F /* iChores */ = {
 			isa = PBXGroup;
 			children = (
+				9298A4B82B72635600633775 /* DS */,
 				92F6A08D2B3478CB0075879F /* iChoresApp.swift */,
 				92F6A08F2B3478CB0075879F /* ContentView.swift */,
 				92946D2B2B3F019B001F0D2E /* HomeView.swift */,
@@ -467,7 +469,6 @@
 				921F358E2B489CF000A6B2F4 /* PrimaryButtonModifier.swift in Sources */,
 				921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
-				9248577B2B403D75006065DD /* UserListView+UsersList.swift in Sources */,
 				924E6D812B47794A00780EF4 /* Room+CoreDataProperties.swift in Sources */,
 				924E6D822B47794A00780EF4 /* Task+CoreDataClass.swift in Sources */,
 				924857792B403272006065DD /* User+ViewModel.swift in Sources */,
@@ -477,7 +478,6 @@
 				92946D302B3F01EC001F0D2E /* UserProfileView.swift in Sources */,
 				922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */,
 				921F35922B48A65B00A6B2F4 /* TextFieldModifier.swift in Sources */,
-				924857802B404A77006065DD /* UserDetailView+SwiftUI.swift in Sources */,
 				9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */,
 				924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */,
 				924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */,

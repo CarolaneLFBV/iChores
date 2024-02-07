@@ -9,46 +9,36 @@ import SwiftUI
 import CoreData
 
 @Observable
-class UserViewModel {
+final class UserViewModel {
     var users: [User] = []
     var isEditing: Bool = false
     var isSheetPresented: Bool = false
     
     var alertTitle = ""
     var alertMessage = ""
-    
+        
     enum UserError: Error {
-        case fetchUserError(Error), deleteUserError(Error), addUserError(Error), updateUserError(Error)
+        case fetch(Error), delete(Error), add(Error), update(Error)
     }
     
     func fetchUsers(context: NSManagedObjectContext) throws {
+        let request: NSFetchRequest<User> = User.fetchRequest()
+        request.sortDescriptors = []
+        
         do {
-            let request: NSFetchRequest<User> = User.fetchRequest()
             self.users = try context.fetch(request)
         } catch let error {
-            throw UserError.fetchUserError(error)
+            throw UserError.fetch(error)
         }
     }
     
-    func deleteUser(at indexSet: IndexSet, context: NSManagedObjectContext) throws {
-        
-        guard !users.isEmpty else { return }
-        
-        let selectedUsers: [User] = indexSet.compactMap { index -> User? in
-            guard index < users.count else { return nil }
-            return users[index]
-        }
-        
-        for user in selectedUsers {
-            context.delete(user)
-        }
-        
+    func delete(_ user: User, context: NSManagedObjectContext) throws {
+        context.delete(user)
         do {
             try context.save()
             try fetchUsers(context: context)
-            alertTitle = "User Deleted"
         } catch let error {
-            throw UserError.deleteUserError(error)
+            throw UserError.delete(error)
         }
     }
     
@@ -67,18 +57,16 @@ class UserViewModel {
             try fetchUsers(context: context)
             alertTitle = "User Created"
         } catch let error {
-            throw UserError.addUserError(error)
+            throw UserError.add(error)
         }
     }
     
-    func editUser(user: User, withModifiedName modifiedName: String, context: NSManagedObjectContext) throws {
-        user.name = modifiedName
+    func updateUser(context: NSManagedObjectContext) throws {        
         do {
             try context.save()
         } catch let error {
-            throw UserError.updateUserError(error)
+            throw UserError.update(error)
         }
-        
     }
     
     func isValidName(_ name: String) -> Bool {
