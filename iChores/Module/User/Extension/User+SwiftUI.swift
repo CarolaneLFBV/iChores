@@ -11,11 +11,11 @@ import SwiftUI
 extension User {
     func getImage() -> Image? {
         guard let imageUrlString = self.userImage,
-              let imageData = Data(base64Encoded: imageUrlString),
-              let uiImage = UIImage(data: imageData) else {
+              let fileURL = URL(string: imageUrlString),
+              let uiImage = UIImage(contentsOfFile: fileURL.path) else {
             return nil
         }
-    
+        
         return Image(uiImage: uiImage)
     }
 }

@@ -14,32 +14,16 @@ final class UserViewModel {
     var isEditing: Bool = false
     var isSheetPresented: Bool = false
     
-    var alertTitle = ""
-    var alertMessage = ""
-        
-    enum UserError: Error {
-        case fetch(Error), delete(Error), add(Error), update(Error)
-    }
-    
+    var fileManager = FileManager()
+
     func fetchUsers(context: NSManagedObjectContext) throws {
-        let request: NSFetchRequest<User> = User.fetchRequest()
-        request.sortDescriptors = []
-        
-        do {
-            self.users = try context.fetch(request)
-        } catch let error {
-            throw UserError.fetch(error)
-        }
+        users = try UserRepository.fetchUsers(context: context)
     }
     
     func delete(_ user: User, context: NSManagedObjectContext) throws {
         context.delete(user)
-        do {
-            try context.save()
-            try fetchUsers(context: context)
-        } catch let error {
-            throw UserError.delete(error)
-        }
+        try context.save()
+        try fetchUsers(context: context)
     }
     
     func addUser(context: NSManagedObjectContext, name: String, image: UIImage?) throws {
@@ -47,26 +31,17 @@ final class UserViewModel {
         user.id = UUID()
         user.name = name
         
-        if let imageData = image?.jpegData(compressionQuality: 1.0) {
-            let base64String = imageData.base64EncodedString()
-            user.userImage = base64String
+        if let image {
+            let imageURL = try fileManager.saveImageToDocumentsDirectory(image, fileName: "\(user.id).png")
+            user.userImage = imageURL?.absoluteString
         }
-
-        do {
-            try context.save()
-            try fetchUsers(context: context)
-            alertTitle = "User Created"
-        } catch let error {
-            throw UserError.add(error)
-        }
+        
+        try context.save()
+        try fetchUsers(context: context)
     }
     
-    func updateUser(context: NSManagedObjectContext) throws {        
-        do {
-            try context.save()
-        } catch let error {
-            throw UserError.update(error)
-        }
+    func updateUser(context: NSManagedObjectContext) throws {
+        try context.save()
     }
     
     func isValidName(_ name: String) -> Bool {

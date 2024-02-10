@@ -11,7 +11,7 @@ struct AddUserView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
-    @State private var userViewModel = UserViewModel()
+    @State var userViewModel: UserViewModel
     
     @State private var userName = ""
     @State private var image: Image?
@@ -47,7 +47,7 @@ struct AddUserView: View {
 
             TextField("User name", text: $userName)
                 .textFieldStyle()
-            
+             
             Spacer()
             
             HStack {
@@ -66,7 +66,8 @@ struct AddUserView: View {
                 Button {
                     do {
                         try userViewModel.addUser(context: moc, name: userName, image: userImage)
-                        userViewModel.isSheetPresented = true
+                        try userViewModel.fetchUsers(context: moc)
+//                        userViewModel.isSheetPresented = true
                     } catch {
                         // TODO: turn into alert
                         print("Error while creating user: \(error.localizedDescription)")
@@ -86,13 +87,9 @@ struct AddUserView: View {
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: self.$userImage)
         }
-        .sheet(isPresented: $userViewModel.isSheetPresented) {
-            BottomSheetView(title: userViewModel.alertTitle)
-        }
-        .transition(.move(edge: .bottom))
+//        .sheet(isPresented: $userViewModel.isSheetPresented) {
+//            BottomSheetView(title: userViewModel.alertTitle)
+//        }
+//        .transition(.move(edge: .bottom))
     }
-}
-
-#Preview {
-    AddUserView()
 }

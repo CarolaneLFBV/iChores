@@ -14,10 +14,7 @@ struct UsersListView: View {
     @State var showingAddUser = false
     @State var showingDeleteAlert = false
     @State var userViewModel = UserViewModel()
-    
-    @State private var fetchError: Error?
-    @State private var showErrorAlert: Bool = false
-    
+            
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -26,10 +23,8 @@ struct UsersListView: View {
     var body: some View {
         usersList
             .task {
-                do {
-                    try userViewModel.fetchUsers(context: moc)
-                } catch {
-                    fetchError = error
+                if userViewModel.users.isEmpty {
+                    try? userViewModel.fetchUsers(context: moc)
                 }
             }
     }
@@ -41,8 +36,11 @@ extension UsersListView {
             if userViewModel.users.isEmpty {
                 NoUserView()
             } else {
-                userListView
+                userLazyGridView
             }
+        }
+        .onAppear() {
+            try? userViewModel.fetchUsers(context: moc)
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -57,16 +55,16 @@ extension UsersListView {
                 Button {
                     userViewModel.isEditing.toggle()
                 } label: {
-                    Label("Edit", systemImage: userViewModel.isEditing ? "checkmark" : "square.and.pencil")
+                    Label("Edit", systemImage: userViewModel.isEditing ? "checkmark" : "pencil")
                 }
             }
         }
         .sheet(isPresented: $showingAddUser) {
-            AddUserView()
+            AddUserView(userViewModel: userViewModel)
         }
     }
     
-    var userListView: some View {
+    var userLazyGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns, content: {
                 ForEach(userViewModel.users, id: \.self) { user in
@@ -96,11 +94,6 @@ extension UsersListView {
                 }
             })
         }
-        .alert("Erreur de chargement", isPresented: $showErrorAlert) {
-              Button("OK", role: .cancel) { }
-          } message: {
-              Text(fetchError?.localizedDescription ?? "Une erreur inconnue est survenue.")
-          }
     }
 }
 
