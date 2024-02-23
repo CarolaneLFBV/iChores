@@ -12,11 +12,10 @@ struct AddUserView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var userViewModel: UserViewModel
-    
+
     @State private var userName = ""
     @State private var image: Image?
     @State private var userImage: UIImage?
-    @State private var showingImagePicker = false
     
     var body: some View {
         VStack {
@@ -35,7 +34,7 @@ struct AddUserView: View {
             }
             .imageStyle()
             .onTapGesture {
-                showingImagePicker = true
+                userViewModel.showingImagePicker = true
             }
             
             Text("Tap to change the picture")
@@ -50,24 +49,13 @@ struct AddUserView: View {
              
             Spacer()
             
-            HStack {
-                Spacer()
-                
-                Button {
-                    dismiss()
-                } label: {
-                    Text("Cancel")
-                        .foregroundStyle(.blue)
-                }
-                .secondaryButtonStyle()
-                
+            HStack {                
                 Spacer()
                 
                 Button {
                     do {
                         try userViewModel.addUser(context: moc, name: userName, image: userImage)
-                        try userViewModel.fetchUsers(context: moc)
-//                        userViewModel.isSheetPresented = true
+                        userViewModel.isSheetPresented.toggle()
                     } catch {
                         // TODO: turn into alert
                         print("Error while creating user: \(error.localizedDescription)")
@@ -84,12 +72,8 @@ struct AddUserView: View {
             }
             Spacer()
         }
-        .sheet(isPresented: $showingImagePicker) {
+        .sheet(isPresented: $userViewModel.showingImagePicker) {
             ImagePicker(image: self.$userImage)
         }
-//        .sheet(isPresented: $userViewModel.isSheetPresented) {
-//            BottomSheetView(title: userViewModel.alertTitle)
-//        }
-//        .transition(.move(edge: .bottom))
     }
 }

@@ -16,7 +16,8 @@ struct UserProfileImage: View {
                     .resizable()
                     .imageStyle()
             } else {
-                Image(systemName: "person")
+                Image("no-icon-logo")
+                    .resizable()
                     .imageStyle()
             }
         }

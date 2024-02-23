@@ -13,6 +13,7 @@ final class UserViewModel {
     var users: [User] = []
     var isEditing: Bool = false
     var isSheetPresented: Bool = false
+    var showingImagePicker = false
     
     var fileManager = FileManager()
 
@@ -32,7 +33,7 @@ final class UserViewModel {
         user.name = name
         
         if let image {
-            let imageURL = try fileManager.saveImageToDocumentsDirectory(image, fileName: "\(user.id).png")
+            let imageURL = try fileManager.saveImageToDocumentsDirectory(image, fileName: name)
             user.userImage = imageURL?.absoluteString
         }
         

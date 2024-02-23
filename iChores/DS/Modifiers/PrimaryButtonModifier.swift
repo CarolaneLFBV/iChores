@@ -9,12 +9,16 @@ import SwiftUI
 
 struct PrimaryButtonModifier: ViewModifier {
     var isEnabled: Bool
+    private var screenWidthSize: CGFloat {
+        UIScreen.main.bounds.width
+    }
+    
     func body(content: Content) -> some View {
         content
             .padding()
-            .frame(width: 100)
+            .frame(width: screenWidthSize * 0.3)
             .background(isEnabled ? Color.blue : Color.blue.opacity(0.5))
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
 

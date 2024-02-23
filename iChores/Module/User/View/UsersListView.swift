@@ -39,9 +39,6 @@ extension UsersListView {
                 userLazyGridView
             }
         }
-        .onAppear() {
-            try? userViewModel.fetchUsers(context: moc)
-        }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
@@ -51,11 +48,13 @@ extension UsersListView {
                 }
             }
             
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    userViewModel.isEditing.toggle()
-                } label: {
-                    Label("Edit", systemImage: userViewModel.isEditing ? "checkmark" : "pencil")
+            if userViewModel.users.count > 0 {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        userViewModel.isEditing.toggle()
+                    } label: {
+                        Label("Edit", systemImage: userViewModel.isEditing ? "checkmark" : "pencil")
+                    }
                 }
             }
         }
@@ -68,7 +67,7 @@ extension UsersListView {
         ScrollView {
             LazyVGrid(columns: columns, content: {
                 ForEach(userViewModel.users, id: \.self) { user in
-                    NavigationLink(destination: UserDetailView(user: user)) {
+                    NavigationLink(destination: UserDetailView(userViewModel: userViewModel, user: user)) {
                         VStack {
                             UserProfileImage(user: user)
                             Text(user.wrappedUserName)
@@ -81,23 +80,20 @@ extension UsersListView {
                                 do {
                                     try userViewModel.delete(user, context: moc)
                                 } catch {
+                                    // TODO: Turn into alert
                                     print("Error while deleting user: \(error.localizedDescription)")
                                 }
                             } label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.red)
-                                    .background(Circle().foregroundColor(.white))
-                                    .padding(4)
+                                DeleteButton()
                             }
                         }
                     }
                 }
             })
         }
+        .sheet(isPresented: $userViewModel.isSheetPresented) {
+            BottomSheetView(userViewModel: userViewModel, title: "User Created", description: "The user has been created")
+        }
+       .transition(.move(edge: .bottom))
     }
-}
-
-
-#Preview {
-    UsersListView()
 }
