@@ -73,6 +73,9 @@ extension UsersListView {
                             Text(user.wrappedUserName)
                                 .foregroundStyle(.black)
                         }
+                        .onAppear {
+                            print(user.userImage ?? "N/A")
+                        }
                     }
                     .overlay(alignment: .topTrailing) {
                         if userViewModel.isEditing {

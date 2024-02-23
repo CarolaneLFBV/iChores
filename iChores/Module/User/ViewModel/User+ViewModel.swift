@@ -13,9 +13,12 @@ final class UserViewModel {
     var users: [User] = []
     var isEditing: Bool = false
     var isSheetPresented: Bool = false
-    var showingImagePicker = false
+    var showingImagePicker: Bool = false
     
     var fileManager = FileManager()
+    
+    var user: User?
+    var modifiedName: String = ""
 
     func fetchUsers(context: NSManagedObjectContext) throws {
         users = try UserRepository.fetchUsers(context: context)
@@ -33,7 +36,7 @@ final class UserViewModel {
         user.name = name
         
         if let image {
-            let imageURL = try fileManager.saveImageToDocumentsDirectory(image, fileName: name)
+            let imageURL = try fileManager.saveImageToDocumentsDirectory(image, fileName: user.id)
             user.userImage = imageURL?.absoluteString
         }
         
@@ -41,8 +44,17 @@ final class UserViewModel {
         try fetchUsers(context: context)
     }
     
+    func startEdition(user: User) {
+        self.user = user
+        self.modifiedName = user.wrappedUserName
+        self.isEditing = true
+    }
+    
     func updateUser(context: NSManagedObjectContext) throws {
+        guard let user = user else { return }
+        user.name = modifiedName
         try context.save()
+        isEditing = false
     }
     
     func isValidName(_ name: String) -> Bool {

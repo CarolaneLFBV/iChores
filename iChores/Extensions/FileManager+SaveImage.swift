@@ -14,7 +14,7 @@ extension FileManager {
         case documentsDirectoryNotFound, imageConversionFailed, fileWriteError(Error), directoryNotCreated
     }
     
-    func saveImageToDocumentsDirectory(_ image: UIImage, fileName: String) throws -> URL? {
+    func saveImageToDocumentsDirectory(_ image: UIImage, fileName: UUID) throws -> URL? {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             throw ImageSaveError.documentsDirectoryNotFound
         }
@@ -27,8 +27,8 @@ extension FileManager {
             throw ImageSaveError.directoryNotCreated
         }
         
-        let fileURL = userImageDirectory.appendingPathComponent(fileName)
-        
+        let fileURL = userImageDirectory.appendingPathComponent("\(fileName)")
+
         guard let data = image.pngData() else {
             throw ImageSaveError.imageConversionFailed
         }

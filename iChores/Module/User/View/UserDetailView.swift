@@ -11,8 +11,6 @@ struct UserDetailView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     @State var userViewModel: UserViewModel
-    @State var isEditing: Bool = false
-    @State var modifiedName = ""
     
     let user: User
     
@@ -20,7 +18,7 @@ struct UserDetailView: View {
         VStack {
             UserProfileImage(user: user)
             
-            if isEditing {
+            if userViewModel.isEditing {
                 userEdition
             } else {
                 userDetail
@@ -32,7 +30,7 @@ struct UserDetailView: View {
 extension UserDetailView {
     var userEdition: some View {
         VStack {
-            TextField("Name", text: $modifiedName)
+            TextField("Name", text: $userViewModel.modifiedName)
                 .textFieldStyle()
             
             Spacer()
@@ -43,7 +41,7 @@ extension UserDetailView {
 
                 Button {
                     do {
-                        user.name = modifiedName
+                        user.name = userViewModel.modifiedName
                         try userViewModel.updateUser(context: moc)
                     } catch {
                         // TODO: turn into alert
@@ -54,8 +52,8 @@ extension UserDetailView {
                     Text("Save")
                         .foregroundStyle(.white)
                 }
-                .disabled(!userViewModel.isValidName(modifiedName))
-                .primaryButtonStyle(isEnabled: userViewModel.isValidName(modifiedName))
+                .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
+                .primaryButtonStyle(isEnabled: userViewModel.isValidName(userViewModel.modifiedName))
             }
         }
     }
@@ -66,7 +64,7 @@ extension UserDetailView {
         }
         .toolbar {
             Button("Edit") {
-                isEditing = true
+                userViewModel.startEdition(user: user)
             }
         }
     }
