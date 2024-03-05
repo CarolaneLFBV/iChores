@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings Viiiiew")
+        Text("SettingsView")
+        Text("SettingsView")
+        Text("SettingsView")
+        Text("SettingsView")
     }
 }
 
