@@ -43,6 +43,7 @@ extension UserDetailView {
                     do {
                         user.name = userViewModel.modifiedName
                         try userViewModel.updateUser(context: moc)
+                        userViewModel.isSheetPresented = true
                     } catch {
                         // TODO: turn into alert
                         print("Error while editing: \(error)")
@@ -55,6 +56,9 @@ extension UserDetailView {
                 .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
                 .primaryButtonStyle(isEnabled: userViewModel.isValidName(userViewModel.modifiedName))
             }
+        }
+        .sheet(isPresented: $userViewModel.isSheetPresented) {
+            BottomSheetView(userViewModel: userViewModel, title: "User Edited", description: "The user has been edited")
         }
     }
     

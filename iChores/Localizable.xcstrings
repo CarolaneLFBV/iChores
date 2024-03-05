@@ -31,6 +31,9 @@
         }
       }
     },
+    "Create a new room with the + button" : {
+
+    },
     "Create a new user with the + button" : {
       "localizations" : {
         "fr" : {
@@ -40,6 +43,9 @@
           }
         }
       }
+    },
+    "Delete" : {
+
     },
     "Edit" : {
       "localizations" : {
@@ -77,6 +83,9 @@
         }
       }
     },
+    "No Rooms found" : {
+
+    },
     "No Users found" : {
       "localizations" : {
         "fr" : {
@@ -110,6 +119,12 @@
           }
         }
       }
+    },
+    "Room" : {
+
+    },
+    "Room name" : {
+
     },
     "Rooms" : {
       "localizations" : {

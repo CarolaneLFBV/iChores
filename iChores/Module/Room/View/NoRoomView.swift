@@ -1,32 +1,29 @@
 //
-//  NoUserView.swift
+//  NoRoomView.swift
 //  iChores
 //
-//  Created by Carolane Lefebvre on 05/01/2024.
+//  Created by Carolane Lefebvre on 24/02/2024.
 //
 
 import SwiftUI
 
-struct NoUserView: View {
+struct NoRoomView: View {
     var body: some View {
         VStack {
-            Image(systemName: "person.3")
+            Image(systemName: "square.split.bottomrightquarter")
                 .font(.title)
                 .foregroundColor(.gray.opacity(0.7))
             
             Spacer()
                 .frame(height: 8)
             
-            Text("No Users found")
+            Text("No Rooms found")
                 .font(.title2)
                 .bold()
             
-            Text("Create a new user with the + button")
+            Text("Create a new room with the + button")
                 .foregroundStyle(.gray)
         }
     }
 }
 
-#Preview {
-    NoUserView()
-}

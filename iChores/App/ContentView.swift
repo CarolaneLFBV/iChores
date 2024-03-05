@@ -33,7 +33,7 @@ struct ContentView: View {
             }
             
             NavigationStack {
-                UserProfileView()
+                SettingsView()
             }
             .tabItem {
                 Label("Profile", systemImage: "person")

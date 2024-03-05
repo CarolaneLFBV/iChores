@@ -16,7 +16,7 @@ extension Room {
         return NSFetchRequest<Room>(entityName: "Room")
     }
 
-    @NSManaged public var idRoom: UUID?
+    @NSManaged public var idRoom: UUID
     @NSManaged public var name: String?
     @NSManaged public var roomImage: String?
     @NSManaged public var type: String?
@@ -25,10 +25,6 @@ extension Room {
 
     public var wrappedRoomName: String {
         name ?? "Unknown Room Name"
-    }
-    
-    public var wrappedRoomID: UUID {
-        idRoom ?? UUID()
     }
     
     public var wrappedRoomType: String {

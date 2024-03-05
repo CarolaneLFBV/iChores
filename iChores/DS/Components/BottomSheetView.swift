@@ -61,6 +61,7 @@ struct BottomSheetView: View {
 
             }
             .ignoresSafeArea()
+            .transition(.move(edge: .bottom))
         }
         
     }

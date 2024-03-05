@@ -75,5 +75,8 @@ struct AddUserView: View {
         .sheet(isPresented: $userViewModel.showingImagePicker) {
             ImagePicker(image: self.$userImage)
         }
+        .sheet(isPresented: $userViewModel.isSheetPresented) {
+            BottomSheetView(userViewModel: userViewModel, title: "User Created", description: "The user has been created")
+        }
     }
 }

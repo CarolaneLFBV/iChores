@@ -73,9 +73,6 @@ extension UsersListView {
                             Text(user.wrappedUserName)
                                 .foregroundStyle(.black)
                         }
-                        .onAppear {
-                            print(user.userImage ?? "N/A")
-                        }
                     }
                     .overlay(alignment: .topTrailing) {
                         if userViewModel.isEditing {
@@ -94,9 +91,5 @@ extension UsersListView {
                 }
             })
         }
-        .sheet(isPresented: $userViewModel.isSheetPresented) {
-            BottomSheetView(userViewModel: userViewModel, title: "User Created", description: "The user has been created")
-        }
-       .transition(.move(edge: .bottom))
     }
 }
