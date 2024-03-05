@@ -111,6 +111,7 @@
       }
     },
     "Profile" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -145,6 +146,9 @@
           }
         }
       }
+    },
+    "Settings" : {
+
     },
     "Tap to change the picture" : {
       "localizations" : {

@@ -55,12 +55,11 @@ struct AddUserView: View {
                 Button {
                     do {
                         try userViewModel.addUser(context: moc, name: userName, image: userImage)
-                        userViewModel.isSheetPresented.toggle()
+                        userViewModel.isSheetPresented = true
                     } catch {
                         // TODO: turn into alert
                         print("Error while creating user: \(error.localizedDescription)")
                     }
-                    dismiss()
                 } label: {
                     Text("Create")
                         .foregroundStyle(.white)

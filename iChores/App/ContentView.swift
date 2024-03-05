@@ -36,7 +36,7 @@ struct ContentView: View {
                 SettingsView()
             }
             .tabItem {
-                Label("Profile", systemImage: "person")
+                Label("Settings", systemImage: "gear")
             }
         }
     }

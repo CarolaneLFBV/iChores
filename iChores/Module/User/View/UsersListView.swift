@@ -79,6 +79,7 @@ extension UsersListView {
                             Button {
                                 do {
                                     try userViewModel.delete(user, context: moc)
+                                    userViewModel.isSheetPresented = true
                                 } catch {
                                     // TODO: Turn into alert
                                     print("Error while deleting user: \(error.localizedDescription)")
@@ -90,6 +91,9 @@ extension UsersListView {
                     }
                 }
             })
+            .sheet(isPresented: $userViewModel.isSheetPresented) {
+                BottomSheetView(userViewModel: userViewModel, title: "User Deleted", description: "The user has been created")
+            }
         }
     }
 }
