@@ -18,6 +18,7 @@ struct RoomDetailView: View {
         VStack {
             Text(room.wrappedRoomName)
             Text(room.wrappedRoomType)
+            Image(systemName: room.roomImageName)
             
             Button("Delete") {
                 do {

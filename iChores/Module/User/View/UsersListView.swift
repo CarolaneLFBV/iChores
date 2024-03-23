@@ -10,11 +10,8 @@ import CoreData
 
 struct UsersListView: View {
     @Environment(\.managedObjectContext) var moc
-        
-    @State var showingAddUser = false
-    @State var showingDeleteAlert = false
     @State var userViewModel = UserViewModel()
-            
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -41,11 +38,9 @@ extension UsersListView {
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    showingAddUser.toggle()
-                } label: {
-                    Label("Add user", systemImage: "plus")
-                }
+                NavigationLink(destination: AddUserView(userViewModel: userViewModel), label: {
+                    Label("Add User", systemImage: "plus")
+                })
             }
             
             if userViewModel.users.count > 0 {
@@ -57,9 +52,6 @@ extension UsersListView {
                     }
                 }
             }
-        }
-        .sheet(isPresented: $showingAddUser) {
-            AddUserView(userViewModel: userViewModel)
         }
     }
     
@@ -73,27 +65,10 @@ extension UsersListView {
                             Text(user.wrappedUserName)
                                 .foregroundStyle(.black)
                         }
-                    }
-                    .overlay(alignment: .topTrailing) {
-                        if userViewModel.isEditing {
-                            Button {
-                                do {
-                                    try userViewModel.delete(user, context: moc)
-                                    userViewModel.isSheetPresented = true
-                                } catch {
-                                    // TODO: Turn into alert
-                                    print("Error while deleting user: \(error.localizedDescription)")
-                                }
-                            } label: {
-                                DeleteButton()
-                            }
-                        }
+                        .padding()
                     }
                 }
             })
-            .sheet(isPresented: $userViewModel.isSheetPresented) {
-                BottomSheetView(userViewModel: userViewModel, title: "User Deleted", description: "The user has been created")
-            }
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  CancelBtnView.swift
+//  CancelButtonView.swift
 //  iChores
 //
 //  Created by Carolane Lefebvre on 10/02/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CancelBtnView: View {
+struct CancelButton: View {
     @Environment(\.dismiss) var dismiss
     private var screenWidthSize: CGFloat {
         UIScreen.main.bounds.width

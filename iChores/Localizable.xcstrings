@@ -1,7 +1,22 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
+          }
+        }
+      }
+    },
+    "Add Room" : {
+
+    },
     "Add user" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -10,6 +25,22 @@
           }
         }
       }
+    },
+    "Add User" : {
+
+    },
+    "Are you sure you want to delete this user?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voulez-vous supprimer cet utilisateur ?"
+          }
+        }
+      }
+    },
+    "Belongs to..." : {
+
     },
     "Cancel" : {
       "localizations" : {
@@ -32,7 +63,14 @@
       }
     },
     "Create a new room with the + button" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez une pièce en cliquant sur le bouton +"
+          }
+        }
+      }
     },
     "Create a new user with the + button" : {
       "localizations" : {
@@ -45,7 +83,14 @@
       }
     },
     "Delete" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
+          }
+        }
+      }
     },
     "Edit" : {
       "localizations" : {
@@ -58,9 +103,6 @@
       }
     },
     "Hello" : {
-
-    },
-    "Hello, World!" : {
 
     },
     "Home" : {
@@ -84,7 +126,14 @@
       }
     },
     "No Rooms found" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune pièce"
+          }
+        }
+      }
     },
     "No Users found" : {
       "localizations" : {
@@ -97,7 +146,15 @@
       }
     },
     "Ok" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
     },
     "OK" : {
       "extractionState" : "stale",
@@ -105,7 +162,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "OK"
+            "value" : "Ok"
           }
         }
       }
@@ -122,10 +179,24 @@
       }
     },
     "Room" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pièce"
+          }
+        }
+      }
     },
     "Room name" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de la pièce"
+          }
+        }
+      }
     },
     "Rooms" : {
       "localizations" : {
@@ -148,6 +219,16 @@
       }
     },
     "Settings" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres"
+          }
+        }
+      }
+    },
+    "SettingsView" : {
 
     },
     "Tap to change the picture" : {
@@ -156,6 +237,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Appuyez pour changer de photo"
+          }
+        }
+      }
+    },
+    "The user will be permanently removed from the app" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'utilisateur sera retiré de l'application"
           }
         }
       }

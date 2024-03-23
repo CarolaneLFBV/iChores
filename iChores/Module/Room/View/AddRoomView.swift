@@ -14,8 +14,10 @@ struct AddRoomView: View {
     @State var roomViewModel: RoomViewModel
 
     @State private var roomName = ""
+    @State private var test = ""
+    
     let typeRoom = ["Entrance", "Living Room", "Bedroom", "Kitchen", "Bathroom", "WC", "Garden", "Dressing Room"]
-    @State private var selectedRoom = "Entrance"
+    @State private var selectedRoom = "Entrance"    
     
     var body: some View {
         VStack {
@@ -27,6 +29,12 @@ struct AddRoomView: View {
                     Text(type)
                 }
             }
+            .foregroundStyle(.black)
+            .pickerStyle(.navigationLink)
+            .textFieldStyle()
+            
+            TextField("Belongs to...", text: $test)
+                .textFieldStyle()
             
             Button {
                 do {
@@ -35,8 +43,10 @@ struct AddRoomView: View {
                     print("ERROR")
                 }
             } label: {
-                Text("Save")
+                Text("Create")
+                    .foregroundStyle(.white)
             }
+            .primaryButtonStyle()
         }
     }
 }

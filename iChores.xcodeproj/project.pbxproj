@@ -16,7 +16,7 @@
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
-		92351E332B778D02008B53E9 /* CancelBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92351E322B778D02008B53E9 /* CancelBtnView.swift */; };
+		92351E332B778D02008B53E9 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92351E322B778D02008B53E9 /* CancelButton.swift */; };
 		924857792B403272006065DD /* User+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924857782B403272006065DD /* User+ViewModel.swift */; };
 		924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */; };
 		924E6D7F2B47794A00780EF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */; };
@@ -28,12 +28,12 @@
 		926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926079582B3F45830082F88A /* User+SwiftUI.swift */; };
 		9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260795B2B3F5E2E0082F88A /* ImageModifier.swift */; };
 		92772AB02B83AC7F007772E4 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92772AAF2B83AC7F007772E4 /* RoundedCorner.swift */; };
-		928B478D2B4C5C150067423B /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B478C2B4C5C150067423B /* BottomSheetView.swift */; };
 		92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D292B3F0114001F0D2E /* UsersListView.swift */; };
 		92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2B2B3F019B001F0D2E /* HomeView.swift */; };
 		92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */; };
 		92946D302B3F01EC001F0D2E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2F2B3F01EC001F0D2E /* SettingsView.swift */; };
 		9297DD762B73E12200452A8B /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297DD752B73E12200452A8B /* UserRepository.swift */; };
+		92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4062A2BAC30E9005AF534 /* Room+SwiftUI.swift */; };
 		92AB02DF2B8A3367002C34EE /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02DE2B8A3367002C34EE /* RoomViewModel.swift */; };
 		92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E12B8A35A0002C34EE /* RoomRepository.swift */; };
 		92AB02E42B8A364C002C34EE /* AddRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E32B8A364C002C34EE /* AddRoomView.swift */; };
@@ -77,7 +77,7 @@
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
-		92351E322B778D02008B53E9 /* CancelBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBtnView.swift; sourceTree = "<group>"; };
+		92351E322B778D02008B53E9 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
 		924857782B403272006065DD /* User+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+ViewModel.swift"; sourceTree = "<group>"; };
 		924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -89,12 +89,12 @@
 		926079582B3F45830082F88A /* User+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+SwiftUI.swift"; sourceTree = "<group>"; };
 		9260795B2B3F5E2E0082F88A /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
 		92772AAF2B83AC7F007772E4 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
-		928B478C2B4C5C150067423B /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		92946D292B3F0114001F0D2E /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		92946D2B2B3F019B001F0D2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsListView.swift; sourceTree = "<group>"; };
 		92946D2F2B3F01EC001F0D2E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9297DD752B73E12200452A8B /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		92A4062A2BAC30E9005AF534 /* Room+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+SwiftUI.swift"; sourceTree = "<group>"; };
 		92AB02DE2B8A3367002C34EE /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		92AB02E12B8A35A0002C34EE /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
 		92AB02E32B8A364C002C34EE /* AddRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomView.swift; sourceTree = "<group>"; };
@@ -142,11 +142,9 @@
 		921F358A2B4893C000A6B2F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				92A4062C2BAC3450005AF534 /* Global */,
 				92AB02E92B8A3F92002C34EE /* Room */,
 				92772AAC2B8369E9007772E4 /* User */,
-				92351E322B778D02008B53E9 /* CancelBtnView.swift */,
-				92C8D22D2B7A4E6400BC83B4 /* DeleteButton.swift */,
-				928B478C2B4C5C150067423B /* BottomSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -165,7 +163,6 @@
 			children = (
 				924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */,
 				924E6D7B2B47794A00780EF4 /* Room+CoreDataProperties.swift */,
-				92AB02E52B8A3CAA002C34EE /* RoomDetailView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +208,7 @@
 			children = (
 				9260795D2B3F76430082F88A /* User */,
 				9260795E2B3F76480082F88A /* Room */,
+				92A406292BAC30DB005AF534 /* Extension */,
 				9260795F2B3F764C0082F88A /* Task */,
 			);
 			path = Module;
@@ -268,6 +266,7 @@
 		926079602B3F76910082F88A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				92AB02E52B8A3CAA002C34EE /* RoomDetailView.swift */,
 				92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */,
 				92AB02E32B8A364C002C34EE /* AddRoomView.swift */,
 				92AB02E72B8A3E77002C34EE /* NoRoomView.swift */,
@@ -287,8 +286,8 @@
 		92772AAC2B8369E9007772E4 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				924E6D842B477B0D00780EF4 /* UserProfileImage.swift */,
 				921F358B2B4893D500A6B2F4 /* NoUserView.swift */,
+				924E6D842B477B0D00780EF4 /* UserProfileImage.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -328,6 +327,23 @@
 				9260795A2B3F5DCD0082F88A /* Modifiers */,
 			);
 			path = DS;
+			sourceTree = "<group>";
+		};
+		92A406292BAC30DB005AF534 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				92A4062A2BAC30E9005AF534 /* Room+SwiftUI.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		92A4062C2BAC3450005AF534 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				92351E322B778D02008B53E9 /* CancelButton.swift */,
+				92C8D22D2B7A4E6400BC83B4 /* DeleteButton.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 		92AB02DD2B8A3352002C34EE /* ViewModel */ = {
@@ -477,7 +493,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					92F6A0892B3478CB0075879F = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -545,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */,
 				92AB02E82B8A3E77002C34EE /* NoRoomView.swift in Sources */,
 				9223FB3F2B3F2C5400426148 /* FileManager+SaveImage.swift in Sources */,
 				92F6A0902B3478CB0075879F /* ContentView.swift in Sources */,
@@ -575,8 +592,7 @@
 				924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */,
 				922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */,
 				92AB02DF2B8A3367002C34EE /* RoomViewModel.swift in Sources */,
-				928B478D2B4C5C150067423B /* BottomSheetView.swift in Sources */,
-				92351E332B778D02008B53E9 /* CancelBtnView.swift in Sources */,
+				92351E332B778D02008B53E9 /* CancelButton.swift in Sources */,
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
 				924E6D832B47794A00780EF4 /* Task+CoreDataProperties.swift in Sources */,
 				92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */,
@@ -621,6 +637,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -684,6 +701,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

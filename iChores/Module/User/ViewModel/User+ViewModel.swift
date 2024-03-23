@@ -12,14 +12,13 @@ import CoreData
 final class UserViewModel {
     var users: [User] = []
     var isEditing: Bool = false
-    var isSheetPresented: Bool = false
     var showingImagePicker: Bool = false
     
     var fileManager = FileManager()
     
     var user: User?
     var modifiedName: String = ""
-
+    
     func fetchUsers(context: NSManagedObjectContext) throws {
         users = try UserRepository.fetchUsers(context: context)
     }
