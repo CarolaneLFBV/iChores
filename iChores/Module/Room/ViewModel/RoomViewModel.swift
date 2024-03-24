@@ -22,12 +22,17 @@ final class RoomViewModel {
         try fetchRooms(context: context)
     }
     
-    func addRoom(context: NSManagedObjectContext, name: String, type: String) throws {
+    func addRoom(context: NSManagedObjectContext, name: String, type: String, user: User? = nil) throws {
         let room = Room(context: context)
         room.idRoom = UUID()
         room.name = name
         room.type = type
-
+        
+        if let user = user {
+            room.roomToUser = user
+            user.addToUserToRoom(room)
+        }
+            
         try context.save()
         try fetchRooms(context: context)
     }

@@ -83,8 +83,11 @@ extension UserDetailView {
     }
     
     var userDetail: some View {
-        Group {
+        VStack {
             Text(user.wrappedUserName)
+            ForEach(user.userRoomArray, id: \.self) { room in
+                Text("\(room.wrappedRoomName)")
+            }
         }
         .toolbar {
             Button("Edit") {

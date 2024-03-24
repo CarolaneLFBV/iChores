@@ -63,7 +63,23 @@ extension UsersListView {
                         VStack {
                             UserProfileImage(user: user)
                             Text(user.wrappedUserName)
-                                .foregroundStyle(.black)
+                        }
+                        .onAppear {
+                            print(user.userRoomArray)
+                        }
+                        .overlay(alignment: .topTrailing) {
+                            if userViewModel.isEditing {
+                                Button {
+                                    do {
+                                        try userViewModel.delete(user, context: moc)
+                                    } catch {
+                                        // TODO: Turn into alert
+                                        print("Error while deleting user: \(error.localizedDescription)")
+                                    }
+                                } label: {
+                                    DeleteButton()
+                                }
+                            }
                         }
                         .padding()
                     }

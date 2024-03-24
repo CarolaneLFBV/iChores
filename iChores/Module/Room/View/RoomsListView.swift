@@ -10,7 +10,9 @@ import SwiftUI
 struct RoomsListView: View {
     @Environment(\.managedObjectContext) var moc
     @State private var roomViewModel = RoomViewModel()
+    @State private var userViewModel = UserViewModel()
     @State private var showingAddRoom: Bool = false
+    
     
     let columns = [
         GridItem(.flexible()),
@@ -36,7 +38,7 @@ extension RoomsListView {
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel), label: {
+                NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
                     Label("Add Room", systemImage: "plus")
                 })
             }
@@ -51,14 +53,11 @@ extension RoomsListView {
                         VStack {
                             Image(systemName: room.roomImageName)
                                 .resizable()
-                                .frame(width: 50, height: 30)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 50, height: 50)
+
                             Text(room.wrappedRoomName)
                         }
-                        .padding()
-                        .foregroundStyle(.black)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(color: .gray, radius: 3, x: 5, y: 5)
                     }
                     .padding()
                 }

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
     "Add" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -13,7 +16,14 @@
       }
     },
     "Add Room" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une pièce"
+          }
+        }
+      }
     },
     "Add user" : {
       "extractionState" : "stale",
@@ -40,7 +50,14 @@
       }
     },
     "Belongs to..." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appartient à..."
+          }
+        }
+      }
     },
     "Cancel" : {
       "localizations" : {
@@ -144,6 +161,9 @@
           }
         }
       }
+    },
+    "None" : {
+
     },
     "Ok" : {
       "extractionState" : "stale",

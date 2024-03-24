@@ -12,12 +12,13 @@ struct AddRoomView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var roomViewModel: RoomViewModel
-
-    @State private var roomName = ""
-    @State private var test = ""
+    @State var userViewModel: UserViewModel
     
+    @State private var roomName = ""
+    @State private var selectedRoom = "Entrance"
     let typeRoom = ["Entrance", "Living Room", "Bedroom", "Kitchen", "Bathroom", "WC", "Garden", "Dressing Room"]
-    @State private var selectedRoom = "Entrance"    
+    
+    @State private var selectedUser: User?
     
     var body: some View {
         VStack {
@@ -29,16 +30,33 @@ struct AddRoomView: View {
                     Text(type)
                 }
             }
-            .foregroundStyle(.black)
             .pickerStyle(.navigationLink)
             .textFieldStyle()
             
-            TextField("Belongs to...", text: $test)
-                .textFieldStyle()
+            Picker("Belongs to...", selection: $selectedUser) {
+                HStack {
+                    Image(systemName: "person.fill")
+                    Text("None")
+                }
+                .tag(nil as User?)
+                
+                ForEach(userViewModel.users, id: \.self) { user in
+                    HStack {
+                        UserProfileImage(user: user).roomUserImage
+                        Text(user.wrappedUserName)
+                    }
+                    .tag(user as User?)
+                }
+            }
+            .pickerStyle(.navigationLink)
+            .textFieldStyle()
+            .onAppear {
+                try? userViewModel.fetchUsers(context: moc)
+            }
             
             Button {
                 do {
-                    try roomViewModel.addRoom(context: moc, name: roomName, type: selectedRoom)
+                    try roomViewModel.addRoom(context: moc, name: roomName, type: selectedRoom, user: selectedUser)
                 } catch {
                     print("ERROR")
                 }
