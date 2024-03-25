@@ -1,10 +1,3 @@
-//
-//  RoomsListView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 29/12/2023.
-//
-
 import SwiftUI
 
 struct RoomsListView: View {
@@ -28,12 +21,13 @@ struct RoomsListView: View {
 }
 
 extension RoomsListView {
+    // MARK: - roomList
     var roomList: some View {
         VStack {
             if roomViewModel.rooms.isEmpty {
                 NoRoomView()
             } else {
-                roomLazyGridView
+                lazyGridView
             }
         }
         .toolbar {
@@ -45,17 +39,14 @@ extension RoomsListView {
         }
     }
     
-    var roomLazyGridView: some View {
+    // MARK: - lazyGridView
+    var lazyGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(roomViewModel.rooms, id: \.self) { room in
                     NavigationLink(destination: RoomDetailView(roomViewModel: roomViewModel, room: room)) {
                         VStack {
-                            Image(systemName: room.roomImageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 50, height: 50)
-
+                            RoomImage(room: room)
                             Text(room.wrappedRoomName)
                         }
                     }
@@ -66,6 +57,3 @@ extension RoomsListView {
     }
 }
 
-#Preview {
-    RoomsListView()
-}

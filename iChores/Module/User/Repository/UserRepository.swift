@@ -1,10 +1,3 @@
-//
-//  UserRepository.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 07/02/2024.
-//
-
 import Foundation
 import CoreData
 

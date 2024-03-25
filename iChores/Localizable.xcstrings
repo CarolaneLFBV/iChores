@@ -49,6 +49,9 @@
         }
       }
     },
+    "Belongs to: %@" : {
+
+    },
     "Belongs to..." : {
       "localizations" : {
         "fr" : {
@@ -217,6 +220,9 @@
           }
         }
       }
+    },
+    "Room's type: %@" : {
+
     },
     "Rooms" : {
       "localizations" : {

@@ -1,10 +1,3 @@
-//
-//  UserDetailView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 28/12/2023.
-//
-
 import SwiftUI
 
 struct UserDetailView: View {
@@ -19,7 +12,7 @@ struct UserDetailView: View {
     
     var body: some View {
         VStack {
-            UserProfileImage(user: user)
+            UserImage(user: user)
             
             if userViewModel.isEditing {
                 userEdition
@@ -31,6 +24,7 @@ struct UserDetailView: View {
 }
 
 extension UserDetailView {
+    // MARK: - userEdition
     var userEdition: some View {
         VStack {
             TextField("Name", text: $userViewModel.modifiedName)
@@ -82,6 +76,7 @@ extension UserDetailView {
         }
     }
     
+    // MARK: - userDetail
     var userDetail: some View {
         VStack {
             Text(user.wrappedUserName)

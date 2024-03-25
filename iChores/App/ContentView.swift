@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 21/12/2023.
-//
-
 import SwiftUI
 import CoreData
 
@@ -40,8 +33,4 @@ struct ContentView: View {
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -1,10 +1,3 @@
-//
-//  TextFieldModifier.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 05/01/2024.
-//
-
 import SwiftUI
 
 struct TextFieldModifier: ViewModifier {

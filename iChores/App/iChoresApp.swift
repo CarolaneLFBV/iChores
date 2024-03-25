@@ -1,10 +1,3 @@
-//
-//  iChoresApp.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 21/12/2023.
-//
-
 import SwiftUI
 
 @main

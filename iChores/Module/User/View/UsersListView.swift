@@ -1,10 +1,3 @@
-//
-//  UsersListView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 29/12/2023.
-//
-
 import SwiftUI
 import CoreData
 
@@ -28,12 +21,13 @@ struct UsersListView: View {
 }
 
 extension UsersListView {
+    // MARK: - usersList
     var usersList: some View {
         VStack {
             if userViewModel.users.isEmpty {
                 NoUserView()
             } else {
-                userLazyGridView
+                lazyGridView
             }
         }
         .toolbar {
@@ -55,13 +49,14 @@ extension UsersListView {
         }
     }
     
-    var userLazyGridView: some View {
+    // MARK: - lazyGridView
+    var lazyGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns, content: {
                 ForEach(userViewModel.users, id: \.self) { user in
                     NavigationLink(destination: UserDetailView(userViewModel: userViewModel, user: user)) {
                         VStack {
-                            UserProfileImage(user: user)
+                            UserImage(user: user)
                             Text(user.wrappedUserName)
                         }
                         .onAppear {

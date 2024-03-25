@@ -1,10 +1,3 @@
-//
-//  RoomModelView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 24/02/2024.
-//
-
 import SwiftUI
 import CoreData
 

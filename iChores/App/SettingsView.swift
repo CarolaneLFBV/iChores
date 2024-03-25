@@ -1,10 +1,3 @@
-//
-//  UserProfileView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 29/12/2023.
-//
-
 import SwiftUI
 
 struct SettingsView: View {
@@ -13,6 +6,3 @@ struct SettingsView: View {
     }
 }
 
-#Preview {
-    SettingsView()
-}

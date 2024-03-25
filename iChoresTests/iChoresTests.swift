@@ -1,10 +1,3 @@
-//
-//  iChoresTests.swift
-//  iChoresTests
-//
-//  Created by Carolane Lefebvre on 21/12/2023.
-//
-
 import XCTest
 @testable import iChores
 

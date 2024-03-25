@@ -1,10 +1,3 @@
-//
-//  DeleteBtutton.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 12/02/2024.
-//
-
 import SwiftUI
 
 struct DeleteButton: View {
@@ -14,8 +7,14 @@ struct DeleteButton: View {
             .background(Circle().foregroundColor(.white))
             .padding(4)
     }
-}
-
-#Preview {
-    DeleteButton()
+    
+    var squareBtn: some View {
+        Text("Delete")
+            .padding()
+            .foregroundColor(.white)
+            .background(.red)
+            .clipShape(
+                RoundedRectangle(cornerRadius: 10)
+            )
+    }
 }

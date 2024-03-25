@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 29/12/2023.
-//
-
 import SwiftUI
 
 struct HomeView: View {
@@ -13,6 +6,3 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView()
-}

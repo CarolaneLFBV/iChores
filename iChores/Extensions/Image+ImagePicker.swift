@@ -1,10 +1,3 @@
-//
-//  ImagePicker.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 28/12/2023.
-//
-
 import SwiftUI
 import PhotosUI
 

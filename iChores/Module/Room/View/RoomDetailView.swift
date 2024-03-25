@@ -1,10 +1,3 @@
-//
-//  RoomDetailView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 24/02/2024.
-//
-
 import SwiftUI
 
 struct RoomDetailView: View {
@@ -16,18 +9,36 @@ struct RoomDetailView: View {
     
     var body: some View {
         VStack {
-            Text(room.wrappedRoomName)
-            Text(room.wrappedRoomType)
-            Image(systemName: room.roomImageName)
+            Spacer()
             
-            Button("Delete") {
-                do {
-                    try roomViewModel.delete(room, context: moc)
-                    dismiss()
-                } catch {
-                    print("ERROR DELETING")
-                }
-            }
+            roomHeader
+            
+            Spacer()
+            
+            roomInformations
+            
+            Spacer()
+            
+        }
+    }
+}
+
+extension RoomDetailView {
+    var roomHeader: some View {
+        VStack {
+            RoomImage(room: room)
+            
+            Text(room.wrappedRoomName)
+                .font(.title)
+        }
+    }
+    
+    var roomInformations: some View {
+        VStack {
+            Text("Room's type: \(room.wrappedRoomType)")
+                .textFieldStyle()
+            Text("Belongs to: \(room.roomToUser?.wrappedUserName ?? "None")")
+                .textFieldStyle()
         }
     }
 }

@@ -1,10 +1,3 @@
-//
-//  RoundedCorner.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 19/02/2024.
-//
-
 import SwiftUI
 import UIKit
 

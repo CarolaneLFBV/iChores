@@ -1,10 +1,3 @@
-//
-//  iChoresUITests.swift
-//  iChoresUITests
-//
-//  Created by Carolane Lefebvre on 21/12/2023.
-//
-
 import XCTest
 
 final class iChoresUITests: XCTestCase {

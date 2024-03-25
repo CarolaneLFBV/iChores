@@ -1,14 +1,8 @@
-//
-//  ButtonModifier.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 05/01/2024.
-//
-
 import SwiftUI
 
 struct PrimaryButtonModifier: ViewModifier {
     var isEnabled: Bool
+    
     private var screenWidthSize: CGFloat {
         UIScreen.main.bounds.width
     }
@@ -17,7 +11,7 @@ struct PrimaryButtonModifier: ViewModifier {
         content
             .padding()
             .frame(width: screenWidthSize * 0.3)
-            .background(isEnabled ? Color.blue : Color.blue.opacity(0.5))
+            .background(isEnabled ? Color.primary : Color.primary.opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
