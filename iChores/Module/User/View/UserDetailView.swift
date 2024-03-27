@@ -27,35 +27,37 @@ extension UserDetailView {
     // MARK: - userEdition
     var userEdition: some View {
         VStack {
-            TextField("Name", text: $userViewModel.modifiedName)
-                .textFieldStyle()
-            
-            Spacer()
-                .frame(height: 100)
-            
+            HStack {
+                Spacer()
+                
+                TextField("Name", text: $userViewModel.modifiedName)
+                    .textFieldStyle()
+                
+                Spacer()
+            }
+                        
             HStack {
                 Button {
-                    do {
-                        try userViewModel.delete(user, context: moc)
-                    } catch {
-                        print("Error while deleting: \(error.localizedDescription)")
-                    }
+                    showingDeleteAlert = true
+                    userToDelete = user
                 } label: {
-                    DeleteButton()
+                    Text("Delete")
+                        .padding()
                 }
+                .secondaryButtonStyle()
+                .tint(.red)
 
                 Button {
                     do {
                         user.name = userViewModel.modifiedName
                         try userViewModel.updateUser(context: moc)
                     } catch {
-                        // TODO: turn into alert
                         print("Error while editing: \(error)")
                     }
                     dismiss()
                 } label: {
                     Text("Save")
-                        .foregroundStyle(.white)
+                        .padding()
                 }
                 .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
                 .primaryButtonStyle(isEnabled: userViewModel.isValidName(userViewModel.modifiedName))
@@ -70,6 +72,7 @@ extension UserDetailView {
                         print("Error while deleting user: \(error.localizedDescription)")
                     }
                 }
+                dismiss()
             }
             
             Button("Cancel", role: .cancel) {}

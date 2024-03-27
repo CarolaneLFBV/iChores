@@ -221,7 +221,7 @@
         }
       }
     },
-    "Room's type: %@" : {
+    "Room's name" : {
 
     },
     "Rooms" : {
@@ -277,6 +277,9 @@
           }
         }
       }
+    },
+    "Type: %@" : {
+
     },
     "User name" : {
       "localizations" : {

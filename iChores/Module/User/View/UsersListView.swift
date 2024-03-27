@@ -72,7 +72,7 @@ extension UsersListView {
                                         print("Error while deleting user: \(error.localizedDescription)")
                                     }
                                 } label: {
-                                    DeleteButton()
+                                    ListDeleteButton()
                                 }
                             }
                         }

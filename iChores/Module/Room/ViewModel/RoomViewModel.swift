@@ -5,6 +5,10 @@ import CoreData
 final class RoomViewModel {
     var rooms: [Room] = []
     
+    var room: Room?
+    var isEditingRoom: Bool = false
+    var modifiedName: String = ""
+    
     func fetchRooms(context: NSManagedObjectContext) throws {
         rooms = try RoomRepository.fetchRooms(context: context)
     }
@@ -28,5 +32,18 @@ final class RoomViewModel {
             
         try context.save()
         try fetchRooms(context: context)
+    }
+    
+    func startEdition(room: Room) {
+        self.room = room
+        self.modifiedName = room.wrappedRoomName
+        self.isEditingRoom = true
+    }
+    
+    func updateRoom(context: NSManagedObjectContext) throws {
+        guard let room = room else { return }
+        room.name = modifiedName
+        try context.save()
+        isEditingRoom = false
     }
 }

@@ -1,15 +1,13 @@
 import SwiftUI
 
 struct TextFieldModifier: ViewModifier {
-    let screenWidth = UIScreen.main.bounds.size.width
-
     func body(content: Content) -> some View {
         content
-            .frame(width: screenWidth * 0.6)
-            .padding(15)
+            .frame(maxWidth: .infinity)
+            .padding(.all, 16)
             .background(.gray.opacity(0.2))
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .padding(.horizontal, 16)
     }
 }
 
