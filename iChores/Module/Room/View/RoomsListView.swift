@@ -30,6 +30,7 @@ extension RoomsListView {
                 lazyGridView
             }
         }
+        .navigationTitle(roomViewModel.rooms.count > 0 ? "Rooms" : "")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {

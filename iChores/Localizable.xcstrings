@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%@" : {
 
     },
@@ -122,7 +125,7 @@
         }
       }
     },
-    "Hello" : {
+    "Hello World" : {
 
     },
     "Home" : {
@@ -300,6 +303,9 @@
           }
         }
       }
+    },
+    "Welcome" : {
+
     }
   },
   "version" : "1.0"

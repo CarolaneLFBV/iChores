@@ -5,7 +5,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             NavigationStack {
-                HomeView()
+                HomeView(userViewModel: UserViewModel(), roomViewModel: RoomViewModel())
             }
             .tabItem {
                 Label("Home", systemImage: "house")

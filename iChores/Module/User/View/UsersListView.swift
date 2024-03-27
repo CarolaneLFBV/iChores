@@ -30,6 +30,7 @@ extension UsersListView {
                 lazyGridView
             }
         }
+        .navigationTitle(userViewModel.users.count > 0 ? "Users" : "")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 NavigationLink(destination: AddUserView(userViewModel: userViewModel), label: {

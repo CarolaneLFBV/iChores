@@ -22,6 +22,17 @@ struct SecondaryButtonModifier: ViewModifier {
     }
 }
 
+struct ButtonStyleView: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(.black.opacity(0.75))
+            .foregroundColor(.white)
+            .clipShape(Circle())
+            .padding([.trailing, .bottom])
+    }
+}
+
 extension View {
     func primaryButtonStyle(isEnabled: Bool = true) -> some View {
         modifier(PrimaryButtonModifier(isEnabled: isEnabled))
