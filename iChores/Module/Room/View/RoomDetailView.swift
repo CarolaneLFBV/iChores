@@ -13,11 +13,11 @@ struct RoomDetailView: View {
     var body: some View {
         VStack {
             Spacer()
-
+            
             roomHeader
-
+            
             Spacer()
-
+            
             if roomViewModel.isEditingRoom {
                 roomEdition
             } else {
@@ -42,17 +42,19 @@ extension RoomDetailView {
             }
         }
     }
-
+    
+    // MARK: - roomInformations
     var roomInformations: some View {
-        VStack {
-            Text("Belongs to: \(room.roomToUser?.wrappedUserName ?? "None")")
-                .textFieldStyle()
-        }
+        Text("Belongs to: \(room.roomToUser?.wrappedUserName ?? "None")")
+            .textFieldStyle()
+        
     }
     
+    // MARK: - roomDetail
     var roomDetail: some View {
         VStack {
             roomInformations
+            roomTasks
         }
         .toolbar {
             Button("Edit") {
@@ -61,6 +63,16 @@ extension RoomDetailView {
         }
     }
     
+    // MARK: - roomTasks
+    var roomTasks: some View {
+        VStack {
+            ForEach(room.roomTaskArray, id: \.self) { task in
+                Text(task.wrappedTaskTitle)
+            }
+        }
+    }
+    
+    // MARK: - roomEdition
     var roomEdition: some View {
         VStack {
             TextField("Room's name", text: $roomViewModel.modifiedName)
@@ -88,7 +100,6 @@ extension RoomDetailView {
                         room.name = roomViewModel.modifiedName
                         try roomViewModel.updateRoom(context: moc)
                     } catch {
-                        // TODO: turn into alert
                         print("Error while editing: \(error)")
                     }
                     dismiss()
