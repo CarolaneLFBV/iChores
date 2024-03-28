@@ -105,6 +105,12 @@
         }
       }
     },
+    "Create Room" : {
+
+    },
+    "Create User" : {
+
+    },
     "Delete" : {
       "localizations" : {
         "fr" : {
@@ -124,9 +130,6 @@
           }
         }
       }
-    },
-    "Hello World" : {
-
     },
     "Home" : {
       "localizations" : {

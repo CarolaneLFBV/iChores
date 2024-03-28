@@ -3,7 +3,7 @@ import CoreData
 
 struct UsersListView: View {
     @Environment(\.managedObjectContext) var moc
-    @State var userViewModel = UserViewModel()
+    @State var userViewModel: UserViewModel
     
     let columns = [
         GridItem(.flexible()),

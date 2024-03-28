@@ -2,24 +2,26 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @State private var userViewModel = UserViewModel()
+    @State private var roomViewModel = RoomViewModel()
     var body: some View {
         TabView {
             NavigationStack {
-                HomeView(userViewModel: UserViewModel(), roomViewModel: RoomViewModel())
+                HomeView(userViewModel: userViewModel, roomViewModel: roomViewModel)
             }
             .tabItem {
                 Label("Home", systemImage: "house")
             }
             
             NavigationStack {
-                RoomsListView()
+                RoomsListView(roomViewModel: roomViewModel, userViewModel: userViewModel)
             }
             .tabItem {
                 Label("Rooms", systemImage: "square.split.bottomrightquarter")
             }
             
             NavigationStack {
-                UsersListView()
+                UsersListView(userViewModel: userViewModel)
             }
             .tabItem {
                 Label("Users", systemImage: "person.2")

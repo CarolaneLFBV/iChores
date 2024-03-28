@@ -9,7 +9,7 @@ struct UserImage: View {
                     .resizable()
                     .userImageStyle()
             } else {
-                Image("no-icon-logo")
+                Image(systemName: "person.fill")
                     .resizable()
                     .imageStyle()
             }
@@ -23,7 +23,7 @@ struct UserImage: View {
                     .resizable()
                     .frame(width: 40, height: 40)
             } else {
-                Image("no-icon-logo")
+                Image(systemName: "person.fill")
                     .resizable()
                     .frame(width: 40, height: 40)
             }

@@ -3,6 +3,8 @@ import SwiftUI
 struct UserDetailView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var userViewModel: UserViewModel
     
     @State private var showingDeleteAlert = false
@@ -57,6 +59,7 @@ extension UserDetailView {
                     dismiss()
                 } label: {
                     Text("Save")
+                        .foregroundStyle(colorScheme == .dark ? .black : .white)
                         .padding()
                 }
                 .disabled(!userViewModel.isValidName(userViewModel.modifiedName))

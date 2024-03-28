@@ -26,8 +26,7 @@ struct ButtonStyleView: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .background(.black.opacity(0.75))
-            .foregroundColor(.white)
+            .background(.primary)
             .clipShape(Circle())
             .padding([.trailing, .bottom])
     }

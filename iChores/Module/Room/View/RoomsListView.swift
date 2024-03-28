@@ -2,8 +2,8 @@ import SwiftUI
 
 struct RoomsListView: View {
     @Environment(\.managedObjectContext) var moc
-    @State private var roomViewModel = RoomViewModel()
-    @State private var userViewModel = UserViewModel()
+    @State var roomViewModel: RoomViewModel
+    @State  var userViewModel: UserViewModel
     @State private var showingAddRoom: Bool = false
     
     

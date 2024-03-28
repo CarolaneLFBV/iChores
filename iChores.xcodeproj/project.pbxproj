@@ -33,6 +33,7 @@
 		92946D302B3F01EC001F0D2E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2F2B3F01EC001F0D2E /* SettingsView.swift */; };
 		9297DD762B73E12200452A8B /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297DD752B73E12200452A8B /* UserRepository.swift */; };
 		929F20DA2BB44CDA00863B19 /* ListDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F20D92BB44CDA00863B19 /* ListDeleteButton.swift */; };
+		929F20E32BB4C08400863B19 /* FloatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F20E22BB4C08400863B19 /* FloatingLabel.swift */; };
 		92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4062A2BAC30E9005AF534 /* Room+SwiftUI.swift */; };
 		92AB02DF2B8A3367002C34EE /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02DE2B8A3367002C34EE /* RoomViewModel.swift */; };
 		92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E12B8A35A0002C34EE /* RoomRepository.swift */; };
@@ -93,6 +94,7 @@
 		92946D2F2B3F01EC001F0D2E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9297DD752B73E12200452A8B /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		929F20D92BB44CDA00863B19 /* ListDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDeleteButton.swift; sourceTree = "<group>"; };
+		929F20E22BB4C08400863B19 /* FloatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabel.swift; sourceTree = "<group>"; };
 		92A4062A2BAC30E9005AF534 /* Room+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+SwiftUI.swift"; sourceTree = "<group>"; };
 		92AB02DE2B8A3367002C34EE /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		92AB02E12B8A35A0002C34EE /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				929F20D92BB44CDA00863B19 /* ListDeleteButton.swift */,
+				929F20E22BB4C08400863B19 /* FloatingLabel.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				924E6D812B47794A00780EF4 /* Room+CoreDataProperties.swift in Sources */,
+				929F20E32BB4C08400863B19 /* FloatingLabel.swift in Sources */,
 				9297DD762B73E12200452A8B /* UserRepository.swift in Sources */,
 				92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */,
 				924E6D822B47794A00780EF4 /* Task+CoreDataClass.swift in Sources */,
