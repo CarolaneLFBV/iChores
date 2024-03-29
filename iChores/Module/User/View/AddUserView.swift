@@ -75,9 +75,9 @@ extension AddUserView {
             }
         } label: {
             Text("Create")
-                .foregroundStyle(.white)
+                .padding()
         }
         .disabled(!userViewModel.isValidName(userName))
-        .primaryButtonStyle(isEnabled: userViewModel.isValidName(userName))
+        .primaryButtonStyle()
     }
 }

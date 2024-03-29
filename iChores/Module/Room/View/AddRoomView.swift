@@ -74,15 +74,14 @@ extension AddRoomView {
         Button {
             do {
                 try roomViewModel.addRoom(context: moc, name: roomName, type: selectedRoom, user: selectedUser)
+                dismiss()
             } catch {
                 print("ERROR")
             }
         } label: {
             Text("Create")
-                .foregroundStyle(.white)
+                .padding()
         }
         .primaryButtonStyle()
-        .frame(maxWidth: .infinity)
-
     }
 }

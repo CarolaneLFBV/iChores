@@ -4,9 +4,11 @@ import CoreData
 @Observable
 final class RoomViewModel {
     var rooms: [Room] = []
-    
     var room: Room?
+    
     var isEditingRoom: Bool = false
+    var isEditingRoomsList: Bool = false
+    
     var modifiedName: String = ""
     
     func fetchRooms(context: NSManagedObjectContext) throws {
@@ -45,5 +47,9 @@ final class RoomViewModel {
         room.name = modifiedName
         try context.save()
         isEditingRoom = false
+    }
+    
+    func isRoomNameValid() -> Bool {
+        return modifiedName.count <= 15
     }
 }

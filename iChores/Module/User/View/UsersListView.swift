@@ -37,16 +37,6 @@ extension UsersListView {
                     Label("Add User", systemImage: "plus")
                 })
             }
-            
-            if userViewModel.users.count > 0 {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        userViewModel.isEditing.toggle()
-                    } label: {
-                        Label("Edit", systemImage: userViewModel.isEditing ? "checkmark" : "pencil")
-                    }
-                }
-            }
         }
     }
     
@@ -60,11 +50,8 @@ extension UsersListView {
                             UserImage(user: user)
                             Text(user.wrappedUserName)
                         }
-                        .onAppear {
-                            print(user.userRoomArray)
-                        }
                         .overlay(alignment: .topTrailing) {
-                            if userViewModel.isEditing {
+                            if userViewModel.isEditingUsersList {
                                 Button {
                                     do {
                                         try userViewModel.delete(user, context: moc)
@@ -77,10 +64,18 @@ extension UsersListView {
                                 }
                             }
                         }
-                        .padding()
                     }
                 }
             })
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    userViewModel.isEditingUsersList.toggle()
+                } label: {
+                    Label("Edit", systemImage: userViewModel.isEditingUsersList ? "checkmark" : "pencil")
+                }
+            }
         }
     }
 }

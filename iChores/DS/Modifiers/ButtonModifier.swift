@@ -1,14 +1,11 @@
 import SwiftUI
 
 struct PrimaryButtonModifier: ViewModifier {
-    var isEnabled: Bool
-    
     func body(content: Content) -> some View {
         content
             .padding()
             .frame(maxWidth: .infinity)
             .buttonStyle(.borderedProminent)
-            .tint(isEnabled ? Color.primary : Color.primary.opacity(0.5))
     }
 }
 
@@ -18,7 +15,16 @@ struct SecondaryButtonModifier: ViewModifier {
             .padding()
             .frame(maxWidth: .infinity)
             .buttonStyle(.bordered)
-//          .tint(.red)
+    }
+}
+
+struct DeleteButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .frame(maxWidth: .infinity)
+            .buttonStyle(.bordered)
+            .tint(.red)
     }
 }
 
@@ -33,12 +39,16 @@ struct ButtonStyleView: ButtonStyle {
 }
 
 extension View {
-    func primaryButtonStyle(isEnabled: Bool = true) -> some View {
-        modifier(PrimaryButtonModifier(isEnabled: isEnabled))
+    func primaryButtonStyle() -> some View {
+        modifier(PrimaryButtonModifier())
     }
     
     func secondaryButtonStyle() -> some View {
         modifier(SecondaryButtonModifier())
+    }
+    
+    func deleteButtonStyle() -> some View {
+        modifier(DeleteButtonModifier())
     }
 }
 

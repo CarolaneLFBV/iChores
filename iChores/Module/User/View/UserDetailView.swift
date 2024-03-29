@@ -16,11 +16,14 @@ struct UserDetailView: View {
         VStack {
             UserImage(user: user)
             
-            if userViewModel.isEditing {
+            if userViewModel.isEditingUser {
                 userEdition
             } else {
                 userDetail
             }
+        }
+        .onAppear {
+            print(user.userTaskArray)
         }
     }
 }
@@ -39,6 +42,8 @@ extension UserDetailView {
             }
                         
             HStack {
+                SecondaryButton()
+                
                 Button {
                     showingDeleteAlert = true
                     userToDelete = user
@@ -46,25 +51,22 @@ extension UserDetailView {
                     Text("Delete")
                         .padding()
                 }
-                .secondaryButtonStyle()
-                .tint(.red)
-
-                Button {
-                    do {
-                        user.name = userViewModel.modifiedName
-                        try userViewModel.updateUser(context: moc)
-                    } catch {
-                        print("Error while editing: \(error)")
-                    }
-                    dismiss()
-                } label: {
-                    Text("Save")
-                        .foregroundStyle(colorScheme == .dark ? .black : .white)
-                        .padding()
-                }
-                .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
-                .primaryButtonStyle(isEnabled: userViewModel.isValidName(userViewModel.modifiedName))
+                .deleteButtonStyle()
             }
+        }
+        .toolbar {
+            Button {
+                do {
+                    user.name = userViewModel.modifiedName
+                    try userViewModel.updateUser(context: moc)
+                } catch {
+                    print("Error while editing: \(error)")
+                }
+                dismiss()
+            } label: {
+                Text("Save")
+            }
+            .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
         }
         .alert("Are you sure you want to delete this user?", isPresented: $showingDeleteAlert) {
             Button("Delete", role: .destructive) {

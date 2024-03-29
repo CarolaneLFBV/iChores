@@ -12,6 +12,7 @@
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="idTask" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="taskToRoom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="roomToTask" inverseEntity="Room"/>
         <relationship name="taskToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userToTask" inverseEntity="User"/>

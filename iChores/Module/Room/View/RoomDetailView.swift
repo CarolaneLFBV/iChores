@@ -15,7 +15,6 @@ struct RoomDetailView: View {
             Spacer()
             
             roomHeader
-            
             Spacer()
             
             if roomViewModel.isEditingRoom {
@@ -25,6 +24,9 @@ struct RoomDetailView: View {
             }
             
             Spacer()
+        }
+        .onAppear {
+            print(room.roomTaskArray)
         }
     }
 }
@@ -82,6 +84,8 @@ extension RoomDetailView {
                 .frame(height: 100)
             
             HStack {
+                SecondaryButton()
+                
                 Button {
                     do {
                         try roomViewModel.delete(room, context: moc)
@@ -92,22 +96,20 @@ extension RoomDetailView {
                     Text("Delete")
                         .padding()
                 }
-                .secondaryButtonStyle()
-                .tint(.red)
-                
-                Button {
-                    do {
-                        room.name = roomViewModel.modifiedName
-                        try roomViewModel.updateRoom(context: moc)
-                    } catch {
-                        print("Error while editing: \(error)")
-                    }
-                    dismiss()
-                } label: {
-                    Text("Save")
-                        .padding()
+                .deleteButtonStyle()
+            }
+        }
+        .toolbar {
+            Button {
+                do {
+                    room.name = roomViewModel.modifiedName
+                    try roomViewModel.updateRoom(context: moc)
+                } catch {
+                    print("Error while editing: \(error)")
                 }
-                .primaryButtonStyle()
+                dismiss()
+            } label: {
+                Text("Save")
             }
         }
         .alert("Are you sure you want to delete this user?", isPresented: $showingDeleteAlert) {

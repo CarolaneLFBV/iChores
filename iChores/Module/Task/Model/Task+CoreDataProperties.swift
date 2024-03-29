@@ -3,7 +3,6 @@ import CoreData
 
 
 extension Task {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Task> {
         return NSFetchRequest<Task>(entityName: "Task")
     }
@@ -11,6 +10,7 @@ extension Task {
     @NSManaged public var category: String?
     @NSManaged public var date: Date?
     @NSManaged public var idTask: UUID?
+    @NSManaged public var isDone: Bool
     @NSManaged public var title: String?
     @NSManaged public var taskToRoom: Room?
     @NSManaged public var taskToUser: User?

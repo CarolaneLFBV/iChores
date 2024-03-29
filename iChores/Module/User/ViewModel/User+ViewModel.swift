@@ -4,7 +4,8 @@ import CoreData
 @Observable
 final class UserViewModel {
     var users: [User] = []
-    var isEditing: Bool = false
+    var isEditingUser: Bool = false
+    var isEditingUsersList: Bool = false
     var showingImagePicker: Bool = false
     
     var fileManager = FileManager()
@@ -39,14 +40,14 @@ final class UserViewModel {
     func startEdition(user: User) {
         self.user = user
         self.modifiedName = user.wrappedUserName
-        self.isEditing = true
+        self.isEditingUser = true
     }
     
     func updateUser(context: NSManagedObjectContext) throws {
         guard let user = user else { return }
         user.name = modifiedName
         try context.save()
-        isEditing = false
+        isEditingUser = false
     }
     
     func isValidName(_ name: String) -> Bool {

@@ -75,6 +75,9 @@
         }
       }
     },
+    "Category" : {
+
+    },
     "Create" : {
       "localizations" : {
         "fr" : {
@@ -106,6 +109,9 @@
       }
     },
     "Create Room" : {
+
+    },
+    "Create Task" : {
 
     },
     "Create User" : {
@@ -272,6 +278,9 @@
           }
         }
       }
+    },
+    "Task's title" : {
+
     },
     "The user will be permanently removed from the app" : {
       "extractionState" : "stale",

@@ -30,7 +30,6 @@ extension RoomsListView {
                 lazyGridView
             }
         }
-        .navigationTitle(roomViewModel.rooms.count > 0 ? "Rooms" : "")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
@@ -50,8 +49,31 @@ extension RoomsListView {
                             RoomImage(room: room)
                             Text(room.wrappedRoomName)
                         }
+                        .overlay(alignment: .topTrailing) {
+                            if roomViewModel.isEditingRoomsList {
+                                Button {
+                                    do {
+                                        try roomViewModel.delete(room, context: moc)
+                                    } catch {
+                                        // TODO: Turn into alert
+                                        print("Error while deleting user: \(error.localizedDescription)")
+                                    }
+                                } label: {
+                                    ListDeleteButton()
+                                }
+                            }
+                        }
                     }
-                    .padding()
+                }
+            }
+        }
+        .navigationTitle(roomViewModel.rooms.count > 0 ? "Rooms" : "")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    roomViewModel.isEditingRoomsList.toggle()
+                } label: {
+                    Label("Edit", systemImage: roomViewModel.isEditingRoomsList ? "checkmark" : "pencil")
                 }
             }
         }

@@ -4,10 +4,12 @@ import CoreData
 struct ContentView: View {
     @State private var userViewModel = UserViewModel()
     @State private var roomViewModel = RoomViewModel()
+    @State private var taskViewModel = TaskViewModel()
+    
     var body: some View {
         TabView {
             NavigationStack {
-                HomeView(userViewModel: userViewModel, roomViewModel: roomViewModel)
+                HomeView(userViewModel: userViewModel, roomViewModel: roomViewModel, taskViewModel: taskViewModel)
             }
             .tabItem {
                 Label("Home", systemImage: "house")
