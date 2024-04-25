@@ -75,7 +75,7 @@
         }
       }
     },
-    "Category" : {
+    "Chore's title" : {
 
     },
     "Create" : {
@@ -278,9 +278,6 @@
           }
         }
       }
-    },
-    "Task's title" : {
-
     },
     "The user will be permanently removed from the app" : {
       "extractionState" : "stale",

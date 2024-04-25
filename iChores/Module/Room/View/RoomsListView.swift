@@ -47,7 +47,7 @@ extension RoomsListView {
                     NavigationLink(destination: RoomDetailView(roomViewModel: roomViewModel, room: room)) {
                         VStack {
                             RoomImage(room: room)
-                            Text(room.wrappedRoomName)
+                            Text(room.name)
                         }
                         .overlay(alignment: .topTrailing) {
                             if roomViewModel.isEditingRoomsList {

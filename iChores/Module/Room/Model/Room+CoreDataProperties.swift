@@ -1,3 +1,11 @@
+//
+//  Room+CoreDataProperties.swift
+//  iChores
+//
+//  Created by Carolane Lefebvre on 25/04/2024.
+//
+//
+
 import Foundation
 import CoreData
 
@@ -9,46 +17,34 @@ extension Room {
     }
 
     @NSManaged public var idRoom: UUID
-    @NSManaged public var name: String?
-    @NSManaged public var roomImage: String?
-    @NSManaged public var type: String?
-    @NSManaged public var roomToTask: NSSet?
-    @NSManaged public var roomToUser: User?
-
-    public var wrappedRoomName: String {
-        name ?? "Unknown Room Name"
-    }
+    @NSManaged public var name: String
+    @NSManaged public var type: String
+    @NSManaged public var roomToChore: NSSet
+    @NSManaged public var roomToUser: User
     
-    public var wrappedRoomType: String {
-        type ?? "Unknown Type"
-    }
-    
-    public var wrappedRoomImage: String {
-        roomImage ?? "No image available"
-    }
-    
-    public var roomTaskArray: [Task] {
-        let set = roomToTask as? Set<Task> ?? []
+    public var roomChoreArray: [Chore] {
+        guard let set = roomToChore as? Set<Chore> else { return [] }
         return set.sorted {
-            $0.wrappedTaskTitle < $1.wrappedTaskTitle
+            $0.title < $1.title
         }
     }
+
 }
 
-// MARK: Generated accessors for roomToTask
+// MARK: Generated accessors for roomToChore
 extension Room {
 
-    @objc(addRoomToTaskObject:)
-    @NSManaged public func addToRoomToTask(_ value: Task)
+    @objc(addRoomToChoreObject:)
+    @NSManaged public func addToRoomToChore(_ value: Chore)
 
-    @objc(removeRoomToTaskObject:)
-    @NSManaged public func removeFromRoomToTask(_ value: Task)
+    @objc(removeRoomToChoreObject:)
+    @NSManaged public func removeFromRoomToChore(_ value: Chore)
 
-    @objc(addRoomToTask:)
-    @NSManaged public func addToRoomToTask(_ values: NSSet)
+    @objc(addRoomToChore:)
+    @NSManaged public func addToRoomToChore(_ values: NSSet)
 
-    @objc(removeRoomToTask:)
-    @NSManaged public func removeFromRoomToTask(_ values: NSSet)
+    @objc(removeRoomToChore:)
+    @NSManaged public func removeFromRoomToChore(_ values: NSSet)
 
 }
 

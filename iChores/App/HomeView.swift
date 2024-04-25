@@ -3,37 +3,38 @@ import SwiftUI
 struct HomeView: View {
     @State var userViewModel: UserViewModel
     @State var roomViewModel: RoomViewModel
-    @State var taskViewModel: TaskViewModel
+    @State var choreViewModel: ChoreViewModel
     
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) var moc
     
     var body: some View {
         ZStack {
-            VStack {
-                ForEach(userViewModel.users, id: \.self) { user in
-                    VStack(alignment: .leading) {
-                        HStack {
-                            UserImage(user: user).roomUserImage
-                            Text(user.wrappedUserName)
-                                .font(.title)
+            ScrollView {
+                VStack {
+                    ForEach(userViewModel.users, id: \.self) { user in
+                        VStack(alignment: .leading) {
+                            HStack {
+                                UserImage(user: user).roomUserImage
+                                Text(user.name)
+                                    .font(.title)
+                            }
+                            
+                            ForEach(user.userChoreArray, id: \.self) { chore in
+                                Text(chore.title)
+                            }
                         }
-                        
-                        ForEach(taskViewModel.tasks, id: \.self) { task in
-                            Text(task.wrappedTaskTitle)
-//                            TaskCategoryView(task: task)
-                        }
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(lineWidth: 2)
+                                .foregroundColor(.primary)
+                        )
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(lineWidth: 2)
-                            .foregroundColor(.primary)
-                    )
                 }
+                .padding()
             }
-            .padding()
                         
             
             VStack {
@@ -44,7 +45,7 @@ struct HomeView: View {
         .task {
             try? userViewModel.fetchUsers(context: moc)
             try? roomViewModel.fetchRooms(context: moc)
-            try? taskViewModel.fetchTasks(context: moc)
+            try? choreViewModel.fetchChores(context: moc)
         }
         .navigationTitle("Welcome")
     }
@@ -63,7 +64,7 @@ extension HomeView {
                 NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
                     Label("Create Room", systemImage: "square.split.bottomrightquarter.fill")
                 })
-                NavigationLink(destination: AddTaskView(taskViewModel: taskViewModel, roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
+                NavigationLink(destination: AddChoreView(choreViewModel: choreViewModel, roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
                     Label("Create Task", systemImage: "circle.inset.filled")
                 })
             } label: {

@@ -1,44 +1,56 @@
 import SwiftUI
 
-struct AddRoomView: View {
+struct AddChoreView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
+    @State var choreViewModel: ChoreViewModel
     @State var roomViewModel: RoomViewModel
     @State var userViewModel: UserViewModel
     
-    @State private var roomName = ""
-    @State private var selectedRoom = "Entrance"
-    let typeRoom = ["Entrance", "Living Room", "Bedroom", "Kitchen", "Bathroom", "WC", "Garden", "Dressing Room"]
-    
+    @State private var choreTitle = ""
+
     @State private var selectedUser: User?
+    @State private var selectedRoom: Room?
     
     var body: some View {
         VStack {
-            roomNameField
-            roomTypePicker
-            roomUserPicker
+            choreTextField
+            choreRoomPicker
+            choreUserPicker
             
             Spacer()
                 .frame(height: 48)
             
-            roomCreateBtn
+            choreCreateBtn
         }
-        .onAppear {
+        .task {
             try? userViewModel.fetchUsers(context: moc)
+            try? roomViewModel.fetchRooms(context: moc)
         }
     }
 }
 
-extension AddRoomView {
-    // MARK: - roomNameField
-    var roomNameField: some View {
-        TextField("Room name", text: $roomName)
+extension AddChoreView {
+    var choreTextField: some View {
+        TextField("Chore's title", text: $choreTitle)
             .textFieldStyle()
     }
     
-    // MARK: - roomUserPicker
-    var roomUserPicker: some View {
+    var choreRoomPicker: some View {
+        Picker("Room", selection: $selectedRoom) {
+            ForEach(roomViewModel.rooms, id: \.idRoom) { room in
+                VStack {
+                    Text(room.name)
+                }
+                .tag(room as Room?)
+            }
+        }
+        .pickerStyle(.navigationLink)
+        .textFieldStyle()
+    }
+    
+    var choreUserPicker: some View {
         Picker("Belongs to...", selection: $selectedUser) {
             HStack {
                 Image(systemName: "person.fill")
@@ -46,7 +58,7 @@ extension AddRoomView {
             }
             .tag(nil as User?)
             
-            ForEach(userViewModel.users, id: \.self) { user in
+            ForEach(userViewModel.users, id: \.idUser) { user in
                 HStack {
                     UserImage(user: user).roomUserImage
                     Text(user.name)
@@ -58,25 +70,13 @@ extension AddRoomView {
         .textFieldStyle()
     }
     
-    // MARK: - roomTypePicker
-    var roomTypePicker: some View {
-        Picker("Room", selection: $selectedRoom) {
-            ForEach(typeRoom, id: \.self) { type in
-                Text(type)
-            }
-        }
-        .pickerStyle(.navigationLink)
-        .textFieldStyle()
-    }
-    
-    // MARK: - roomCreateBtn
-    var roomCreateBtn: some View {
+    var choreCreateBtn: some View {
         Button {
             do {
-                try roomViewModel.addRoom(context: moc, name: roomName, type: selectedRoom, user: selectedUser)
+                try choreViewModel.addChore(context: moc, title: choreTitle, user: selectedUser, room: $selectedRoom.wrappedValue)
                 dismiss()
             } catch {
-                print("ERROR")
+                print("Error Adding Chore: \(error.localizedDescription)")
             }
         } label: {
             Text("Create")

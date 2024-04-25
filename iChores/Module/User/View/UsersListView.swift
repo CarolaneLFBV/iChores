@@ -48,7 +48,7 @@ extension UsersListView {
                     NavigationLink(destination: UserDetailView(userViewModel: userViewModel, user: user)) {
                         VStack {
                             UserImage(user: user)
-                            Text(user.wrappedUserName)
+                            Text(user.name)
                         }
                         .overlay(alignment: .topTrailing) {
                             if userViewModel.isEditingUsersList {

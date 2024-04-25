@@ -23,7 +23,7 @@ struct UserDetailView: View {
             }
         }
         .onAppear {
-            print(user.userTaskArray)
+            print("CHORES USER: \(user.userChoreArray)")
         }
     }
 }
@@ -87,9 +87,9 @@ extension UserDetailView {
     // MARK: - userDetail
     var userDetail: some View {
         VStack {
-            Text(user.wrappedUserName)
+            Text(user.name)
             ForEach(user.userRoomArray, id: \.self) { room in
-                Text("\(room.wrappedRoomName)")
+                Text("\(room.name)")
             }
         }
         .toolbar {

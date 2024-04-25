@@ -18,6 +18,7 @@ final class RoomViewModel {
     func delete(_ room: Room, context: NSManagedObjectContext) throws {
         context.delete(room)
         try context.save()
+        print(context)
         try fetchRooms(context: context)
     }
     
@@ -27,9 +28,8 @@ final class RoomViewModel {
         room.name = name
         room.type = type
         
-        if let user = user {
+        if let user {
             room.roomToUser = user
-            user.addToUserToRoom(room)
         }
             
         try context.save()
@@ -38,7 +38,7 @@ final class RoomViewModel {
     
     func startEdition(room: Room) {
         self.room = room
-        self.modifiedName = room.wrappedRoomName
+        self.modifiedName = room.name
         self.isEditingRoom = true
     }
     

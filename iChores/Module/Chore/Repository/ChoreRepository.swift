@@ -1,14 +1,14 @@
 import Foundation
 import CoreData
 
-class TaskRepository {
+class ChoreRepository {
         
     enum Error: Swift.Error {
         case fetch, delete, add, update
     }
     
-    static func fetchTasks(context: NSManagedObjectContext) throws -> [Task] {
-        let request: NSFetchRequest<Task> = Task.fetchRequest()
+    static func fetchChores(context: NSManagedObjectContext) throws -> [Chore] {
+        let request: NSFetchRequest<Chore> = Chore.fetchRequest()
         request.sortDescriptors = []
         
         do {

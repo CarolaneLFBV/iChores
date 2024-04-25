@@ -25,11 +25,11 @@ final class UserViewModel {
     
     func addUser(context: NSManagedObjectContext, name: String, image: UIImage?) throws {
         let user = User(context: context)
-        user.id = UUID()
+        user.idUser = UUID()
         user.name = name
         
         if let image {
-            let imageURL = try fileManager.saveImageToDocumentsDirectory(image, fileName: user.id)
+            let imageURL = try fileManager.saveImageToDocumentsDirectory(image, fileName: user.idUser)
             user.userImage = imageURL?.absoluteString
         }
         
@@ -39,7 +39,7 @@ final class UserViewModel {
     
     func startEdition(user: User) {
         self.user = user
-        self.modifiedName = user.wrappedUserName
+        self.modifiedName = user.name
         self.isEditingUser = true
     }
     

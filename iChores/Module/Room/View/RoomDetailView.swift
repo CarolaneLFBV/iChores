@@ -25,9 +25,6 @@ struct RoomDetailView: View {
             
             Spacer()
         }
-        .onAppear {
-            print(room.roomTaskArray)
-        }
     }
 }
 
@@ -37,9 +34,9 @@ extension RoomDetailView {
             RoomImage(room: room)
             
             VStack {
-                Text(room.wrappedRoomName)
+                Text(room.name)
                     .font(.title)
-                Text("Type: \(room.wrappedRoomType)")
+                Text("Type: \(room.type)")
                     .font(.caption)
             }
         }
@@ -47,7 +44,7 @@ extension RoomDetailView {
     
     // MARK: - roomInformations
     var roomInformations: some View {
-        Text("Belongs to: \(room.roomToUser?.wrappedUserName ?? "None")")
+        Text("Belongs to: \(room.roomToUser.name)")
             .textFieldStyle()
         
     }
@@ -68,8 +65,8 @@ extension RoomDetailView {
     // MARK: - roomTasks
     var roomTasks: some View {
         VStack {
-            ForEach(room.roomTaskArray, id: \.self) { task in
-                Text(task.wrappedTaskTitle)
+            ForEach(room.roomChoreArray, id: \.self) { chore in
+                Text(chore.title)
             }
         }
     }

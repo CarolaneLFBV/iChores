@@ -16,17 +16,10 @@
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
-		923C7DD02BB6F4E90079C269 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DCF2BB6F4E90079C269 /* TaskRepository.swift */; };
-		923C7DD22BB6F50A0079C269 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD12BB6F50A0079C269 /* TaskViewModel.swift */; };
-		923C7DD42BB6F72A0079C269 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD32BB6F72A0079C269 /* AddTaskView.swift */; };
-		923C7DD72BB6F81D0079C269 /* Task+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD62BB6F81D0079C269 /* Task+SwiftUI.swift */; };
+		923C7DD02BB6F4E90079C269 /* ChoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */; };
+		923C7DD22BB6F50A0079C269 /* ChoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD12BB6F50A0079C269 /* ChoreViewModel.swift */; };
+		923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD32BB6F72A0079C269 /* AddChoreView.swift */; };
 		924857792B403272006065DD /* User+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924857782B403272006065DD /* User+ViewModel.swift */; };
-		924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */; };
-		924E6D7F2B47794A00780EF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */; };
-		924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */; };
-		924E6D812B47794A00780EF4 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7B2B47794A00780EF4 /* Room+CoreDataProperties.swift */; };
-		924E6D822B47794A00780EF4 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7C2B47794A00780EF4 /* Task+CoreDataClass.swift */; };
-		924E6D832B47794A00780EF4 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D7D2B47794A00780EF4 /* Task+CoreDataProperties.swift */; };
 		924E6D852B477B0D00780EF4 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D842B477B0D00780EF4 /* UserImage.swift */; };
 		92555D542BB1DE8600B74F6B /* RoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92555D532BB1DE8600B74F6B /* RoomImage.swift */; };
 		926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926079582B3F45830082F88A /* User+SwiftUI.swift */; };
@@ -46,7 +39,6 @@
 		92AB02E82B8A3E77002C34EE /* NoRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E72B8A3E77002C34EE /* NoRoomView.swift */; };
 		92B87C5A2BB5D91100401366 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87C592BB5D91100401366 /* SecondaryButton.swift */; };
 		92C8D2302B7A545100BC83B4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 92C8D22F2B7A545100BC83B4 /* Localizable.xcstrings */; };
-		92D5A7012BB6FDD0009571E2 /* TaskCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5A7002BB6FDD0009571E2 /* TaskCategoryView.swift */; };
 		92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A08D2B3478CB0075879F /* iChoresApp.swift */; };
 		92F6A0902B3478CB0075879F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A08F2B3478CB0075879F /* ContentView.swift */; };
 		92F6A0922B3478CD0075879F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F6A0912B3478CD0075879F /* Assets.xcassets */; };
@@ -54,6 +46,12 @@
 		92F6A09F2B3478CE0075879F /* iChoresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A09E2B3478CE0075879F /* iChoresTests.swift */; };
 		92F6A0A92B3478CE0075879F /* iChoresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A0A82B3478CE0075879F /* iChoresUITests.swift */; };
 		92F6A0AB2B3478CE0075879F /* iChoresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A0AA2B3478CE0075879F /* iChoresUITestsLaunchTests.swift */; };
+		92F6B7712BDA8D9900515A09 /* Chore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B76B2BDA8D9900515A09 /* Chore+CoreDataClass.swift */; };
+		92F6B7722BDA8D9900515A09 /* Chore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B76C2BDA8D9900515A09 /* Chore+CoreDataProperties.swift */; };
+		92F6B7732BDA8D9900515A09 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B76D2BDA8D9900515A09 /* User+CoreDataClass.swift */; };
+		92F6B7742BDA8D9900515A09 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B76E2BDA8D9900515A09 /* User+CoreDataProperties.swift */; };
+		92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B76F2BDA8D9900515A09 /* Room+CoreDataClass.swift */; };
+		92F6B7762BDA8D9900515A09 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B7702BDA8D9900515A09 /* Room+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,17 +81,10 @@
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
-		923C7DCF2BB6F4E90079C269 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
-		923C7DD12BB6F50A0079C269 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
-		923C7DD32BB6F72A0079C269 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
-		923C7DD62BB6F81D0079C269 /* Task+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+SwiftUI.swift"; sourceTree = "<group>"; };
+		923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRepository.swift; sourceTree = "<group>"; };
+		923C7DD12BB6F50A0079C269 /* ChoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreViewModel.swift; sourceTree = "<group>"; };
+		923C7DD32BB6F72A0079C269 /* AddChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreView.swift; sourceTree = "<group>"; };
 		924857782B403272006065DD /* User+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+ViewModel.swift"; sourceTree = "<group>"; };
-		924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
-		924E6D7B2B47794A00780EF4 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		924E6D7C2B47794A00780EF4 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		924E6D7D2B47794A00780EF4 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		924E6D842B477B0D00780EF4 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		92555D532BB1DE8600B74F6B /* RoomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomImage.swift; sourceTree = "<group>"; };
 		926079582B3F45830082F88A /* User+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+SwiftUI.swift"; sourceTree = "<group>"; };
@@ -113,7 +104,6 @@
 		92AB02E72B8A3E77002C34EE /* NoRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRoomView.swift; sourceTree = "<group>"; };
 		92B87C592BB5D91100401366 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		92C8D22F2B7A545100BC83B4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		92D5A7002BB6FDD0009571E2 /* TaskCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategoryView.swift; sourceTree = "<group>"; };
 		92F6A08A2B3478CB0075879F /* iChores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F6A08D2B3478CB0075879F /* iChoresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChoresApp.swift; sourceTree = "<group>"; };
 		92F6A08F2B3478CB0075879F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +114,12 @@
 		92F6A0A42B3478CE0075879F /* iChoresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iChoresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F6A0A82B3478CE0075879F /* iChoresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChoresUITests.swift; sourceTree = "<group>"; };
 		92F6A0AA2B3478CE0075879F /* iChoresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChoresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		92F6B76B2BDA8D9900515A09 /* Chore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chore+CoreDataClass.swift"; path = "../../../../Chore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		92F6B76C2BDA8D9900515A09 /* Chore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Chore+CoreDataProperties.swift"; path = "../../../../Chore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		92F6B76D2BDA8D9900515A09 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../../../../User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		92F6B76E2BDA8D9900515A09 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../../../../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		92F6B76F2BDA8D9900515A09 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
+		92F6B7702BDA8D9900515A09 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +160,8 @@
 		922C25162B3DDBBD00896D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				924E6D782B47794A00780EF4 /* User+CoreDataClass.swift */,
-				924E6D792B47794A00780EF4 /* User+CoreDataProperties.swift */,
+				92F6B76D2BDA8D9900515A09 /* User+CoreDataClass.swift */,
+				92F6B76E2BDA8D9900515A09 /* User+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,8 +169,8 @@
 		922C25172B3DDBC100896D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				924E6D7A2B47794A00780EF4 /* Room+CoreDataClass.swift */,
-				924E6D7B2B47794A00780EF4 /* Room+CoreDataProperties.swift */,
+				92F6B76F2BDA8D9900515A09 /* Room+CoreDataClass.swift */,
+				92F6B7702BDA8D9900515A09 /* Room+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,8 +178,8 @@
 		922C25182B3DDBC500896D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				924E6D7C2B47794A00780EF4 /* Task+CoreDataClass.swift */,
-				924E6D7D2B47794A00780EF4 /* Task+CoreDataProperties.swift */,
+				92F6B76B2BDA8D9900515A09 /* Chore+CoreDataClass.swift */,
+				92F6B76C2BDA8D9900515A09 /* Chore+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,7 +197,7 @@
 		923C7DCC2BB6F4B10079C269 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				923C7DD12BB6F50A0079C269 /* TaskViewModel.swift */,
+				923C7DD12BB6F50A0079C269 /* ChoreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -209,8 +205,7 @@
 		923C7DCD2BB6F4B70079C269 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				923C7DD32BB6F72A0079C269 /* AddTaskView.swift */,
-				92D5A7002BB6FDD0009571E2 /* TaskCategoryView.swift */,
+				923C7DD32BB6F72A0079C269 /* AddChoreView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,17 +213,9 @@
 		923C7DCE2BB6F4CC0079C269 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				923C7DCF2BB6F4E90079C269 /* TaskRepository.swift */,
+				923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		923C7DD52BB6F8150079C269 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				923C7DD62BB6F81D0079C269 /* Task+SwiftUI.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		9248577C2B403DE7006065DD /* ViewModel */ = {
@@ -253,7 +240,7 @@
 			children = (
 				9260795D2B3F76430082F88A /* User */,
 				9260795E2B3F76480082F88A /* Room */,
-				9260795F2B3F764C0082F88A /* Task */,
+				9260795F2B3F764C0082F88A /* Chore */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -300,16 +287,15 @@
 			path = Room;
 			sourceTree = "<group>";
 		};
-		9260795F2B3F764C0082F88A /* Task */ = {
+		9260795F2B3F764C0082F88A /* Chore */ = {
 			isa = PBXGroup;
 			children = (
-				923C7DD52BB6F8150079C269 /* Extension */,
 				922C25182B3DDBC500896D7E /* Model */,
 				923C7DCE2BB6F4CC0079C269 /* Repository */,
 				923C7DCD2BB6F4B70079C269 /* View */,
 				923C7DCC2BB6F4B10079C269 /* ViewModel */,
 			);
-			path = Task;
+			path = Chore;
 			sourceTree = "<group>";
 		};
 		926079602B3F76910082F88A /* View */ = {
@@ -605,6 +591,12 @@
 			files = (
 				92B87C5A2BB5D91100401366 /* SecondaryButton.swift in Sources */,
 				92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */,
+				92F6B7712BDA8D9900515A09 /* Chore+CoreDataClass.swift in Sources */,
+				92F6B7722BDA8D9900515A09 /* Chore+CoreDataProperties.swift in Sources */,
+				92F6B7732BDA8D9900515A09 /* User+CoreDataClass.swift in Sources */,
+				92F6B7742BDA8D9900515A09 /* User+CoreDataProperties.swift in Sources */,
+				92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */,
+				92F6B7762BDA8D9900515A09 /* Room+CoreDataProperties.swift in Sources */,
 				92AB02E82B8A3E77002C34EE /* NoRoomView.swift in Sources */,
 				9223FB3F2B3F2C5400426148 /* FileManager+Image.swift in Sources */,
 				92F6A0902B3478CB0075879F /* ContentView.swift in Sources */,
@@ -614,35 +606,27 @@
 				922C25222B3DE75100896D7E /* AddUserView.swift in Sources */,
 				924E6D852B477B0D00780EF4 /* UserImage.swift in Sources */,
 				92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */,
-				923C7DD22BB6F50A0079C269 /* TaskViewModel.swift in Sources */,
-				923C7DD42BB6F72A0079C269 /* AddTaskView.swift in Sources */,
+				923C7DD22BB6F50A0079C269 /* ChoreViewModel.swift in Sources */,
+				923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */,
 				921F358E2B489CF000A6B2F4 /* ButtonModifier.swift in Sources */,
 				921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
-				924E6D812B47794A00780EF4 /* Room+CoreDataProperties.swift in Sources */,
 				929F20E32BB4C08400863B19 /* FloatingLabel.swift in Sources */,
 				9297DD762B73E12200452A8B /* UserRepository.swift in Sources */,
 				92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */,
-				924E6D822B47794A00780EF4 /* Task+CoreDataClass.swift in Sources */,
-				92D5A7012BB6FDD0009571E2 /* TaskCategoryView.swift in Sources */,
 				924857792B403272006065DD /* User+ViewModel.swift in Sources */,
 				926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */,
 				92AB02E62B8A3CAA002C34EE /* RoomDetailView.swift in Sources */,
 				922C251B2B3DDEF900896D7E /* DataController.swift in Sources */,
-				923C7DD02BB6F4E90079C269 /* TaskRepository.swift in Sources */,
-				924E6D7F2B47794A00780EF4 /* User+CoreDataProperties.swift in Sources */,
+				923C7DD02BB6F4E90079C269 /* ChoreRepository.swift in Sources */,
 				92946D302B3F01EC001F0D2E /* SettingsView.swift in Sources */,
 				922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */,
 				921F35922B48A65B00A6B2F4 /* TextFieldModifier.swift in Sources */,
 				9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */,
-				924E6D7E2B47794A00780EF4 /* User+CoreDataClass.swift in Sources */,
-				924E6D802B47794A00780EF4 /* Room+CoreDataClass.swift in Sources */,
 				922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */,
 				92AB02DF2B8A3367002C34EE /* RoomViewModel.swift in Sources */,
 				929F20DA2BB44CDA00863B19 /* ListDeleteButton.swift in Sources */,
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
-				924E6D832B47794A00780EF4 /* Task+CoreDataProperties.swift in Sources */,
-				923C7DD72BB6F81D0079C269 /* Task+SwiftUI.swift in Sources */,
 				92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
