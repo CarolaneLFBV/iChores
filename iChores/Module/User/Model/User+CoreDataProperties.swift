@@ -1,3 +1,11 @@
+//
+//  User+CoreDataProperties.swift
+//  iChores
+//
+//  Created by Carolane Lefebvre on 25/04/2024.
+//
+//
+
 import Foundation
 import CoreData
 
@@ -8,33 +16,42 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var id: UUID
-    @NSManaged public var name: String?
+    @NSManaged public var idUser: UUID
+    @NSManaged public var name: String
     @NSManaged public var userImage: String?
-    @NSManaged public var userToRoom: NSSet?
-    @NSManaged public var userToTask: NSSet?
-    
-    public var wrappedUserName: String {
-        name ?? "Unknown User Name"
-    }
-
-    public var wrappedUserImage: String {
-        userImage ?? "No Image available"
-    }
+    @NSManaged public var userToChore: NSSet
+    @NSManaged public var userToRoom: NSSet
     
     public var userRoomArray: [Room] {
-        let set = userToRoom as? Set<Room> ?? []
+        guard let set = userToRoom as? Set<Room> else { return [] }
         return set.sorted {
-            $0.wrappedRoomName < $1.wrappedRoomName
+            $0.name < $1.name
         }
     }
     
-    public var userTaskArray: [Task] {
-        let set = userToTask as? Set<Task> ?? []
+    public var userChoreArray: [Chore] {
+        guard let set = userToChore as? Set<Chore> else { return [] }
         return set.sorted {
-            $0.wrappedTaskTitle < $1.wrappedTaskTitle
+            $0.title < $1.title
         }
     }
+
+}
+
+// MARK: Generated accessors for userToChore
+extension User {
+
+    @objc(addUserToChoreObject:)
+    @NSManaged public func addToUserToChore(_ value: Chore)
+
+    @objc(removeUserToChoreObject:)
+    @NSManaged public func removeFromUserToChore(_ value: Chore)
+
+    @objc(addUserToChore:)
+    @NSManaged public func addToUserToChore(_ values: NSSet)
+
+    @objc(removeUserToChore:)
+    @NSManaged public func removeFromUserToChore(_ values: NSSet)
 
 }
 
@@ -52,23 +69,6 @@ extension User {
 
     @objc(removeUserToRoom:)
     @NSManaged public func removeFromUserToRoom(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for userToTask
-extension User {
-
-    @objc(addUserToTaskObject:)
-    @NSManaged public func addToUserToTask(_ value: Task)
-
-    @objc(removeUserToTaskObject:)
-    @NSManaged public func removeFromUserToTask(_ value: Task)
-
-    @objc(addUserToTask:)
-    @NSManaged public func addToUserToTask(_ values: NSSet)
-
-    @objc(removeUserToTask:)
-    @NSManaged public func removeFromUserToTask(_ values: NSSet)
 
 }
 
