@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  iChores
 //
-//  Created by Carolane Lefebvre on 25/04/2024.
+//  Created by Carolane Lefebvre on 27/04/2024.
 //
 //
 

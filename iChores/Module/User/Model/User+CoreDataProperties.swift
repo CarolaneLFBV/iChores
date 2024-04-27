@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  iChores
 //
-//  Created by Carolane Lefebvre on 25/04/2024.
+//  Created by Carolane Lefebvre on 27/04/2024.
 //
 //
 
@@ -16,25 +16,11 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var idUser: UUID
-    @NSManaged public var name: String
+    @NSManaged public var idUser: UUID?
+    @NSManaged public var name: String?
     @NSManaged public var userImage: String?
-    @NSManaged public var userToChore: NSSet
-    @NSManaged public var userToRoom: NSSet
-    
-    public var userRoomArray: [Room] {
-        guard let set = userToRoom as? Set<Room> else { return [] }
-        return set.sorted {
-            $0.name < $1.name
-        }
-    }
-    
-    public var userChoreArray: [Chore] {
-        guard let set = userToChore as? Set<Chore> else { return [] }
-        return set.sorted {
-            $0.title < $1.title
-        }
-    }
+    @NSManaged public var userToChore: NSSet?
+    @NSManaged public var userToRoom: NSSet?
 
 }
 
