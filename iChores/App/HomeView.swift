@@ -21,7 +21,7 @@ struct HomeView: View {
                             }
                             
                             ForEach(user.userChoreArray, id: \.self) { chore in
-                                Text(chore.title)
+                                ChoreRowView(chore: chore)
                             }
                         }
                         .padding()

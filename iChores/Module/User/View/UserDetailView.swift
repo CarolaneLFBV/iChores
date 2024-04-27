@@ -22,9 +22,6 @@ struct UserDetailView: View {
                 userDetail
             }
         }
-        .onAppear {
-            print("CHORES USER: \(user.userChoreArray)")
-        }
     }
 }
 

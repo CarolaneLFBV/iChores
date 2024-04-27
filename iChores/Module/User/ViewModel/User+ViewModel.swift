@@ -40,7 +40,7 @@ final class UserViewModel {
     func startEdition(user: User) {
         self.user = user
         self.modifiedName = user.name
-        self.isEditingUser = true
+        self.isEditingUser.toggle()
     }
     
     func updateUser(context: NSManagedObjectContext) throws {
