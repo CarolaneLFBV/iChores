@@ -7,31 +7,36 @@ struct RoomProfile: View {
     var body: some View {
         VStack {
             if vertical {
-                VStack {
-                    Image(systemName: room.roomImageName)
-                        .resizable()
-                        .imageSizeStyle(width: 65, height: 65, contentMode: .fit)
-                        .imageBorderStyle()
-
-                    
-                    Text(room.name)
-                        .font(.title3)
-                }
+                verticalProfile
             } else {
-                HStack {
-                    Image(systemName: room.roomImageName)
-                        .resizable()
-                        .imageSizeStyle(width: 40, height: 40, contentMode: .fit)
-
-                    
-                    Text(room.name)
-                        .font(.title3)
-                }
+                horizontalProfile
             }
         }
     }
     
-//    var horizontal: some View {
-//
-//    }
+    var verticalProfile: some View {
+        VStack {
+            Image(systemName: room.roomImageName)
+                .resizable()
+                .padding()
+                .imageSizeStyle(width: 95, height: 95, contentMode: .fit)
+                .imageBorderStyle()
+
+            
+            Text(room.name)
+                .font(.title3)
+        }
+    }
+    
+    var horizontalProfile: some View {
+        HStack {
+            Image(systemName: room.roomImageName)
+                .resizable()
+                .imageSizeStyle(width: 40, height: 40, contentMode: .fit)
+
+            
+            Text(room.name)
+                .font(.title3)
+        }
+    }
 }

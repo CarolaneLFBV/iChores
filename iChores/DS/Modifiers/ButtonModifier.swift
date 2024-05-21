@@ -26,8 +26,8 @@ struct DeleteButtonModifier: ViewModifier {
         content
             .padding()
             .frame(maxWidth: .infinity)
-            .buttonStyle(.bordered)
             .tint(.red)
+            .buttonStyle(.bordered)
     }
 }
 

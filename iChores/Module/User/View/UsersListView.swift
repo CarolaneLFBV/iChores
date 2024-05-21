@@ -11,18 +11,6 @@ struct UsersListView: View {
     ]
     
     var body: some View {
-        usersList
-            .task {
-                if userViewModel.users.isEmpty {
-                    try? userViewModel.fetchUsers(context: moc)
-                }
-            }
-    }
-}
-
-extension UsersListView {
-    // MARK: - usersList
-    var usersList: some View {
         VStack {
             if userViewModel.users.isEmpty {
                 NoUserView()
@@ -30,24 +18,30 @@ extension UsersListView {
                 lazyGridView
             }
         }
-        .navigationTitle(userViewModel.users.count > 0 ? "Users" : "")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                NavigationLink(destination: AddUserView(userViewModel: userViewModel), label: {
+                NavigationLink(destination: AddUserView(userViewModel: userViewModel)) {
                     Label("Add User", systemImage: "plus")
-                })
+                }
+            }
+        }
+        .task {
+            if userViewModel.users.isEmpty {
+                try? userViewModel.fetchUsers(context: moc)
             }
         }
     }
-    
-    // MARK: - lazyGridView
-    var lazyGridView: some View {
+}
+
+extension UsersListView {
+    private var lazyGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns, content: {
-                ForEach(userViewModel.users, id: \.self) { user in
+                ForEach(userViewModel.users, id: \.idUser) { user in
                     NavigationLink(destination: UserDetailView(userViewModel: userViewModel, user: user)) {
                         UserProfile(user: user)
-                            .overlay(alignment: .topTrailing) {
+                            .padding()
+                            .overlay(alignment: .topTrailing, content: {
                                 if userViewModel.isEditingUsersList {
                                     Button {
                                         do {
@@ -60,11 +54,12 @@ extension UsersListView {
                                         ListDeleteButton()
                                     }
                                 }
-                            }
+                            })
                     }
                 }
             })
         }
+        .navigationTitle(userViewModel.users.count == 1 ? "User" : "Users")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

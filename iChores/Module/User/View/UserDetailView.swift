@@ -11,7 +11,19 @@ struct UserDetailView: View {
     
     let user: User
     
-    func deleteUser(user: User) {
+    var body: some View {
+        //TODO: - Allow the user to modify his image?
+        VStack {
+            if userViewModel.isEditingUser {
+                userEdition
+            } else {
+                userDetail
+            }
+        }
+        .padding()
+    }
+    
+    private func deleteUser(user: User) {
         do {
             try userViewModel.delete(user, context: moc)
             dismiss()
@@ -19,43 +31,34 @@ struct UserDetailView: View {
             print("error while deleting user: \(error.localizedDescription)")
         }
     }
-    
-    var body: some View {
-        //TODO: - Allow the user to modify his image?
-        VStack {
-            if userViewModel.isEditingUser {
-                UserImage(user: user)
-                userEdition
-            } else {
-                UserProfile(user: user)
-                userDetail
-            }
-        }
-        .padding()
-    }
 }
 
-
 extension UserDetailView {
-    // MARK: - userEdition
     private var userEdition: some View {
         ScrollView {
+            UserImage(user: user)
             TextField("Name", text: $userViewModel.modifiedName)
                 .textFieldStyle()
-            
             DividerSpacer(height: 40)
-
             RoomsAndTasks(user: user)
-            
             userEditionButtons
-
+            
         }
         .toolbar {
-            updateButton
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Save") {
+                    do {
+                        user.name = userViewModel.modifiedName
+                        try userViewModel.updateUser(context: moc)
+                    } catch {
+                        print("Error while editing: \(error)")
+                    }
+                    userViewModel.isEditingUser = false
+                }
+                .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
+            }
         }
-        .confirmationAlert(
-            isPresented: $showingDeleteAlert,
-            title: "Are you sure you want to delete this user?",
+        .confirmationAlert(isPresented: $showingDeleteAlert, title: "Are you sure you want to delete this user?",
             confirmAction: {
                 if let userToDelete = userToDelete {
                     deleteUser(user: userToDelete)
@@ -64,21 +67,21 @@ extension UserDetailView {
         )
     }
     
-    // MARK: - userDetail
     private var userDetail: some View {
         VStack {
+            UserProfile(user: user)
             DividerSpacer(height: 40)
             RoomsAndTasks(user: user)
         }
         .toolbar {
-            Button("Edit") {
-                userViewModel.startEdition(user: user)
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Edit") {
+                    userViewModel.startEdition(user: user)
+                }
             }
         }
     }
-}
-
-extension UserDetailView {
+    
     private var userEditionButtons: some View {
         HStack {
             SecondaryButton()
@@ -92,20 +95,5 @@ extension UserDetailView {
             }
             .deleteButtonStyle()
         }
-    }
-    
-    private var updateButton: some View {
-        Button {
-            do {
-                user.name = userViewModel.modifiedName
-                try userViewModel.updateUser(context: moc)
-            } catch {
-                print("Error while editing: \(error)")
-            }
-            userViewModel.isEditingUser = false
-        } label: {
-            Text("Save")
-        }
-        .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
     }
 }

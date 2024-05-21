@@ -40,9 +40,10 @@ extension AddUserView {
                 } else {
                     Image(systemName: "person.fill")
                         .resizable()
+                        .padding()
                 }
             }
-            .imageSizeStyle(width: 65, height: 65, contentMode: .fit)
+            .imageSizeStyle(width: 95, height: 95, contentMode: .fit)
             .imageBorderStyle()
             .onTapGesture {
                 userViewModel.showingImagePicker = true

@@ -8,11 +8,13 @@ struct UserImage: View {
             if let userImage = user.getImage() {
                 userImage
                     .resizable()
-                    .userImageStyle()
+                    .imageSizeStyle(width: 95, height: 95, contentMode: nil)
+                    .imageBorderStyle()
             } else {
                 Image(systemName: "person.fill")
                     .resizable()
-                    .imageSizeStyle(width: 65, height: 65, contentMode: .fill)
+                    .padding()
+                    .imageSizeStyle(width: 95, height: 95, contentMode: .fit)
                     .imageBorderStyle()
             }
         }
@@ -23,11 +25,14 @@ struct UserImage: View {
             if let userImage = user.getImage() {
                 userImage
                     .resizable()
-                    .imageSizeStyle(width: 30, height: 30, contentMode: .fill)
+                    .imageSizeStyle(width: 45, height: 45, contentMode: nil)
+                    .imageBorderStyle()
             } else {
                 Image(systemName: "person.fill")
                     .resizable()
-                    .imageSizeStyle(width: 30, height: 30, contentMode: .fit)
+                    .padding(.all, 8)
+                    .imageSizeStyle(width: 45, height: 45, contentMode: .fit)
+                    .imageBorderStyle()
             }
         }
     }
