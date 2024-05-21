@@ -10,6 +10,15 @@ struct RoomDetailView: View {
     
     let room: Room
     
+    private func deleteRoom(room: Room) {
+        do {
+            try roomViewModel.deleteRoom(room, context: moc)
+            dismiss()
+        } catch {
+            print("Error while deleting user: \(error.localizedDescription)")
+        }
+    }
+    
     var body: some View {
         VStack {
             header
@@ -23,6 +32,23 @@ struct RoomDetailView: View {
             }
         }
         .padding()
+    }
+}
+
+extension RoomDetailView {
+    var roomEditButtons: some View {
+        HStack {
+            RoomButtons(roomViewModel: roomViewModel, room: room).cancelButton
+            
+            Button {
+                showingDeleteAlert = true
+                roomToDelete = room
+            } label: {
+                Text("Delete")
+                    .padding()
+            }
+            .deleteButtonStyle()
+        }
     }
 }
 
@@ -47,27 +73,20 @@ extension RoomDetailView {
 
             UsersAndTasks(room: room)
             
-            HStack {
-                RoomButtons(roomViewModel: roomViewModel, room: room).cancelButton
-                RoomButtons(roomViewModel: roomViewModel, room: room).deleteButton
-            }
+            roomEditButtons
         }
         .toolbar {
             updateButton
         }
-        .alert("Are you sure you want to delete this user?", isPresented: $showingDeleteAlert) {
-            Button("Delete", role: .destructive) {
+        .confirmationAlert(
+            isPresented: $showingDeleteAlert,
+            title: "Are you sure you want to delete this room?",
+            confirmAction: {
                 if let roomToDelete = roomToDelete {
-                    do {
-                        try roomViewModel.deleteRoom(roomToDelete, context: moc)
-                    } catch {
-                        print("Error while deleting user: \(error.localizedDescription)")
-                    }
+                    deleteRoom(room: roomToDelete)
                 }
             }
-            
-            Button("Cancel", role: .cancel) {}
-        }
+        )
     }
     
     // MARK: - Header

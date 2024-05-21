@@ -46,6 +46,7 @@
 
     },
     "Are you sure you want to delete this user?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -298,6 +299,9 @@
           }
         }
       }
+    },
+    "This action cannot be undone." : {
+
     },
     "Type: %@" : {
 

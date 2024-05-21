@@ -27,6 +27,18 @@ struct NoDataSelected: View {
             
         }
     }
+    
+    var noChoreSelected: some View {
+        HStack {
+            Image(systemName: "circle.inset.filled")
+                .resizable()
+                .imageSizeStyle(width: 30, height: 30, contentMode: .fit)
+
+            Text("None")
+                .font(.title3)
+            
+        }
+    }
 }
 
 #Preview {

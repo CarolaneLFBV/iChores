@@ -3,7 +3,6 @@ import SwiftUI
 struct UserDetailView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    @Environment(\.colorScheme) var colorScheme
     
     @State var userViewModel: UserViewModel
     
@@ -11,6 +10,15 @@ struct UserDetailView: View {
     @State private var userToDelete: User?
     
     let user: User
+    
+    func deleteUser(user: User) {
+        do {
+            try userViewModel.delete(user, context: moc)
+            dismiss()
+        } catch {
+            print("error while deleting user: \(error.localizedDescription)")
+        }
+    }
     
     var body: some View {
         //TODO: - Allow the user to modify his image?
@@ -27,58 +35,77 @@ struct UserDetailView: View {
     }
 }
 
+
 extension UserDetailView {
     // MARK: - userEdition
-    var userEdition: some View {
+    private var userEdition: some View {
         ScrollView {
             TextField("Name", text: $userViewModel.modifiedName)
                 .textFieldStyle()
             
-            HStack {
-                SecondaryButton()
-                
-                Button {
-                    showingDeleteAlert = true
-                    userToDelete = user
-                } label: {
-                    Text("Delete")
-                        .padding()
-                }
-                .deleteButtonStyle()
-            }
-            
+            DividerSpacer(height: 40)
+
             RoomsAndTasks(user: user)
-        }
-        .padding()
-        .toolbar {
-            UserButtons(moc: _moc, userViewModel: userViewModel, user: user).updateButton
-        }
-        .alert("Are you sure you want to delete this user?", isPresented: $showingDeleteAlert) {
-            Button("Delete", role: .destructive) {
-                if let userToDelete = userToDelete {
-                    do {
-                        try userViewModel.delete(userToDelete, context: moc)
-                    } catch {
-                        print("Error while deleting user: \(error.localizedDescription)")
-                    }
-                }
-                dismiss()
-            }
             
-            Button("Cancel", role: .cancel) {}
+            userEditionButtons
+
         }
+        .toolbar {
+            updateButton
+        }
+        .confirmationAlert(
+            isPresented: $showingDeleteAlert,
+            title: "Are you sure you want to delete this user?",
+            confirmAction: {
+                if let userToDelete = userToDelete {
+                    deleteUser(user: userToDelete)
+                }
+            }
+        )
     }
     
     // MARK: - userDetail
-    var userDetail: some View {
+    private var userDetail: some View {
         VStack {
             DividerSpacer(height: 40)
             RoomsAndTasks(user: user)
         }
         .toolbar {
-            UserButtons(userViewModel: userViewModel, user: user).editButton
+            Button("Edit") {
+                userViewModel.startEdition(user: user)
+            }
         }
     }
 }
 
-
+extension UserDetailView {
+    private var userEditionButtons: some View {
+        HStack {
+            SecondaryButton()
+            
+            Button {
+                showingDeleteAlert = true
+                userToDelete = user
+            } label: {
+                Text("Delete")
+                    .padding()
+            }
+            .deleteButtonStyle()
+        }
+    }
+    
+    private var updateButton: some View {
+        Button {
+            do {
+                user.name = userViewModel.modifiedName
+                try userViewModel.updateUser(context: moc)
+            } catch {
+                print("Error while editing: \(error)")
+            }
+            userViewModel.isEditingUser = false
+        } label: {
+            Text("Save")
+        }
+        .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
+    }
+}
