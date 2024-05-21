@@ -1,5 +1,6 @@
 import SwiftUI
 
+//MARK: - Primary Button
 struct PrimaryButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -9,6 +10,7 @@ struct PrimaryButtonModifier: ViewModifier {
     }
 }
 
+//MARK: - Secondary Button
 struct SecondaryButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -18,6 +20,7 @@ struct SecondaryButtonModifier: ViewModifier {
     }
 }
 
+//MARK: - Delete Button
 struct DeleteButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -28,7 +31,8 @@ struct DeleteButtonModifier: ViewModifier {
     }
 }
 
-struct ButtonStyleView: ButtonStyle {
+//MARK: - Button Style
+struct ContextMenuButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
@@ -38,6 +42,7 @@ struct ButtonStyleView: ButtonStyle {
     }
 }
 
+//MARK: - Extensions
 extension View {
     func primaryButtonStyle() -> some View {
         modifier(PrimaryButtonModifier())

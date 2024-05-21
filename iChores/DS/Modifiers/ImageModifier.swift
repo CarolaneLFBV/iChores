@@ -1,10 +1,9 @@
 import SwiftUI
 
 // MARK: - ImageModifier
-struct ImageModifier: ViewModifier {
+struct ImageBorder: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(width: 65, height: 65)
             .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
@@ -30,13 +29,31 @@ struct UserImageModifier: ViewModifier {
     }
 }
 
+// MARK: - ImageSizeModifier
+struct ImageSizeModifier: ViewModifier {
+    var width: CGFloat?
+    var height: CGFloat?
+    var contentMode: ContentMode = .fit
+
+    func body(content: Content) -> some View {
+        content
+            .aspectRatio(contentMode: contentMode)
+            .frame(width: width, height: height)
+            .scaledToFit()
+    }
+}
+
 // MARK: - Extension View
 extension View {
     func userImageStyle() -> some View {
         modifier(UserImageModifier())
     }
     
-    func imageStyle() -> some View {
-        modifier(ImageModifier())
+    func imageBorderStyle() -> some View {
+        modifier(ImageBorder())
+    }
+    
+    func imageSizeStyle(width: CGFloat? = nil, height: CGFloat? = nil, contentMode: ContentMode = .fit) -> some View {
+        self.modifier(ImageSizeModifier(width: width, height: height, contentMode: contentMode))
     }
 }

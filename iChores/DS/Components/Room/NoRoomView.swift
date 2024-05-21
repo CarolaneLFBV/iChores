@@ -7,8 +7,7 @@ struct NoRoomView: View {
                 .font(.title)
                 .foregroundColor(.gray.opacity(0.7))
             
-            Spacer()
-                .frame(height: 8)
+            DividerSpacer(height: 8)
             
             Text("No Rooms found")
                 .font(.title2)

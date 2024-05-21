@@ -12,49 +12,24 @@ struct RoomDetailView: View {
     
     var body: some View {
         VStack {
-            Spacer()
+            header
             
-            roomHeader
-            Spacer()
+            DividerSpacer(height: 40)
             
             if roomViewModel.isEditingRoom {
                 roomEdition
             } else {
                 roomDetail
             }
-            
-            Spacer()
         }
+        .padding()
     }
 }
 
 extension RoomDetailView {
-    var roomHeader: some View {
-        VStack {
-            RoomImage(room: room)
-            
-            VStack {
-                Text(room.name)
-                    .font(.title)
-                Text("Type: \(room.type)")
-                    .font(.caption)
-            }
-        }
-    }
-    
-    // MARK: - roomInformations
-    var roomInformations: some View {
-        Text("Belongs to: \(room.roomToUser.name)")
-            .textFieldStyle()
-        
-    }
-    
     // MARK: - roomDetail
     var roomDetail: some View {
-        VStack {
-            roomInformations
-            roomTasks
-        }
+        UsersAndTasks(room: room)
         .toolbar {
             Button("Edit") {
                 roomViewModel.startEdition(room: room)
@@ -62,58 +37,29 @@ extension RoomDetailView {
         }
     }
     
-    // MARK: - roomTasks
-    var roomTasks: some View {
-        VStack {
-            ForEach(room.roomChoreArray, id: \.self) { chore in
-                Text(chore.title)
-            }
-        }
-    }
-    
     // MARK: - roomEdition
     var roomEdition: some View {
-        VStack {
+        ScrollView {
             TextField("Room's name", text: $roomViewModel.modifiedName)
                 .textFieldStyle()
             
-            Spacer()
-                .frame(height: 100)
+            DividerSpacer(height: 40)
+
+            UsersAndTasks(room: room)
             
             HStack {
-                SecondaryButton()
-                
-                Button {
-                    do {
-                        try roomViewModel.delete(room, context: moc)
-                    } catch {
-                        print("Error while deleting: \(error.localizedDescription)")
-                    }
-                } label: {
-                    Text("Delete")
-                        .padding()
-                }
-                .deleteButtonStyle()
+                RoomButtons(roomViewModel: roomViewModel, room: room).cancelButton
+                RoomButtons(roomViewModel: roomViewModel, room: room).deleteButton
             }
         }
         .toolbar {
-            Button {
-                do {
-                    room.name = roomViewModel.modifiedName
-                    try roomViewModel.updateRoom(context: moc)
-                } catch {
-                    print("Error while editing: \(error)")
-                }
-                dismiss()
-            } label: {
-                Text("Save")
-            }
+            updateButton
         }
         .alert("Are you sure you want to delete this user?", isPresented: $showingDeleteAlert) {
             Button("Delete", role: .destructive) {
                 if let roomToDelete = roomToDelete {
                     do {
-                        try roomViewModel.delete(roomToDelete, context: moc)
+                        try roomViewModel.deleteRoom(roomToDelete, context: moc)
                     } catch {
                         print("Error while deleting user: \(error.localizedDescription)")
                     }
@@ -123,4 +69,31 @@ extension RoomDetailView {
             Button("Cancel", role: .cancel) {}
         }
     }
+    
+    // MARK: - Header
+    var header: some View {
+        VStack {
+            RoomProfile(room: room, vertical: true)
+            Text("Type: \(room.type)")
+                .font(.caption)
+        }
+    }
+    
+    // MARK: - Update Button
+    var updateButton: some View {
+        Button {
+            do {
+                room.name = roomViewModel.modifiedName
+                try roomViewModel.updateRoom(context: moc)
+            } catch {
+                print("Error while editing: \(error)")
+            }
+            dismiss()
+        } label: {
+            Text("Save")
+        }
+    }
 }
+
+
+

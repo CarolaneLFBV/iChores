@@ -8,70 +8,77 @@ struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) var moc
     
+    // @State private var isShowingChores = false
+    
     var body: some View {
         ZStack {
             ScrollView {
-                VStack {
-                    ForEach(userViewModel.users, id: \.self) { user in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                UserImage(user: user).roomUserImage
-                                Text(user.name)
-                                    .font(.title)
-                            }
-                            
-                            ForEach(user.userChoreArray, id: \.self) { chore in
-                                ChoreRowView(chore: chore)
-                            }
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(lineWidth: 2)
-                                .foregroundColor(.primary)
-                        )
-                    }
-                }
-                .padding()
+                userSection
             }
+//            .toolbar {
+//                ToolbarItem(placement: .topBarLeading, content: {
+//                    Button("Chores") {
+//                        isShowingChores.toggle()
+//                    }
+//                })
+//            }
                         
-            
-            VStack {
-                Spacer()
-                hoverButton
-            }
+            contextMenuButton
         }
         .task {
             try? userViewModel.fetchUsers(context: moc)
             try? roomViewModel.fetchRooms(context: moc)
             try? choreViewModel.fetchChores(context: moc)
         }
-        .navigationTitle("Welcome")
+        .navigationTitle("Home")
     }
 }
 
 
 extension HomeView {
-    var hoverButton: some View {
-        HStack {
+    // MARK: - User Section
+    var userSection: some View {
+        VStack {
+            ForEach(userViewModel.users, id: \.self) { user in
+                VStack(alignment: .leading) {
+                    UserProfile(user: user).horizontal
+                    
+                    ForEach(user.userChoreArray, id: \.self) { chore in
+                        ChoreRowView(chore: chore, choreViewModel: choreViewModel)
+                    }
+                }
+                .homeBorder()
+            }
+        }
+        .padding()
+    }
+    
+    // MARK: - Context Menu Btn
+    var contextMenuButton: some View {
+        VStack {
             Spacer()
             
-            Menu {
-                NavigationLink(destination: AddUserView(userViewModel: userViewModel), label: {
-                    Label("Create User", systemImage: "person.fill.badge.plus")
-                })
-                NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
-                    Label("Create Room", systemImage: "square.split.bottomrightquarter.fill")
-                })
-                NavigationLink(destination: AddChoreView(choreViewModel: choreViewModel, roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
-                    Label("Create Task", systemImage: "circle.inset.filled")
-                })
-            } label: {
-                Image(systemName: "plus")
-                    .foregroundStyle(colorScheme == .dark ? .black : .white)
+            HStack {
+                Spacer()
+                
+                Menu {
+                    NavigationLink(destination: AddUserView(userViewModel: userViewModel), label: {
+                        Label("Create User", systemImage: "person.fill.badge.plus")
+                    })
+                    NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
+                        Label("Create Room", systemImage: "square.split.bottomrightquarter.fill")
+                    })
+                    if !userViewModel.users.isEmpty && !roomViewModel.rooms.isEmpty {
+                        NavigationLink(destination: AddChoreView(choreViewModel: choreViewModel, roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
+                            Label("Create Task", systemImage: "circle.inset.filled")
+                        })
+                    }
+                } label: {
+                    Image(systemName: "plus")
+                        .foregroundStyle(colorScheme == .dark ? .black : .white)
+                }
+                .buttonStyle(ContextMenuButton())
             }
-            .buttonStyle(ButtonStyleView())
         }
     }
 }

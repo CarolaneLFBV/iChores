@@ -15,10 +15,9 @@ final class RoomViewModel {
         rooms = try RoomRepository.fetchRooms(context: context)
     }
     
-    func delete(_ room: Room, context: NSManagedObjectContext) throws {
+    func deleteRoom(_ room: Room, context: NSManagedObjectContext) throws {
         context.delete(room)
         try context.save()
-        print(context)
         try fetchRooms(context: context)
     }
     

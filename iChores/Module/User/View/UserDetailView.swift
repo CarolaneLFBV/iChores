@@ -13,31 +13,27 @@ struct UserDetailView: View {
     let user: User
     
     var body: some View {
+        //TODO: - Allow the user to modify his image?
         VStack {
-            UserImage(user: user)
-            
             if userViewModel.isEditingUser {
+                UserImage(user: user)
                 userEdition
             } else {
+                UserProfile(user: user)
                 userDetail
             }
         }
+        .padding()
     }
 }
 
 extension UserDetailView {
     // MARK: - userEdition
     var userEdition: some View {
-        VStack {
-            HStack {
-                Spacer()
-                
-                TextField("Name", text: $userViewModel.modifiedName)
-                    .textFieldStyle()
-                
-                Spacer()
-            }
-                        
+        ScrollView {
+            TextField("Name", text: $userViewModel.modifiedName)
+                .textFieldStyle()
+            
             HStack {
                 SecondaryButton()
                 
@@ -50,20 +46,12 @@ extension UserDetailView {
                 }
                 .deleteButtonStyle()
             }
+            
+            RoomsAndTasks(user: user)
         }
+        .padding()
         .toolbar {
-            Button {
-                do {
-                    user.name = userViewModel.modifiedName
-                    try userViewModel.updateUser(context: moc)
-                } catch {
-                    print("Error while editing: \(error)")
-                }
-                dismiss()
-            } label: {
-                Text("Save")
-            }
-            .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
+            UserButtons(moc: _moc, userViewModel: userViewModel, user: user).updateButton
         }
         .alert("Are you sure you want to delete this user?", isPresented: $showingDeleteAlert) {
             Button("Delete", role: .destructive) {
@@ -84,15 +72,11 @@ extension UserDetailView {
     // MARK: - userDetail
     var userDetail: some View {
         VStack {
-            Text(user.name)
-            ForEach(user.userRoomArray, id: \.self) { room in
-                Text("\(room.name)")
-            }
+            DividerSpacer(height: 40)
+            RoomsAndTasks(user: user)
         }
         .toolbar {
-            Button("Edit") {
-                userViewModel.startEdition(user: user)
-            }
+            UserButtons(userViewModel: userViewModel, user: user).editButton
         }
     }
 }

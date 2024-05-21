@@ -15,15 +15,15 @@ struct AddRoomView: View {
     
     var body: some View {
         VStack {
-            roomNameField
-            roomTypePicker
-            roomUserPicker
+            nameField
+            typePicker
+            userPicker
             
-            Spacer()
-                .frame(height: 48)
+            DividerSpacer(height: 40).spacer
             
-            roomCreateBtn
+            createButton
         }
+        .padding()
         .onAppear {
             try? userViewModel.fetchUsers(context: moc)
         }
@@ -32,25 +32,19 @@ struct AddRoomView: View {
 
 extension AddRoomView {
     // MARK: - roomNameField
-    var roomNameField: some View {
+    var nameField: some View {
         TextField("Room name", text: $roomName)
             .textFieldStyle()
     }
     
     // MARK: - roomUserPicker
-    var roomUserPicker: some View {
+    var userPicker: some View {
         Picker("Belongs to...", selection: $selectedUser) {
-            HStack {
-                Image(systemName: "person.fill")
-                Text("None")
-            }
-            .tag(nil as User?)
+            NoDataSelected().noUserSelected
+                .tag(nil as User?)
             
             ForEach(userViewModel.users, id: \.self) { user in
-                HStack {
-                    UserImage(user: user).roomUserImage
-                    Text(user.name)
-                }
+                UserProfile(user: user).horizontal
                 .tag(user as User?)
             }
         }
@@ -59,7 +53,7 @@ extension AddRoomView {
     }
     
     // MARK: - roomTypePicker
-    var roomTypePicker: some View {
+    var typePicker: some View {
         Picker("Room", selection: $selectedRoom) {
             ForEach(typeRoom, id: \.self) { type in
                 Text(type)
@@ -70,7 +64,7 @@ extension AddRoomView {
     }
     
     // MARK: - roomCreateBtn
-    var roomCreateBtn: some View {
+    var createButton: some View {
         Button {
             do {
                 try roomViewModel.addRoom(context: moc, name: roomName, type: selectedRoom, user: selectedUser)

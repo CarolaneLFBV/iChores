@@ -2,6 +2,7 @@ import SwiftUI
 
 struct UserImage: View {
     let user: User
+    
     var body: some View {
         Group {
             if let userImage = user.getImage() {
@@ -11,7 +12,8 @@ struct UserImage: View {
             } else {
                 Image(systemName: "person.fill")
                     .resizable()
-                    .imageStyle()
+                    .imageSizeStyle(width: 65, height: 65, contentMode: .fill)
+                    .imageBorderStyle()
             }
         }
     }
@@ -21,11 +23,11 @@ struct UserImage: View {
             if let userImage = user.getImage() {
                 userImage
                     .resizable()
-                    .frame(width: 40, height: 40)
+                    .imageSizeStyle(width: 30, height: 30, contentMode: .fill)
             } else {
                 Image(systemName: "person.fill")
                     .resizable()
-                    .frame(width: 40, height: 40)
+                    .imageSizeStyle(width: 30, height: 30, contentMode: .fit)
             }
         }
     }

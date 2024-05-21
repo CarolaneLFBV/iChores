@@ -46,36 +46,19 @@ extension UsersListView {
             LazyVGrid(columns: columns, content: {
                 ForEach(userViewModel.users, id: \.self) { user in
                     NavigationLink(destination: UserDetailView(userViewModel: userViewModel, user: user)) {
-                        VStack {
-                            UserImage(user: user)
-                            Text(user.name)
-                        }
+                        UserProfile(user: user)
                         .overlay(alignment: .topTrailing) {
-                            if userViewModel.isEditingUsersList {
-                                Button {
-                                    do {
-                                        try userViewModel.delete(user, context: moc)
-                                    } catch {
-                                        // TODO: Turn into alert
-                                        print("Error while deleting user: \(error.localizedDescription)")
-                                    }
-                                } label: {
-                                    ListDeleteButton()
-                                }
-                            }
+                            UserButtons(moc: _moc, userViewModel: userViewModel, user: user).deleteUserList
                         }
                     }
                 }
             })
         }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    userViewModel.isEditingUsersList.toggle()
-                } label: {
-                    Label("Edit", systemImage: userViewModel.isEditingUsersList ? "checkmark" : "pencil")
-                }
-            }
-        }
+        //TODO: - Find a fix 
+//        .toolbar {
+//            ToolbarItem(placement: .topBarTrailing) {
+//                UserButtons(userViewModel: userViewModel, user: user).editingUserList
+//            }
+//        }
     }
 }

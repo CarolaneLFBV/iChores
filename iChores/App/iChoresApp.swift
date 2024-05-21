@@ -7,10 +7,6 @@ struct iChoresApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
-                .onAppear {
-                    let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-                    //print(paths[0])
-                }
         }
     }
 }

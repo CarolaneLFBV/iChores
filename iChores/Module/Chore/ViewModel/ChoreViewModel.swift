@@ -19,12 +19,24 @@ final class ChoreViewModel {
         if let user {
             chore.choreToUser = user
         }
-    
+        
         if let room {
             chore.choreToRoom = room
         }
-        
+            
+        try context.save()
+        try fetchChores(context: context)
+    }
+    
+    func markChoreAsDone(_ chore: Chore, context: NSManagedObjectContext) throws {
+        chore.isDone = true
+        try deleteChore(chore, context: context)
+    }    
+    
+    func deleteChore(_ chore: Chore, context: NSManagedObjectContext) throws {
+        context.delete(chore)
         try context.save()
         try fetchChores(context: context)
     }
 }
+

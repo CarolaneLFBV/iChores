@@ -1,11 +1,3 @@
-//
-//  Chore+CoreDataProperties.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 27/04/2024.
-//
-//
-
 import Foundation
 import CoreData
 

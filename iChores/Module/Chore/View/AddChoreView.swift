@@ -9,7 +9,7 @@ struct AddChoreView: View {
     @State var userViewModel: UserViewModel
     
     @State private var choreTitle = ""
-
+    
     @State private var selectedUser: User?
     @State private var selectedRoom: Room?
     
@@ -19,11 +19,11 @@ struct AddChoreView: View {
             choreRoomPicker
             choreUserPicker
             
-            Spacer()
-                .frame(height: 48)
+            DividerSpacer(height: 16)
             
             choreCreateBtn
         }
+        .padding()
         .task {
             try? userViewModel.fetchUsers(context: moc)
             try? roomViewModel.fetchRooms(context: moc)
@@ -39,11 +39,12 @@ extension AddChoreView {
     
     var choreRoomPicker: some View {
         Picker("Room", selection: $selectedRoom) {
+            NoDataSelected().noRoomSelected
+                .tag(nil as Room?)
+            
             ForEach(roomViewModel.rooms, id: \.idRoom) { room in
-                VStack {
-                    Text(room.name)
-                }
-                .tag(room as Room?)
+                RoomProfile(room: room, vertical: false)
+                    .tag(room as Room?)
             }
         }
         .pickerStyle(.navigationLink)
@@ -52,18 +53,12 @@ extension AddChoreView {
     
     var choreUserPicker: some View {
         Picker("Belongs to...", selection: $selectedUser) {
-            HStack {
-                Image(systemName: "person.fill")
-                Text("None")
-            }
-            .tag(nil as User?)
+            NoDataSelected().noUserSelected
+                .tag(nil as User?)
             
             ForEach(userViewModel.users, id: \.idUser) { user in
-                HStack {
-                    UserImage(user: user).roomUserImage
-                    Text(user.name)
-                }
-                .tag(user as User?)
+                UserProfile(user: user).horizontal
+                    .tag(user as User?)
             }
         }
         .pickerStyle(.navigationLink)

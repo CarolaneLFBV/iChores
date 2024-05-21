@@ -12,27 +12,26 @@ struct AddUserView: View {
     
     var body: some View {
         VStack {
-            Spacer()
+            profilePicture
             
-            userImageProfile
-          
-            Spacer()
+            DividerSpacer(height: 40)
+                    
+            nameField
+                
+            HStack {
+                SecondaryButton()
+                createButton
+            }
             
-            userNameField
-            
-            Spacer()
-            
-            userCreateBtn
-            
-            Spacer()
         }
+        .padding()
 
     }
 }
 
 extension AddUserView {
     // MARK: - userImageProfile
-    var userImageProfile: some View {
+    var profilePicture: some View {
         VStack {
             Group {
                 if let userImage {
@@ -43,7 +42,8 @@ extension AddUserView {
                         .resizable()
                 }
             }
-            .imageStyle()
+            .imageSizeStyle(width: 65, height: 65, contentMode: .fit)
+            .imageBorderStyle()
             .onTapGesture {
                 userViewModel.showingImagePicker = true
             }
@@ -58,13 +58,13 @@ extension AddUserView {
     }
     
     // MARK: - userNameField
-    var userNameField: some View {
+    var nameField: some View {
         TextField("User name", text: $userName)
             .textFieldStyle()
     }
     
     // MARK: - userCreateBtn
-    var userCreateBtn: some View {
+    var createButton: some View {
         Button {
             do {
                 try userViewModel.addUser(context: moc, name: userName, image: userImage)

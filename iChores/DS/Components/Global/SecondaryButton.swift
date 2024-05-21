@@ -1,10 +1,3 @@
-//
-//  SecondaryButton.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 28/03/2024.
-//
-
 import SwiftUI
 
 struct SecondaryButton: View {

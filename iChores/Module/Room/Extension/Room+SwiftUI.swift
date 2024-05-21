@@ -13,6 +13,6 @@ extension Room {
     ]
     
     var roomImageName: String {
-        Self.roomTypeToImageName[self.type ?? ""] ?? "questionmark.circle"
+        Self.roomTypeToImageName[self.type] ?? "questionmark.circle"
     }
 }

@@ -7,7 +7,6 @@ struct TextFieldModifier: ViewModifier {
             .padding(.all, 16)
             .background(.gray.opacity(0.2))
             .clipShape(RoundedRectangle(cornerRadius: 8))
-            .padding(.horizontal, 16)
     }
 }
 

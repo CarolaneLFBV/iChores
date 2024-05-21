@@ -7,6 +7,9 @@
     "%@" : {
 
     },
+    "%@'s tasks" : {
+
+    },
     "Add" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -76,6 +79,9 @@
       }
     },
     "Chore's title" : {
+
+    },
+    "Chores" : {
 
     },
     "Create" : {
@@ -246,6 +252,9 @@
         }
       }
     },
+    "Rooms owned by %@" : {
+
+    },
     "Save" : {
       "localizations" : {
         "fr" : {
@@ -312,9 +321,6 @@
           }
         }
       }
-    },
-    "Welcome" : {
-
     }
   },
   "version" : "1.0"
