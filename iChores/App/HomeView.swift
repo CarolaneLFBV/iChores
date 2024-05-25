@@ -4,25 +4,15 @@ struct HomeView: View {
     @State var userViewModel: UserViewModel
     @State var roomViewModel: RoomViewModel
     @State var choreViewModel: ChoreViewModel
-    
+    @State var addUserViewModel: AddUserViewModel
+
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.managedObjectContext) var moc
-    
-    // @State private var isShowingChores = false
-    
+        
     var body: some View {
         ZStack {
             ScrollView {
                 userSection
             }
-//            .toolbar {
-//                ToolbarItem(placement: .topBarLeading, content: {
-//                    Button("Chores") {
-//                        isShowingChores.toggle()
-//                    }
-//                })
-//            }
-                        
             contextMenuButton
         }
         .task {
@@ -36,9 +26,9 @@ struct HomeView: View {
 
 
 extension HomeView {
-    var userSection: some View {
+    private var userSection: some View {
         VStack {
-            ForEach(userViewModel.users, id: \.self) { user in
+            ForEach(userViewModel.users, id: \.idUser) { user in
                 VStack(alignment: .leading) {
                     UserProfile(user: user).horizontal
                     
@@ -52,7 +42,7 @@ extension HomeView {
         .padding()
     }
     
-    var contextMenuButton: some View {
+    private var contextMenuButton: some View {
         VStack {
             Spacer()
             
@@ -60,7 +50,7 @@ extension HomeView {
                 Spacer()
                 
                 Menu {
-                    NavigationLink(destination: AddUserView(userViewModel: userViewModel), label: {
+                    NavigationLink(destination: AddUserView(addUserViewModel: addUserViewModel), label: {
                         Label("Create User", systemImage: "person.fill.badge.plus")
                     })
                     NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {

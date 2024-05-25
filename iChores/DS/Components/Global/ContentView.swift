@@ -5,11 +5,12 @@ struct ContentView: View {
     @State private var userViewModel = UserViewModel()
     @State private var roomViewModel = RoomViewModel()
     @State private var choreViewModel = ChoreViewModel()
-    
+    @State private var addUserViewModel = AddUserViewModel()
+
     var body: some View {
         TabView {
             NavigationStack {
-                HomeView(userViewModel: userViewModel, roomViewModel: roomViewModel, choreViewModel: choreViewModel)
+                HomeView(userViewModel: userViewModel, roomViewModel: roomViewModel, choreViewModel: choreViewModel, addUserViewModel: addUserViewModel)
             }
             .tabItem {
                 Label("Home", systemImage: "house")
@@ -23,7 +24,7 @@ struct ContentView: View {
             }
             
             NavigationStack {
-                UsersListView(userViewModel: userViewModel)
+                UsersListView(userViewModel: userViewModel, addUserViewModel: addUserViewModel)
             }
             .tabItem {
                 Label("Users", systemImage: "person.2")

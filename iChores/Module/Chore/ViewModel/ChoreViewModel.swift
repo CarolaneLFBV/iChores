@@ -25,14 +25,30 @@ final class ChoreViewModel {
         if let room {
             chore.choreToRoom = room
         }
-            
         try moc.save()
         try fetchChores()
+    }
+    
+    func update(_ chore: Chore) throws {
+        chore.isDone = true
+        try moc.save()
     }
     
     func deleteChore(_ chore: Chore) throws {
         moc.delete(chore)
         try moc.save()
         try fetchChores()
+    }
+    
+    func markChoreAsDoneAndDelete(_ chore: Chore) throws {
+        try update(chore)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            do {
+                try self.deleteChore(chore)
+            } catch {
+                print("error while deleting chore")
+            }
+        }
     }
 }

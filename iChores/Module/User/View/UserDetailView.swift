@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct UserDetailView: View {
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
     @State var userViewModel: UserViewModel
@@ -12,7 +11,6 @@ struct UserDetailView: View {
     let user: User
     
     var body: some View {
-        //TODO: - Allow the user to modify his image?
         VStack {
             if userViewModel.isEditingUser {
                 userEdition
@@ -49,11 +47,11 @@ extension UserDetailView {
                 Button("Save") {
                     do {
                         user.name = userViewModel.modifiedName
-                        try userViewModel.updateUser()
+                        try userViewModel.updateUser(user: user)
                     } catch {
                         print("Error while editing: \(error)")
                     }
-                    userViewModel.isEditingUser = false
+                    dismiss()
                 }
                 .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
             }

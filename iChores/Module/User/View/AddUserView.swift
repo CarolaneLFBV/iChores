@@ -4,7 +4,7 @@ struct AddUserView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
-    @State var userViewModel: UserViewModel
+    @State var addUserViewModel: AddUserViewModel
     
     @State private var userName = ""
     @State private var image: Image?
@@ -44,14 +44,14 @@ extension AddUserView {
             .imageSizeStyle(width: 95, height: 95, contentMode: .fit)
             .imageBorderStyle()
             .onTapGesture {
-                userViewModel.showingImagePicker = true
+                addUserViewModel.showingImagePicker = true
             }
             
             Text("Tap to change the picture")
                 .font(.caption)
                 .foregroundStyle(.gray)
         }
-        .sheet(isPresented: $userViewModel.showingImagePicker) {
+        .sheet(isPresented: $addUserViewModel.showingImagePicker) {
             ImagePicker(image: self.$userImage)
         }
     }
@@ -66,7 +66,7 @@ extension AddUserView {
     var createButton: some View {
         Button {
             do {
-                try userViewModel.addUser(name: userName, image: userImage)
+                try addUserViewModel.addUser(name: userName, image: userImage)
                 dismiss()
             } catch {
                 // TODO: turn into alert
@@ -76,7 +76,7 @@ extension AddUserView {
             Text("Create")
                 .padding()
         }
-        .disabled(!userViewModel.isValidName(userName))
+        .disabled(!addUserViewModel.isValidName(userName))
         .primaryButtonStyle()
     }
 }

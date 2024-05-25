@@ -2,32 +2,32 @@ import SwiftUI
 import CoreData
 
 struct UsersListView: View {
-    @Environment(\.managedObjectContext) var moc
     @State var userViewModel: UserViewModel
-    
+    @State var addUserViewModel: AddUserViewModel
+
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
     
     var body: some View {
-        VStack {
+        ScrollView {
             if userViewModel.users.isEmpty {
                 NoUserView()
             } else {
                 lazyGridView
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                NavigationLink(destination: AddUserView(userViewModel: userViewModel)) {
-                    Label("Add User", systemImage: "plus")
-                }
-            }
-        }
         .task {
             if userViewModel.users.isEmpty {
                 try? userViewModel.fetchUsers()
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                NavigationLink(destination: AddUserView(addUserViewModel: addUserViewModel)) {
+                    Label("Add User", systemImage: "plus")
+                }
             }
         }
     }

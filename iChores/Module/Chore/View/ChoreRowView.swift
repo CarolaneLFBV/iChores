@@ -3,7 +3,6 @@ import SwiftUI
 struct ChoreRowView: View {
     let chore: Chore
     var choreViewModel: ChoreViewModel
-    @Environment(\.managedObjectContext) var moc
 
     var body: some View {
         VStack {
@@ -16,7 +15,7 @@ struct ChoreRowView: View {
             .padding(.all, 4)
             .onTapGesture {
                 do {
-                    try choreViewModel.deleteChore(chore)
+                    try choreViewModel.markChoreAsDoneAndDelete(chore)
                 } catch {
                     print("error")
                 }
