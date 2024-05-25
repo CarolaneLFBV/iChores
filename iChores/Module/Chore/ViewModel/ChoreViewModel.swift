@@ -6,12 +6,14 @@ final class ChoreViewModel {
     var chores: [Chore] = []
     var chore: Chore?
     
-    func fetchChores(context: NSManagedObjectContext) throws {
-        chores = try ChoreRepository.fetchChores(context: context)
+    var moc = DataController.shared.viewContext
+    
+    func fetchChores() throws {
+        chores = try ChoreRepository.fetchChores(context: moc)
     }
     
-    func addChore(context: NSManagedObjectContext, title: String, user: User?, room: Room?) throws {
-        let chore = Chore(context: context)
+    func addChore(title: String, user: User?, room: Room?) throws {
+        let chore = Chore(context: moc)
         chore.idChore = UUID()
         chore.title = title
         chore.isDone = false
@@ -24,19 +26,14 @@ final class ChoreViewModel {
             chore.choreToRoom = room
         }
             
-        try context.save()
-        try fetchChores(context: context)
+        try moc.save()
+        try fetchChores()
     }
     
-    func markChoreAsDone(_ chore: Chore, context: NSManagedObjectContext) throws {
-        chore.isDone = true
-        try deleteChore(chore, context: context)
-    }    
-    
-    func deleteChore(_ chore: Chore, context: NSManagedObjectContext) throws {
-        context.delete(chore)
-        try context.save()
-        try fetchChores(context: context)
+    func deleteChore(_ chore: Chore) throws {
+        moc.delete(chore)
+        try moc.save()
+        try fetchChores()
     }
 }
 

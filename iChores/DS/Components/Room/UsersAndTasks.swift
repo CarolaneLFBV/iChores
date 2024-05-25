@@ -26,6 +26,5 @@ struct UsersAndTasks: View {
                 .homeBorder()
             }
         }
-        }
-
+    }
 }

@@ -11,18 +11,20 @@ final class RoomViewModel {
     
     var modifiedName: String = ""
     
-    func fetchRooms(context: NSManagedObjectContext) throws {
-        rooms = try RoomRepository.fetchRooms(context: context)
+    var moc = DataController.shared.viewContext
+    
+    func fetchRooms() throws {
+        rooms = try RoomRepository.fetchRooms(context: moc)
     }
     
-    func deleteRoom(_ room: Room, context: NSManagedObjectContext) throws {
-        context.delete(room)
-        try context.save()
-        try fetchRooms(context: context)
+    func deleteRoom(_ room: Room) throws {
+        moc.delete(room)
+        try moc.save()
+        try fetchRooms()
     }
     
-    func addRoom(context: NSManagedObjectContext, name: String, type: String, user: User? = nil) throws {
-        let room = Room(context: context)
+    func addRoom(name: String, type: String, user: User? = nil) throws {
+        let room = Room(context: moc)
         room.idRoom = UUID()
         room.name = name
         room.type = type
@@ -31,8 +33,8 @@ final class RoomViewModel {
             room.roomToUser = user
         }
             
-        try context.save()
-        try fetchRooms(context: context)
+        try moc.save()
+        try fetchRooms()
     }
     
     func startEdition(room: Room) {
@@ -41,10 +43,10 @@ final class RoomViewModel {
         self.isEditingRoom = true
     }
     
-    func updateRoom(context: NSManagedObjectContext) throws {
+    func updateRoom() throws {
         guard let room = room else { return }
         room.name = modifiedName
-        try context.save()
+        try moc.save()
         isEditingRoom = false
     }
     

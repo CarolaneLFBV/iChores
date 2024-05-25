@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct AddRoomView: View {
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
     @State var roomViewModel: RoomViewModel
@@ -25,20 +24,18 @@ struct AddRoomView: View {
         }
         .padding()
         .onAppear {
-            try? userViewModel.fetchUsers(context: moc)
+            try? userViewModel.fetchUsers()
         }
     }
 }
 
 extension AddRoomView {
-    // MARK: - roomNameField
-    var nameField: some View {
+    private var nameField: some View {
         TextField("Room name", text: $roomName)
             .textFieldStyle()
     }
     
-    // MARK: - roomUserPicker
-    var userPicker: some View {
+    private var userPicker: some View {
         Picker("Belongs to...", selection: $selectedUser) {
             NoDataSelected().noUserSelected
                 .tag(nil as User?)
@@ -52,8 +49,7 @@ extension AddRoomView {
         .textFieldStyle()
     }
     
-    // MARK: - roomTypePicker
-    var typePicker: some View {
+    private var typePicker: some View {
         Picker("Room", selection: $selectedRoom) {
             ForEach(typeRoom, id: \.self) { type in
                 Text(type)
@@ -63,11 +59,10 @@ extension AddRoomView {
         .textFieldStyle()
     }
     
-    // MARK: - roomCreateBtn
-    var createButton: some View {
+    private var createButton: some View {
         Button {
             do {
-                try roomViewModel.addRoom(context: moc, name: roomName, type: selectedRoom, user: selectedUser)
+                try roomViewModel.addRoom(name: roomName, type: selectedRoom, user: selectedUser)
                 dismiss()
             } catch {
                 print("ERROR")

@@ -28,7 +28,6 @@ extension Room {
             $0.title < $1.title
         }
     }
-
 }
 
 // MARK: Generated accessors for roomToChore

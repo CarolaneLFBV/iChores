@@ -26,9 +26,9 @@ struct HomeView: View {
             contextMenuButton
         }
         .task {
-            try? userViewModel.fetchUsers(context: moc)
-            try? roomViewModel.fetchRooms(context: moc)
-            try? choreViewModel.fetchChores(context: moc)
+            try? userViewModel.fetchUsers()
+            try? roomViewModel.fetchRooms()
+            try? choreViewModel.fetchChores()
         }
         .navigationTitle("Home")
     }

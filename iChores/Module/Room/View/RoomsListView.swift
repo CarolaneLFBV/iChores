@@ -5,7 +5,7 @@ struct RoomsListView: View {
     @State var roomViewModel: RoomViewModel
     @State var userViewModel: UserViewModel
     @State private var showingAddRoom: Bool = false
-    
+        
     
     let columns = [
         GridItem(.flexible()),
@@ -15,7 +15,7 @@ struct RoomsListView: View {
     var body: some View {
         roomList
             .task {
-                try? roomViewModel.fetchRooms(context: moc)
+                try? roomViewModel.fetchRooms()
             }
     }
 }

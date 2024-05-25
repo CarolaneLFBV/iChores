@@ -25,7 +25,7 @@ struct UserDetailView: View {
     
     private func deleteUser(user: User) {
         do {
-            try userViewModel.delete(user, context: moc)
+            try userViewModel.delete(user)
             dismiss()
         } catch {
             print("error while deleting user: \(error.localizedDescription)")
@@ -49,7 +49,7 @@ extension UserDetailView {
                 Button("Save") {
                     do {
                         user.name = userViewModel.modifiedName
-                        try userViewModel.updateUser(context: moc)
+                        try userViewModel.updateUser()
                     } catch {
                         print("Error while editing: \(error)")
                     }

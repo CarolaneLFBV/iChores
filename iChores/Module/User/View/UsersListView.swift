@@ -27,7 +27,7 @@ struct UsersListView: View {
         }
         .task {
             if userViewModel.users.isEmpty {
-                try? userViewModel.fetchUsers(context: moc)
+                try? userViewModel.fetchUsers()
             }
         }
     }
@@ -45,7 +45,7 @@ extension UsersListView {
                                 if userViewModel.isEditingUsersList {
                                     Button {
                                         do {
-                                            try userViewModel.delete(user, context: moc)
+                                            try userViewModel.delete(user)
                                         } catch {
                                             // TODO: Turn into alert
                                             print("Error while deleting user: \(error.localizedDescription)")

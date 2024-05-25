@@ -25,7 +25,7 @@ struct RoomButtons: View {
             if roomViewModel.isEditingRoomsList {
                 Button {
                     do {
-                        try roomViewModel.deleteRoom(room, context: moc)
+                        try roomViewModel.deleteRoom(room)
                     } catch {
                         // TODO: Turn into alert
                         print("Error while deleting user: \(error.localizedDescription)")

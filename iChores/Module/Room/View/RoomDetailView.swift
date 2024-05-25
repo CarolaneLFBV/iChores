@@ -12,7 +12,7 @@ struct RoomDetailView: View {
     
     private func deleteRoom(room: Room) {
         do {
-            try roomViewModel.deleteRoom(room, context: moc)
+            try roomViewModel.deleteRoom(room)
             dismiss()
         } catch {
             print("Error while deleting user: \(error.localizedDescription)")
@@ -103,7 +103,7 @@ extension RoomDetailView {
         Button {
             do {
                 room.name = roomViewModel.modifiedName
-                try roomViewModel.updateRoom(context: moc)
+                try roomViewModel.updateRoom()
             } catch {
                 print("Error while editing: \(error)")
             }

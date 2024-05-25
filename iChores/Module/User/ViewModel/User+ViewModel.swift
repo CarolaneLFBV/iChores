@@ -13,18 +13,20 @@ final class UserViewModel {
     var user: User?
     var modifiedName: String = ""
     
-    func fetchUsers(context: NSManagedObjectContext) throws {
-        users = try UserRepository.fetchUsers(context: context)
+    var moc = DataController.shared.viewContext
+    
+    func fetchUsers() throws {
+        users = try UserRepository.fetchUsers(context: moc)
     }
     
-    func delete(_ user: User, context: NSManagedObjectContext) throws {
-        context.delete(user)
-        try context.save()
-        try fetchUsers(context: context)
+    func delete(_ user: User) throws {
+        moc.delete(user)
+        try moc.save()
+        try fetchUsers()
     }
     
-    func addUser(context: NSManagedObjectContext, name: String, image: UIImage?) throws {
-        let user = User(context: context)
+    func addUser(name: String, image: UIImage?) throws {
+        let user = User(context: moc)
         user.idUser = UUID()
         user.name = name
         
@@ -33,8 +35,8 @@ final class UserViewModel {
             user.userImage = imageURL?.absoluteString
         }
         
-        try context.save()
-        try fetchUsers(context: context)
+        try moc.save()
+        try fetchUsers()
     }
     
     func startEdition(user: User) {
@@ -43,10 +45,10 @@ final class UserViewModel {
         self.isEditingUser.toggle()
     }
     
-    func updateUser(context: NSManagedObjectContext) throws {
+    func updateUser() throws {
         guard let user = user else { return }
         user.name = modifiedName
-        try context.save()
+        try moc.save()
         isEditingUser = false
     }
     

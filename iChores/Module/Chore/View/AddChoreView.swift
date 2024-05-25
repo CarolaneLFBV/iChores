@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct AddChoreView: View {
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
     @State var choreViewModel: ChoreViewModel
@@ -15,29 +14,29 @@ struct AddChoreView: View {
     
     var body: some View {
         VStack {
-            choreTextField
-            choreRoomPicker
-            choreUserPicker
+            titleField
+            roomPicker
+            userPicker
             
             DividerSpacer(height: 16)
             
-            choreCreateBtn
+            createButton
         }
         .padding()
         .task {
-            try? userViewModel.fetchUsers(context: moc)
-            try? roomViewModel.fetchRooms(context: moc)
+            try? userViewModel.fetchUsers()
+            try? roomViewModel.fetchRooms()
         }
     }
 }
 
 extension AddChoreView {
-    var choreTextField: some View {
+    private var titleField: some View {
         TextField("Chore's title", text: $choreTitle)
             .textFieldStyle()
     }
     
-    var choreRoomPicker: some View {
+    private var roomPicker: some View {
         Picker("Room", selection: $selectedRoom) {
             NoDataSelected().noRoomSelected
                 .tag(nil as Room?)
@@ -51,7 +50,7 @@ extension AddChoreView {
         .textFieldStyle()
     }
     
-    var choreUserPicker: some View {
+    private var userPicker: some View {
         Picker("Belongs to...", selection: $selectedUser) {
             NoDataSelected().noUserSelected
                 .tag(nil as User?)
@@ -65,10 +64,10 @@ extension AddChoreView {
         .textFieldStyle()
     }
     
-    var choreCreateBtn: some View {
+    private var createButton: some View {
         Button {
             do {
-                try choreViewModel.addChore(context: moc, title: choreTitle, user: selectedUser, room: $selectedRoom.wrappedValue)
+                try choreViewModel.addChore(title: choreTitle, user: selectedUser, room: $selectedRoom.wrappedValue)
                 dismiss()
             } catch {
                 print("Error Adding Chore: \(error.localizedDescription)")

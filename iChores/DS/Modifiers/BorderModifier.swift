@@ -11,8 +11,6 @@ struct BorderModifier: ViewModifier {
                     .stroke(lineWidth: 2)
                     .foregroundColor(.primary)
             )
-
-
     }
 }
 // MARK: - Extension View

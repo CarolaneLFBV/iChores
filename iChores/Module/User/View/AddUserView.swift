@@ -22,10 +22,8 @@ struct AddUserView: View {
                 SecondaryButton()
                 createButton
             }
-            
         }
         .padding()
-
     }
 }
 
@@ -68,7 +66,7 @@ extension AddUserView {
     var createButton: some View {
         Button {
             do {
-                try userViewModel.addUser(context: moc, name: userName, image: userImage)
+                try userViewModel.addUser(name: userName, image: userImage)
                 dismiss()
             } catch {
                 // TODO: turn into alert
