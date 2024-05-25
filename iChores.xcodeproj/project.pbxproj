@@ -50,7 +50,6 @@
 		92E55CE02BF84FDF006124B2 /* RoomProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */; };
 		92E55CE22BF85152006124B2 /* RoomsAndTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CE12BF85152006124B2 /* RoomsAndTasks.swift */; };
 		92E55CE42BF8542E006124B2 /* DividerSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CE32BF8542E006124B2 /* DividerSpacer.swift */; };
-		92E55CE82BF86C4A006124B2 /* RoomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CE72BF86C4A006124B2 /* RoomButtons.swift */; };
 		92E55CEC2BF874CF006124B2 /* UsersAndTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CEB2BF874CF006124B2 /* UsersAndTasks.swift */; };
 		92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A08D2B3478CB0075879F /* iChoresApp.swift */; };
 		92F6A0902B3478CB0075879F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A08F2B3478CB0075879F /* ContentView.swift */; };
@@ -124,7 +123,6 @@
 		92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProfile.swift; sourceTree = "<group>"; };
 		92E55CE12BF85152006124B2 /* RoomsAndTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsAndTasks.swift; sourceTree = "<group>"; };
 		92E55CE32BF8542E006124B2 /* DividerSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerSpacer.swift; sourceTree = "<group>"; };
-		92E55CE72BF86C4A006124B2 /* RoomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomButtons.swift; sourceTree = "<group>"; };
 		92E55CEB2BF874CF006124B2 /* UsersAndTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAndTasks.swift; sourceTree = "<group>"; };
 		92F6A08A2B3478CB0075879F /* iChores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F6A08D2B3478CB0075879F /* iChoresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChoresApp.swift; sourceTree = "<group>"; };
@@ -426,7 +424,6 @@
 			children = (
 				92AB02E72B8A3E77002C34EE /* NoRoomView.swift */,
 				92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */,
-				92E55CE72BF86C4A006124B2 /* RoomButtons.swift */,
 				92E55CEB2BF874CF006124B2 /* UsersAndTasks.swift */,
 			);
 			path = Room;
@@ -628,7 +625,6 @@
 				92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */,
 				92E55CDC2BF84888006124B2 /* UserProfile.swift in Sources */,
 				920981592BDCEA3F0028C4C0 /* User+CoreDataClass.swift in Sources */,
-				92E55CE82BF86C4A006124B2 /* RoomButtons.swift in Sources */,
 				9209815A2BDCEA3F0028C4C0 /* User+CoreDataProperties.swift in Sources */,
 				92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */,
 				92F6B7762BDA8D9900515A09 /* Room+CoreDataProperties.swift in Sources */,

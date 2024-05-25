@@ -9,7 +9,7 @@ struct UserProfile: View {
     
     var vertical: some View {
         VStack {
-            UserImage(user: user)
+            UserImage(user: user, size: 95)
             Text(user.name)
                 .font(.title3)
         }
@@ -17,7 +17,7 @@ struct UserProfile: View {
     
     var horizontal: some View {
         HStack {
-            UserImage(user: user).roomUserImage
+            UserImage(user: user, size: 45)
             Text(user.name)
                 .font(.title3)
         }

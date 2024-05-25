@@ -38,7 +38,14 @@ struct RoomDetailView: View {
 extension RoomDetailView {
     var roomEditButtons: some View {
         HStack {
-            RoomButtons(roomViewModel: roomViewModel, room: room).cancelButton
+            Button {
+                roomViewModel.isEditingRoomsList = false
+                roomViewModel.isEditingRoom = false
+            } label: {
+                Text("Cancel")
+                    .padding()
+            }
+            .secondaryButtonStyle()
             
             Button {
                 showingDeleteAlert = true

@@ -7,7 +7,6 @@ struct ChoreRowView: View {
 
     var body: some View {
         VStack {
-            // TODO: - Ajout de suppression
             HStack {
                 Image(systemName: "checkmark.square")
                 Text(chore.title)

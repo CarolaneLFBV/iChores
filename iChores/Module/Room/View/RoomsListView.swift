@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct RoomsListView: View {
-    @Environment(\.managedObjectContext) var moc
     @State var roomViewModel: RoomViewModel
     @State var userViewModel: UserViewModel
     @State private var showingAddRoom: Bool = false
@@ -21,7 +20,6 @@ struct RoomsListView: View {
 }
 
 extension RoomsListView {
-    // MARK: - roomList
     var roomList: some View {
         VStack {
             if roomViewModel.rooms.isEmpty {
@@ -30,6 +28,7 @@ extension RoomsListView {
                 lazyGridView
             }
         }
+        .padding()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
@@ -39,7 +38,6 @@ extension RoomsListView {
         }
     }
     
-    // MARK: - lazyGridView
     var lazyGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
@@ -47,10 +45,17 @@ extension RoomsListView {
                     NavigationLink(destination: RoomDetailView(roomViewModel: roomViewModel, room: room)) {
                         RoomProfile(room: room, vertical: true)
                             .overlay(alignment: .topTrailing) {
-                                //TODO: - AAAAAAAAAAAAAAAAAAAAAAAA
                                 if roomViewModel.isEditingRoomsList {
-                                    RoomButtons(moc: _moc, roomViewModel: roomViewModel, room: room)
-                                        .deleteButtonStyle()
+                                    Button {
+                                        do {
+                                            try roomViewModel.deleteRoom(room)
+                                        } catch {
+                                            // TODO: Turn into alert
+                                            print("Error while deleting user: \(error.localizedDescription)")
+                                        }
+                                    } label: {
+                                        ListDeleteButton()
+                                    }
                                 }
                             }
                     }
@@ -60,7 +65,6 @@ extension RoomsListView {
         .navigationTitle(roomViewModel.rooms.count > 0 ? "Rooms" : "")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                // TODO: - Move into RoomButtons (room not available)
                 Button {
                     roomViewModel.isEditingRoomsList.toggle()
                 } label: {

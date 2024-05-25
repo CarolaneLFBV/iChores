@@ -36,4 +36,3 @@ final class ChoreViewModel {
         try fetchChores()
     }
 }
-

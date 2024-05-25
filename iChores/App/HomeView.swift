@@ -36,7 +36,6 @@ struct HomeView: View {
 
 
 extension HomeView {
-    // MARK: - User Section
     var userSection: some View {
         VStack {
             ForEach(userViewModel.users, id: \.self) { user in
@@ -53,7 +52,6 @@ extension HomeView {
         .padding()
     }
     
-    // MARK: - Context Menu Btn
     var contextMenuButton: some View {
         VStack {
             Spacer()

@@ -36,7 +36,7 @@ struct UserDetailView: View {
 extension UserDetailView {
     private var userEdition: some View {
         ScrollView {
-            UserImage(user: user)
+            UserImage(user: user, size: 95)
             TextField("Name", text: $userViewModel.modifiedName)
                 .textFieldStyle()
             DividerSpacer(height: 40)
