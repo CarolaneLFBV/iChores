@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct AddUserView: View {
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
     @State var addUserViewModel: AddUserViewModel
@@ -28,7 +27,6 @@ struct AddUserView: View {
 }
 
 extension AddUserView {
-    // MARK: - userImageProfile
     var profilePicture: some View {
         VStack {
             Group {
@@ -56,20 +54,17 @@ extension AddUserView {
         }
     }
     
-    // MARK: - userNameField
     var nameField: some View {
         TextField("User name", text: $userName)
             .textFieldStyle()
     }
     
-    // MARK: - userCreateBtn
     var createButton: some View {
         Button {
             do {
                 try addUserViewModel.addUser(name: userName, image: userImage)
                 dismiss()
             } catch {
-                // TODO: turn into alert
                 print("Error while creating user: \(error.localizedDescription)")
             }
         } label: {

@@ -2,17 +2,25 @@ import SwiftUI
 
 struct UserDetailView: View {
     @Environment(\.dismiss) var dismiss
-    
-    @State var userViewModel: UserViewModel
-    
-    @State private var showingDeleteAlert = false
+    @State var userCoreDataHelper: UserCoreDataHelper
+    @State var userDetailViewModel: UserDetailViewModel
+
     @State private var userToDelete: User?
     
     let user: User
     
+    private func deleteUser(user: User) {
+        do {
+            try userDetailViewModel.delete(user: user)
+            dismiss()
+        } catch {
+            print("error while deleting user: \(error.localizedDescription)")
+        }
+    }
+    
     var body: some View {
         VStack {
-            if userViewModel.isEditingUser {
+            if userDetailViewModel.isEditingUser {
                 userEdition
             } else {
                 userDetail
@@ -20,22 +28,13 @@ struct UserDetailView: View {
         }
         .padding()
     }
-    
-    private func deleteUser(user: User) {
-        do {
-            try userViewModel.delete(user)
-            dismiss()
-        } catch {
-            print("error while deleting user: \(error.localizedDescription)")
-        }
-    }
 }
 
 extension UserDetailView {
     private var userEdition: some View {
         ScrollView {
             UserImage(user: user, size: 95)
-            TextField("Name", text: $userViewModel.modifiedName)
+            TextField("Name", text: $userDetailViewModel.modifiedName)
                 .textFieldStyle()
             DividerSpacer(height: 40)
             RoomsAndTasks(user: user)
@@ -46,17 +45,17 @@ extension UserDetailView {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
                     do {
-                        user.name = userViewModel.modifiedName
-                        try userViewModel.updateUser(user: user)
+                        user.name = userDetailViewModel.modifiedName
+                        try userDetailViewModel.update(user: user)
                     } catch {
                         print("Error while editing: \(error)")
                     }
                     dismiss()
                 }
-                .disabled(!userViewModel.isValidName(userViewModel.modifiedName))
+                .disabled(!userDetailViewModel.isValidName(userDetailViewModel.modifiedName))
             }
         }
-        .confirmationAlert(isPresented: $showingDeleteAlert, title: "Are you sure you want to delete this user?",
+        .confirmationAlert(isPresented: $userCoreDataHelper.showingDeleteAlert, title: "Are you sure you want to delete this user?",
             confirmAction: {
                 if let userToDelete = userToDelete {
                     deleteUser(user: userToDelete)
@@ -74,7 +73,7 @@ extension UserDetailView {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Edit") {
-                    userViewModel.startEdition(user: user)
+                    userDetailViewModel.startEdition(user: user)
                 }
             }
         }
@@ -85,7 +84,7 @@ extension UserDetailView {
             SecondaryButton()
             
             Button {
-                showingDeleteAlert = true
+                userCoreDataHelper.showingDeleteAlert = true
                 userToDelete = user
             } label: {
                 Text("Delete")

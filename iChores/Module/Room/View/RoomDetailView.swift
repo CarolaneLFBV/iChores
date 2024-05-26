@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct RoomDetailView: View {
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    @State var roomViewModel: RoomViewModel
+    
+    @State var roomCoreDataHelper: RoomCoreDataHelper
+    @State var roomDetailViewModel: RoomDetailViewModel
     
     @State private var showingDeleteAlert: Bool = false
     @State private var roomToDelete: Room?
@@ -12,7 +13,7 @@ struct RoomDetailView: View {
     
     private func deleteRoom(room: Room) {
         do {
-            try roomViewModel.deleteRoom(room)
+            try roomDetailViewModel.delete(room)
             dismiss()
         } catch {
             print("Error while deleting user: \(error.localizedDescription)")
@@ -25,7 +26,7 @@ struct RoomDetailView: View {
             
             DividerSpacer(height: 40)
             
-            if roomViewModel.isEditingRoom {
+            if roomDetailViewModel.isEditingRoom {
                 roomEdition
             } else {
                 roomDetail
@@ -39,8 +40,8 @@ extension RoomDetailView {
     var roomEditButtons: some View {
         HStack {
             Button {
-                roomViewModel.isEditingRoomsList = false
-                roomViewModel.isEditingRoom = false
+                roomDetailViewModel.isEditingRoomList = false
+                roomDetailViewModel.isEditingRoom = false
             } label: {
                 Text("Cancel")
                     .padding()
@@ -60,20 +61,18 @@ extension RoomDetailView {
 }
 
 extension RoomDetailView {
-    // MARK: - roomDetail
     var roomDetail: some View {
         UsersAndTasks(room: room)
         .toolbar {
             Button("Edit") {
-                roomViewModel.startEdition(room: room)
+                roomDetailViewModel.edit(room: room)
             }
         }
     }
     
-    // MARK: - roomEdition
     var roomEdition: some View {
         ScrollView {
-            TextField("Room's name", text: $roomViewModel.modifiedName)
+            TextField("Room's name", text: $roomCoreDataHelper.modifiedName)
                 .textFieldStyle()
             
             DividerSpacer(height: 40)
@@ -96,7 +95,6 @@ extension RoomDetailView {
         )
     }
     
-    // MARK: - Header
     var header: some View {
         VStack {
             RoomProfile(room: room, vertical: true)
@@ -105,12 +103,11 @@ extension RoomDetailView {
         }
     }
     
-    // MARK: - Update Button
     var updateButton: some View {
         Button {
             do {
-                room.name = roomViewModel.modifiedName
-                try roomViewModel.updateRoom()
+                room.name = roomCoreDataHelper.modifiedName
+                try roomDetailViewModel.update()
             } catch {
                 print("Error while editing: \(error)")
             }

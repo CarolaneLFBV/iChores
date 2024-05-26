@@ -2,10 +2,10 @@ import SwiftUI
 
 struct AddChoreView: View {
     @Environment(\.dismiss) var dismiss
-    
-    @State var choreViewModel: ChoreViewModel
-    @State var roomViewModel: RoomViewModel
-    @State var userViewModel: UserViewModel
+    @State var userCoreDataHelper: UserCoreDataHelper
+    @State var roomCoreDataHelper: RoomCoreDataHelper
+
+    @State var addChoreViewModel: AddChoreViewModel
     
     @State private var choreTitle = ""
     
@@ -24,8 +24,8 @@ struct AddChoreView: View {
         }
         .padding()
         .task {
-            try? userViewModel.fetchUsers()
-            try? roomViewModel.fetchRooms()
+            try? userCoreDataHelper.fetch()
+            try? roomCoreDataHelper.fetch()
         }
     }
 }
@@ -41,7 +41,7 @@ extension AddChoreView {
             NoDataSelected().noRoomSelected
                 .tag(nil as Room?)
             
-            ForEach(roomViewModel.rooms, id: \.idRoom) { room in
+            ForEach(roomCoreDataHelper.rooms, id: \.idRoom) { room in
                 RoomProfile(room: room, vertical: false)
                     .tag(room as Room?)
             }
@@ -55,7 +55,7 @@ extension AddChoreView {
             NoDataSelected().noUserSelected
                 .tag(nil as User?)
             
-            ForEach(userViewModel.users, id: \.idUser) { user in
+            ForEach(userCoreDataHelper.users, id: \.idUser) { user in
                 UserProfile(user: user).horizontal
                     .tag(user as User?)
             }
@@ -67,7 +67,7 @@ extension AddChoreView {
     private var createButton: some View {
         Button {
             do {
-                try choreViewModel.addChore(title: choreTitle, user: selectedUser, room: $selectedRoom.wrappedValue)
+                try addChoreViewModel.add(title: choreTitle, user: selectedUser, room: $selectedRoom.wrappedValue)
                 dismiss()
             } catch {
                 print("Error Adding Chore: \(error.localizedDescription)")

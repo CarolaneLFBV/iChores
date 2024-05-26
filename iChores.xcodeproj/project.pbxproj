@@ -12,6 +12,12 @@
 		920981592BDCEA3F0028C4C0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920981572BDCEA3F0028C4C0 /* User+CoreDataClass.swift */; };
 		9209815A2BDCEA3F0028C4C0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920981582BDCEA3F0028C4C0 /* User+CoreDataProperties.swift */; };
 		9209815C2BDCF55C0028C4C0 /* ChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209815B2BDCF55C0028C4C0 /* ChoreRowView.swift */; };
+		920A14C32C030F0D003D3915 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14C22C030F0D003D3915 /* UserDetailViewModel.swift */; };
+		920A14C52C031103003D3915 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14C42C031103003D3915 /* UserListViewModel.swift */; };
+		920A14C72C03192C003D3915 /* RoomCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14C62C03192C003D3915 /* RoomCoreDataHelper.swift */; };
+		920A14C92C031936003D3915 /* AddRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14C82C031936003D3915 /* AddRoomViewModel.swift */; };
+		920A14CB2C031941003D3915 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14CA2C031941003D3915 /* RoomListViewModel.swift */; };
+		920A14CD2C03194E003D3915 /* RoomDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14CC2C03194E003D3915 /* RoomDetailViewModel.swift */; };
 		921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358B2B4893D500A6B2F4 /* NoUserView.swift */; };
 		921F358E2B489CF000A6B2F4 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358D2B489CF000A6B2F4 /* ButtonModifier.swift */; };
 		921F35922B48A65B00A6B2F4 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35912B48A65B00A6B2F4 /* TextFieldModifier.swift */; };
@@ -22,23 +28,20 @@
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
 		923C7DD02BB6F4E90079C269 /* ChoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */; };
-		923C7DD22BB6F50A0079C269 /* ChoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD12BB6F50A0079C269 /* ChoreViewModel.swift */; };
 		923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD32BB6F72A0079C269 /* AddChoreView.swift */; };
-		924857792B403272006065DD /* User+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924857782B403272006065DD /* User+ViewModel.swift */; };
 		924E6D852B477B0D00780EF4 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D842B477B0D00780EF4 /* UserImage.swift */; };
 		92501E182BFBC69000EA8D91 /* NoDataSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92501E172BFBC69000EA8D91 /* NoDataSelected.swift */; };
 		926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926079582B3F45830082F88A /* User+SwiftUI.swift */; };
 		9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260795B2B3F5E2E0082F88A /* ImageModifier.swift */; };
 		927957102BED235300362E32 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9279570F2BED235300362E32 /* CheckboxToggleStyle.swift */; };
 		928EF6172BFC87A100154A68 /* ConfirmationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928EF6162BFC87A100154A68 /* ConfirmationAlert.swift */; };
-		92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D292B3F0114001F0D2E /* UsersListView.swift */; };
+		92946D2A2B3F0114001F0D2E /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D292B3F0114001F0D2E /* UserListView.swift */; };
 		92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2B2B3F019B001F0D2E /* HomeView.swift */; };
-		92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */; };
+		92946D2E2B3F01D6001F0D2E /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2D2B3F01D6001F0D2E /* RoomListView.swift */; };
 		92946D302B3F01EC001F0D2E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92946D2F2B3F01EC001F0D2E /* SettingsView.swift */; };
 		9297DD762B73E12200452A8B /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297DD752B73E12200452A8B /* UserRepository.swift */; };
 		929F20DA2BB44CDA00863B19 /* ListDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F20D92BB44CDA00863B19 /* ListDeleteButton.swift */; };
 		92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A4062A2BAC30E9005AF534 /* Room+SwiftUI.swift */; };
-		92AB02DF2B8A3367002C34EE /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02DE2B8A3367002C34EE /* RoomViewModel.swift */; };
 		92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E12B8A35A0002C34EE /* RoomRepository.swift */; };
 		92AB02E42B8A364C002C34EE /* AddRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E32B8A364C002C34EE /* AddRoomView.swift */; };
 		92AB02E62B8A3CAA002C34EE /* RoomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E52B8A3CAA002C34EE /* RoomDetailView.swift */; };
@@ -62,6 +65,9 @@
 		92F6A0AB2B3478CE0075879F /* iChoresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6A0AA2B3478CE0075879F /* iChoresUITestsLaunchTests.swift */; };
 		92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B76F2BDA8D9900515A09 /* Room+CoreDataClass.swift */; };
 		92F6B7762BDA8D9900515A09 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B7702BDA8D9900515A09 /* Room+CoreDataProperties.swift */; };
+		92F86F992C035A1C00E7B0A8 /* ChoreCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F86F982C035A1C00E7B0A8 /* ChoreCoreDataHelper.swift */; };
+		92F86F9B2C035A7B00E7B0A8 /* AddChoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F86F9A2C035A7B00E7B0A8 /* AddChoreViewModel.swift */; };
+		92F86F9D2C035B1100E7B0A8 /* EditChoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F86F9C2C035B1100E7B0A8 /* EditChoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,12 @@
 		920981572BDCEA3F0028C4C0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		920981582BDCEA3F0028C4C0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9209815B2BDCF55C0028C4C0 /* ChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRowView.swift; sourceTree = "<group>"; };
+		920A14C22C030F0D003D3915 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		920A14C42C031103003D3915 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		920A14C62C03192C003D3915 /* RoomCoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCoreDataHelper.swift; sourceTree = "<group>"; };
+		920A14C82C031936003D3915 /* AddRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomViewModel.swift; sourceTree = "<group>"; };
+		920A14CA2C031941003D3915 /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
+		920A14CC2C03194E003D3915 /* RoomDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewModel.swift; sourceTree = "<group>"; };
 		921F358B2B4893D500A6B2F4 /* NoUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserView.swift; sourceTree = "<group>"; };
 		921F358D2B489CF000A6B2F4 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		921F35912B48A65B00A6B2F4 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
@@ -97,23 +109,20 @@
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRepository.swift; sourceTree = "<group>"; };
-		923C7DD12BB6F50A0079C269 /* ChoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreViewModel.swift; sourceTree = "<group>"; };
 		923C7DD32BB6F72A0079C269 /* AddChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreView.swift; sourceTree = "<group>"; };
-		924857782B403272006065DD /* User+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+ViewModel.swift"; sourceTree = "<group>"; };
 		924E6D842B477B0D00780EF4 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		92501E172BFBC69000EA8D91 /* NoDataSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataSelected.swift; sourceTree = "<group>"; };
 		926079582B3F45830082F88A /* User+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+SwiftUI.swift"; sourceTree = "<group>"; };
 		9260795B2B3F5E2E0082F88A /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
 		9279570F2BED235300362E32 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		928EF6162BFC87A100154A68 /* ConfirmationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationAlert.swift; sourceTree = "<group>"; };
-		92946D292B3F0114001F0D2E /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		92946D292B3F0114001F0D2E /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		92946D2B2B3F019B001F0D2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsListView.swift; sourceTree = "<group>"; };
+		92946D2D2B3F01D6001F0D2E /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		92946D2F2B3F01EC001F0D2E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9297DD752B73E12200452A8B /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		929F20D92BB44CDA00863B19 /* ListDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDeleteButton.swift; sourceTree = "<group>"; };
 		92A4062A2BAC30E9005AF534 /* Room+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+SwiftUI.swift"; sourceTree = "<group>"; };
-		92AB02DE2B8A3367002C34EE /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		92AB02E12B8A35A0002C34EE /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
 		92AB02E32B8A364C002C34EE /* AddRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomView.swift; sourceTree = "<group>"; };
 		92AB02E52B8A3CAA002C34EE /* RoomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailView.swift; sourceTree = "<group>"; };
@@ -140,6 +149,9 @@
 		92F6A0AA2B3478CE0075879F /* iChoresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChoresUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		92F6B76F2BDA8D9900515A09 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
 		92F6B7702BDA8D9900515A09 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		92F86F982C035A1C00E7B0A8 /* ChoreCoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreCoreDataHelper.swift; sourceTree = "<group>"; };
+		92F86F9A2C035A7B00E7B0A8 /* AddChoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreViewModel.swift; sourceTree = "<group>"; };
+		92F86F9C2C035B1100E7B0A8 /* EditChoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +228,7 @@
 		922C25232B3DE75700896D7E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				92946D292B3F0114001F0D2E /* UsersListView.swift */,
+				92946D292B3F0114001F0D2E /* UserListView.swift */,
 				922C251D2B3DE0E400896D7E /* UserDetailView.swift */,
 				922C25212B3DE75100896D7E /* AddUserView.swift */,
 				92946D2F2B3F01EC001F0D2E /* SettingsView.swift */,
@@ -227,7 +239,9 @@
 		923C7DCC2BB6F4B10079C269 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				923C7DD12BB6F50A0079C269 /* ChoreViewModel.swift */,
+				92F86F982C035A1C00E7B0A8 /* ChoreCoreDataHelper.swift */,
+				92F86F9A2C035A7B00E7B0A8 /* AddChoreViewModel.swift */,
+				92F86F9C2C035B1100E7B0A8 /* EditChoreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,9 +266,10 @@
 		9248577C2B403DE7006065DD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				924857782B403272006065DD /* User+ViewModel.swift */,
 				92AD0FF72C02871200F44C7B /* AddUserViewModel.swift */,
 				92AD0FF92C02881000F44C7B /* UserCoreDataHelper.swift */,
+				920A14C22C030F0D003D3915 /* UserDetailViewModel.swift */,
+				920A14C42C031103003D3915 /* UserListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,7 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				92AB02E52B8A3CAA002C34EE /* RoomDetailView.swift */,
-				92946D2D2B3F01D6001F0D2E /* RoomsListView.swift */,
+				92946D2D2B3F01D6001F0D2E /* RoomListView.swift */,
 				92AB02E32B8A364C002C34EE /* AddRoomView.swift */,
 			);
 			path = View;
@@ -412,7 +427,10 @@
 		92AB02DD2B8A3352002C34EE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				92AB02DE2B8A3367002C34EE /* RoomViewModel.swift */,
+				920A14C62C03192C003D3915 /* RoomCoreDataHelper.swift */,
+				920A14C82C031936003D3915 /* AddRoomViewModel.swift */,
+				920A14CA2C031941003D3915 /* RoomListViewModel.swift */,
+				920A14CC2C03194E003D3915 /* RoomDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -631,6 +649,7 @@
 				92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */,
 				92E55CDC2BF84888006124B2 /* UserProfile.swift in Sources */,
 				920981592BDCEA3F0028C4C0 /* User+CoreDataClass.swift in Sources */,
+				920A14CD2C03194E003D3915 /* RoomDetailViewModel.swift in Sources */,
 				9209815A2BDCEA3F0028C4C0 /* User+CoreDataProperties.swift in Sources */,
 				92AD0FF82C02871200F44C7B /* AddUserViewModel.swift in Sources */,
 				92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */,
@@ -638,7 +657,9 @@
 				92AB02E82B8A3E77002C34EE /* NoRoomView.swift in Sources */,
 				9223FB3F2B3F2C5400426148 /* FileManager+Image.swift in Sources */,
 				92E55CE42BF8542E006124B2 /* DividerSpacer.swift in Sources */,
+				920A14C92C031936003D3915 /* AddRoomViewModel.swift in Sources */,
 				92F6A0902B3478CB0075879F /* ContentView.swift in Sources */,
+				92F86F992C035A1C00E7B0A8 /* ChoreCoreDataHelper.swift in Sources */,
 				92E55CEC2BF874CF006124B2 /* UsersAndTasks.swift in Sources */,
 				92AB02E42B8A364C002C34EE /* AddRoomView.swift in Sources */,
 				92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */,
@@ -648,17 +669,17 @@
 				920981562BDCEA140028C4C0 /* Chore+CoreDataProperties.swift in Sources */,
 				922C25222B3DE75100896D7E /* AddUserView.swift in Sources */,
 				924E6D852B477B0D00780EF4 /* UserImage.swift in Sources */,
-				92946D2E2B3F01D6001F0D2E /* RoomsListView.swift in Sources */,
+				92946D2E2B3F01D6001F0D2E /* RoomListView.swift in Sources */,
+				920A14C32C030F0D003D3915 /* UserDetailViewModel.swift in Sources */,
 				927957102BED235300362E32 /* CheckboxToggleStyle.swift in Sources */,
-				923C7DD22BB6F50A0079C269 /* ChoreViewModel.swift in Sources */,
 				923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */,
 				92AD0FFA2C02881000F44C7B /* UserCoreDataHelper.swift in Sources */,
 				921F358E2B489CF000A6B2F4 /* ButtonModifier.swift in Sources */,
+				920A14CB2C031941003D3915 /* RoomListViewModel.swift in Sources */,
 				921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				9297DD762B73E12200452A8B /* UserRepository.swift in Sources */,
 				92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */,
-				924857792B403272006065DD /* User+ViewModel.swift in Sources */,
 				926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */,
 				92AB02E62B8A3CAA002C34EE /* RoomDetailView.swift in Sources */,
 				922C251B2B3DDEF900896D7E /* DataController.swift in Sources */,
@@ -666,16 +687,19 @@
 				92946D302B3F01EC001F0D2E /* SettingsView.swift in Sources */,
 				922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */,
 				921F35922B48A65B00A6B2F4 /* TextFieldModifier.swift in Sources */,
+				920A14C52C031103003D3915 /* UserListViewModel.swift in Sources */,
 				9209815C2BDCF55C0028C4C0 /* ChoreRowView.swift in Sources */,
 				9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */,
 				92E55CE02BF84FDF006124B2 /* RoomProfile.swift in Sources */,
 				922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */,
 				92501E182BFBC69000EA8D91 /* NoDataSelected.swift in Sources */,
 				92E55CE22BF85152006124B2 /* RoomsAndTasks.swift in Sources */,
-				92AB02DF2B8A3367002C34EE /* RoomViewModel.swift in Sources */,
+				920A14C72C03192C003D3915 /* RoomCoreDataHelper.swift in Sources */,
 				929F20DA2BB44CDA00863B19 /* ListDeleteButton.swift in Sources */,
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
-				92946D2A2B3F0114001F0D2E /* UsersListView.swift in Sources */,
+				92946D2A2B3F0114001F0D2E /* UserListView.swift in Sources */,
+				92F86F9D2C035B1100E7B0A8 /* EditChoreViewModel.swift in Sources */,
+				92F86F9B2C035A7B00E7B0A8 /* AddChoreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,13 +2,11 @@ import SwiftUI
 import CoreData
 
 @Observable
-final class ChoreViewModel {
+final class ChoreCoreDataHelper {
     var chores: [Chore] = []
-    var chore: Chore?
-    
     var moc = DataController.shared.viewContext
     
-    func fetchChores() throws {
+    func fetch() throws {
         chores = try ChoreRepository.fetchChores(context: moc)
     }
     
@@ -26,29 +24,12 @@ final class ChoreViewModel {
             chore.choreToRoom = room
         }
         try moc.save()
-        try fetchChores()
+        try fetch()
     }
     
-    func update(_ chore: Chore) throws {
-        chore.isDone = true
-        try moc.save()
-    }
-    
-    func deleteChore(_ chore: Chore) throws {
+    func delete(_ chore: Chore) throws {
         moc.delete(chore)
         try moc.save()
-        try fetchChores()
-    }
-    
-    func markChoreAsDoneAndDelete(_ chore: Chore) throws {
-        try update(chore)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            do {
-                try self.deleteChore(chore)
-            } catch {
-                print("error while deleting chore")
-            }
-        }
+        try fetch()
     }
 }

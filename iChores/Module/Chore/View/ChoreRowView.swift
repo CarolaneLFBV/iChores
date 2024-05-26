@@ -2,12 +2,12 @@ import SwiftUI
 
 struct ChoreRowView: View {
     let chore: Chore
-    var choreViewModel: ChoreViewModel
+    var editChoreViewModel: EditChoreViewModel
 
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "checkmark.square")
+                Image(systemName: chore.isDone ? "checkmark.square" : "square")
                 Text(chore.title)
                 Spacer()
                 Text(chore.choreToRoom.name)
@@ -15,7 +15,7 @@ struct ChoreRowView: View {
             .padding(.all, 4)
             .onTapGesture {
                 do {
-                    try choreViewModel.markChoreAsDoneAndDelete(chore)
+                    try editChoreViewModel.markChoreAsDoneAndDelete(chore)
                 } catch {
                     print("error")
                 }

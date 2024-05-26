@@ -1,9 +1,11 @@
 import SwiftUI
 import CoreData
 
-struct UsersListView: View {
-    @State var userViewModel: UserViewModel
+struct UserListView: View {
+    @State var userCoreDataHelper: UserCoreDataHelper
+    @State var userListViewModel: UserListViewModel
     @State var addUserViewModel: AddUserViewModel
+    @State var userDetailViewModel: UserDetailViewModel
 
     let columns = [
         GridItem(.flexible()),
@@ -12,16 +14,14 @@ struct UsersListView: View {
     
     var body: some View {
         ScrollView {
-            if userViewModel.users.isEmpty {
+            if userCoreDataHelper.users.isEmpty {
                 NoUserView()
             } else {
                 lazyGridView
             }
         }
         .task {
-            if userViewModel.users.isEmpty {
-                try? userViewModel.fetchUsers()
-            }
+            try? userCoreDataHelper.fetch()
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -33,21 +33,20 @@ struct UsersListView: View {
     }
 }
 
-extension UsersListView {
+extension UserListView {
     private var lazyGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns, content: {
-                ForEach(userViewModel.users, id: \.idUser) { user in
-                    NavigationLink(destination: UserDetailView(userViewModel: userViewModel, user: user)) {
+                ForEach(userCoreDataHelper.users, id: \.idUser) { user in
+                    NavigationLink(destination: UserDetailView(userCoreDataHelper: userCoreDataHelper, userDetailViewModel: userDetailViewModel, user: user)) {
                         UserProfile(user: user)
                             .padding()
                             .overlay(alignment: .topTrailing, content: {
-                                if userViewModel.isEditingUsersList {
+                                if userListViewModel.isEditingUsersList {
                                     Button {
                                         do {
-                                            try userViewModel.delete(user)
+                                            try userListViewModel.delete(user)
                                         } catch {
-                                            // TODO: Turn into alert
                                             print("Error while deleting user: \(error.localizedDescription)")
                                         }
                                     } label: {
@@ -59,13 +58,13 @@ extension UsersListView {
                 }
             })
         }
-        .navigationTitle(userViewModel.users.count == 1 ? "User" : "Users")
+        .navigationTitle(userCoreDataHelper.users.count == 1 ? "User" : "Users")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    userViewModel.isEditingUsersList.toggle()
+                    userListViewModel.isEditingUsersList.toggle()
                 } label: {
-                    Label("Edit", systemImage: userViewModel.isEditingUsersList ? "checkmark" : "pencil")
+                    Label("Edit", systemImage: userListViewModel.isEditingUsersList ? "checkmark" : "pencil")
                 }
             }
         }

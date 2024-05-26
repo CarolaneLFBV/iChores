@@ -1,13 +1,17 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var userViewModel: UserViewModel
-    @State var roomViewModel: RoomViewModel
-    @State var choreViewModel: ChoreViewModel
-    @State var addUserViewModel: AddUserViewModel
-
     @Environment(\.colorScheme) var colorScheme
-        
+
+    @State var userCoreDataHelper: UserCoreDataHelper
+    @State var roomCoreDataHelper: RoomCoreDataHelper
+    @State var choreCoreDataHelper: ChoreCoreDataHelper
+    
+    @State var addUserViewModel: AddUserViewModel
+    @State var addRoomViewModel: AddRoomViewModel
+    @State var addChoreViewModel: AddChoreViewModel
+    @State var editChoreViewModel: EditChoreViewModel
+
     var body: some View {
         ZStack {
             ScrollView {
@@ -16,9 +20,9 @@ struct HomeView: View {
             contextMenuButton
         }
         .task {
-            try? userViewModel.fetchUsers()
-            try? roomViewModel.fetchRooms()
-            try? choreViewModel.fetchChores()
+            try? userCoreDataHelper.fetch()
+            try? roomCoreDataHelper.fetch()
+            try? choreCoreDataHelper.fetch()
         }
         .navigationTitle("Home")
     }
@@ -28,12 +32,12 @@ struct HomeView: View {
 extension HomeView {
     private var userSection: some View {
         VStack {
-            ForEach(userViewModel.users, id: \.idUser) { user in
+            ForEach(userCoreDataHelper.users, id: \.idUser) { user in
                 VStack(alignment: .leading) {
                     UserProfile(user: user).horizontal
                     
                     ForEach(user.userChoreArray, id: \.self) { chore in
-                        ChoreRowView(chore: chore, choreViewModel: choreViewModel)
+                        ChoreRowView(chore: chore, editChoreViewModel: editChoreViewModel)
                     }
                 }
                 .homeBorder()
@@ -53,11 +57,11 @@ extension HomeView {
                     NavigationLink(destination: AddUserView(addUserViewModel: addUserViewModel), label: {
                         Label("Create User", systemImage: "person.fill.badge.plus")
                     })
-                    NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
+                    NavigationLink(destination: AddRoomView(userCoreDataHelper: userCoreDataHelper, addRoomViewModel: addRoomViewModel), label: {
                         Label("Create Room", systemImage: "square.split.bottomrightquarter.fill")
                     })
-                    if !userViewModel.users.isEmpty && !roomViewModel.rooms.isEmpty {
-                        NavigationLink(destination: AddChoreView(choreViewModel: choreViewModel, roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
+                    if !userCoreDataHelper.users.isEmpty && !roomCoreDataHelper.rooms.isEmpty {
+                        NavigationLink(destination: AddChoreView(userCoreDataHelper: userCoreDataHelper, roomCoreDataHelper: roomCoreDataHelper, addChoreViewModel: addChoreViewModel), label: {
                             Label("Create Task", systemImage: "circle.inset.filled")
                         })
                     }

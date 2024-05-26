@@ -5,11 +5,19 @@ import CoreData
 final class UserCoreDataHelper {
     var users: [User] = []
     var user: User?
-    
+
     var moc = DataController.shared.viewContext
     
-    func fetchUsers() throws {
+    var showingDeleteAlert = false
+    
+    func fetch() throws {
         users = try UserRepository.fetchUsers(context: moc)
+    }
+    
+    func delete(_ user: User) throws {
+        moc.delete(user)
+        try moc.save()
+        try fetch()
     }
     
     func isValidName(_ name: String) -> Bool {

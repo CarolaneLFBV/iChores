@@ -1,10 +1,14 @@
 import SwiftUI
 
-struct RoomsListView: View {
-    @State var roomViewModel: RoomViewModel
-    @State var userViewModel: UserViewModel
+struct RoomListView: View {
+    @State var userCoreDataHelper: UserCoreDataHelper
+    @State var roomCoreDataHelper: RoomCoreDataHelper
+
+    @State var roomListViewModel: RoomListViewModel
+    @State var roomDetailViewModel: RoomDetailViewModel
+    @State var addRoomViewModel: AddRoomViewModel
+
     @State private var showingAddRoom: Bool = false
-        
     
     let columns = [
         GridItem(.flexible()),
@@ -14,15 +18,15 @@ struct RoomsListView: View {
     var body: some View {
         roomList
             .task {
-                try? roomViewModel.fetchRooms()
+                try? roomCoreDataHelper.fetch()
             }
     }
 }
 
-extension RoomsListView {
+extension RoomListView {
     var roomList: some View {
         VStack {
-            if roomViewModel.rooms.isEmpty {
+            if roomCoreDataHelper.rooms.isEmpty {
                 NoRoomView()
             } else {
                 lazyGridView
@@ -31,7 +35,7 @@ extension RoomsListView {
         .padding()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                NavigationLink(destination: AddRoomView(roomViewModel: roomViewModel, userViewModel: userViewModel), label: {
+                NavigationLink(destination: AddRoomView( userCoreDataHelper:  userCoreDataHelper, addRoomViewModel: addRoomViewModel), label: {
                     Label("Add Room", systemImage: "plus")
                 })
             }
@@ -41,16 +45,15 @@ extension RoomsListView {
     var lazyGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(roomViewModel.rooms, id: \.self) { room in
-                    NavigationLink(destination: RoomDetailView(roomViewModel: roomViewModel, room: room)) {
+                ForEach(roomCoreDataHelper.rooms, id: \.idRoom) { room in
+                    NavigationLink(destination: RoomDetailView(roomCoreDataHelper: roomCoreDataHelper, roomDetailViewModel: roomDetailViewModel, room: room)) {
                         RoomProfile(room: room, vertical: true)
                             .overlay(alignment: .topTrailing) {
-                                if roomViewModel.isEditingRoomsList {
+                                if roomListViewModel.isEditingRoomsList {
                                     Button {
                                         do {
-                                            try roomViewModel.deleteRoom(room)
+                                            try roomListViewModel.delete(room)
                                         } catch {
-                                            // TODO: Turn into alert
                                             print("Error while deleting user: \(error.localizedDescription)")
                                         }
                                     } label: {
@@ -62,13 +65,13 @@ extension RoomsListView {
                 }
             }
         }
-        .navigationTitle(roomViewModel.rooms.count > 0 ? "Rooms" : "")
+        .navigationTitle(roomCoreDataHelper.rooms.count > 0 ? "Rooms" : "")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    roomViewModel.isEditingRoomsList.toggle()
+                    roomListViewModel.isEditingRoomsList.toggle()
                 } label: {
-                    Label("Edit", systemImage: roomViewModel.isEditingRoomsList ? "checkmark" : "pencil")
+                    Label("Edit", systemImage: roomListViewModel.isEditingRoomsList ? "checkmark" : "pencil")
                 }
             }
         }

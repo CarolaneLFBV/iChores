@@ -2,9 +2,9 @@ import SwiftUI
 
 struct AddRoomView: View {
     @Environment(\.dismiss) var dismiss
+    @State var userCoreDataHelper: UserCoreDataHelper
     
-    @State var roomViewModel: RoomViewModel
-    @State var userViewModel: UserViewModel
+    @State var addRoomViewModel: AddRoomViewModel
     
     @State private var roomName = ""
     @State private var selectedRoom = "Entrance"
@@ -23,8 +23,8 @@ struct AddRoomView: View {
             createButton
         }
         .padding()
-        .onAppear {
-            try? userViewModel.fetchUsers()
+        .task {
+            try? userCoreDataHelper.fetch()
         }
     }
 }
@@ -40,7 +40,7 @@ extension AddRoomView {
             NoDataSelected().noUserSelected
                 .tag(nil as User?)
             
-            ForEach(userViewModel.users, id: \.self) { user in
+            ForEach(userCoreDataHelper.users, id: \.self) { user in
                 UserProfile(user: user).horizontal
                 .tag(user as User?)
             }
@@ -62,7 +62,7 @@ extension AddRoomView {
     private var createButton: some View {
         Button {
             do {
-                try roomViewModel.addRoom(name: roomName, type: selectedRoom, user: selectedUser)
+                try addRoomViewModel.add(name: roomName, type: selectedRoom, user: selectedUser)
                 dismiss()
             } catch {
                 print("ERROR")
