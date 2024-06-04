@@ -15,7 +15,8 @@ struct ChoreRowView: View {
             .padding(.all, 4)
             .onTapGesture {
                 do {
-                    try editChoreViewModel.markChoreAsDoneAndDelete(chore)
+                    try editChoreViewModel.update(chore)
+                    print(chore.isDone)
                 } catch {
                     print("error")
                 }

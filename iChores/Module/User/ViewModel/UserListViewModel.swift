@@ -3,8 +3,6 @@ import CoreData
 
 @Observable
 final class UserListViewModel {
-    var user: User?
-
     var coreDataHelper = UserCoreDataHelper()
     
     var isEditingUsersList: Bool = false

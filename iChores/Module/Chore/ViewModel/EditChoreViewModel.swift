@@ -6,7 +6,7 @@ final class EditChoreViewModel {
     var choreCoreDataHelper = ChoreCoreDataHelper()
     
     func update(_ chore: Chore) throws {
-        chore.isDone = true
+        chore.isDone.toggle()
         try choreCoreDataHelper.moc.save()
     }
     
@@ -14,13 +14,10 @@ final class EditChoreViewModel {
         try choreCoreDataHelper.delete(chore)
     }
     
-    func markChoreAsDoneAndDelete(_ chore: Chore) throws {
+    func markChoreAsDoneAndDelete(_ chore: Chore) async throws {
         try update(chore)
-        
-        Task {
-            try await Task.sleep(for: .seconds(2))
-            try await delete(chore)
-            try choreCoreDataHelper.fetch()
-        }
+        try await Task.sleep(for: .seconds(2))
+        try delete(chore)
+        try choreCoreDataHelper.fetch()
     }
 }

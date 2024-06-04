@@ -30,6 +30,7 @@ struct UserListView: View {
                 }
             }
         }
+        .navigationTitle(userCoreDataHelper.users.count == 1 ? "User" : "Users")
     }
 }
 
@@ -58,7 +59,6 @@ extension UserListView {
                 }
             })
         }
-        .navigationTitle(userCoreDataHelper.users.count == 1 ? "User" : "Users")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
