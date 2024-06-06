@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "%@" : {
 
     },
@@ -304,9 +301,6 @@
 
     },
     "Type: %@" : {
-
-    },
-    "User" : {
 
     },
     "User name" : {
