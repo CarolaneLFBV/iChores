@@ -15,7 +15,7 @@ struct AddRoomView: View {
             typePicker
             userPicker
             
-            DividerSpacer(height: 40).spacer
+            Components.DividerSpacer(height: 40)
             
             createButton
         }
@@ -34,7 +34,7 @@ extension AddRoomView {
     
     private var userPicker: some View {
         Picker("Belongs to...", selection: $selectedUser) {
-            NoDataSelected().noUserSelected
+            Components.NoDataSelected(dataType: .user)
                 .tag(nil as User?)
             
             ForEach(addRoomViewModel.users, id: \.idUser) { user in

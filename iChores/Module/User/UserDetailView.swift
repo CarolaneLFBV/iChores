@@ -26,7 +26,7 @@ extension UserDetailView {
             TextField("Name", text: $userDetailViewModel.modifiedName)
                 .textFieldStyle()
             
-            DividerSpacer(height: 40)
+            Components.DividerSpacer(height: 40)
             
             RoomsAndTasks(user: user)
             
@@ -54,7 +54,7 @@ extension UserDetailView {
     private var userDetail: some View {
         VStack {
             UserProfile(user: user)
-            DividerSpacer(height: 40)
+            Components.DividerSpacer(height: 40)
             RoomsAndTasks(user: user)
         }
         .toolbar {
@@ -68,7 +68,7 @@ extension UserDetailView {
     
     private var userEditionButtons: some View {
         HStack {
-            SecondaryButton()
+            Components.SecondaryButton()
             
             Button {
                 userDetailViewModel.showingDeleteAlert = true

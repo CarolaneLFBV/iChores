@@ -8,7 +8,7 @@ struct UsersAndTasks: View {
             Text("Belongs to: \(room.roomToUser.name)")
                 .textFieldStyle()
             
-            DividerSpacer(height: 40).spacer
+            Components.DividerSpacer(height: 40)
             
             VStack(alignment: .leading) {
                 Text("Chores")

@@ -17,11 +17,11 @@
 		920A14C92C031936003D3915 /* AddRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14C82C031936003D3915 /* AddRoomViewModel.swift */; };
 		920A14CB2C031941003D3915 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14CA2C031941003D3915 /* RoomListViewModel.swift */; };
 		920A14CD2C03194E003D3915 /* RoomDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A14CC2C03194E003D3915 /* RoomDetailViewModel.swift */; };
-		921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358B2B4893D500A6B2F4 /* NoUserView.swift */; };
 		921F358E2B489CF000A6B2F4 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F358D2B489CF000A6B2F4 /* ButtonModifier.swift */; };
 		921F35922B48A65B00A6B2F4 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35912B48A65B00A6B2F4 /* TextFieldModifier.swift */; };
 		9223FB3F2B3F2C5400426148 /* FileManager+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9223FB3E2B3F2C5400426148 /* FileManager+Image.swift */; };
 		922A53092C11916000FA8B3A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A53082C11916000FA8B3A /* HomeViewModel.swift */; };
+		922A530B2C11D99C00FA8B3A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A530A2C11D99C00FA8B3A /* Components.swift */; };
 		922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922C24F82B3DC61600896D7E /* iChores.xcdatamodeld */; };
 		922C251B2B3DDEF900896D7E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251A2B3DDEF900896D7E /* DataController.swift */; };
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
@@ -48,6 +48,7 @@
 		92AD0FF82C02871200F44C7B /* AddUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD0FF72C02871200F44C7B /* AddUserViewModel.swift */; };
 		92B87C5A2BB5D91100401366 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87C592BB5D91100401366 /* SecondaryButton.swift */; };
 		92C8D2302B7A545100BC83B4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 92C8D22F2B7A545100BC83B4 /* Localizable.xcstrings */; };
+		92E178BC2C123F0A00F9E2B1 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E178BB2C123F0A00F9E2B1 /* DataType.swift */; };
 		92E55CDA2BF84734006124B2 /* BorderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CD92BF84734006124B2 /* BorderModifier.swift */; };
 		92E55CDC2BF84888006124B2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CDB2BF84888006124B2 /* UserProfile.swift */; };
 		92E55CE02BF84FDF006124B2 /* RoomProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */; };
@@ -95,11 +96,11 @@
 		920A14C82C031936003D3915 /* AddRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomViewModel.swift; sourceTree = "<group>"; };
 		920A14CA2C031941003D3915 /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		920A14CC2C03194E003D3915 /* RoomDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewModel.swift; sourceTree = "<group>"; };
-		921F358B2B4893D500A6B2F4 /* NoUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserView.swift; sourceTree = "<group>"; };
 		921F358D2B489CF000A6B2F4 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		921F35912B48A65B00A6B2F4 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		9223FB3E2B3F2C5400426148 /* FileManager+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Image.swift"; sourceTree = "<group>"; };
 		922A53082C11916000FA8B3A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		922A530A2C11D99C00FA8B3A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		922C24F92B3DC61600896D7E /* iChores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iChores.xcdatamodel; sourceTree = "<group>"; };
 		922C251A2B3DDEF900896D7E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		92AD0FF72C02871200F44C7B /* AddUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewModel.swift; sourceTree = "<group>"; };
 		92B87C592BB5D91100401366 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		92C8D22F2B7A545100BC83B4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		92E178BB2C123F0A00F9E2B1 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 		92E55CD92BF84734006124B2 /* BorderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderModifier.swift; sourceTree = "<group>"; };
 		92E55CDB2BF84888006124B2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProfile.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		921F358A2B4893C000A6B2F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				922A530A2C11D99C00FA8B3A /* Components.swift */,
 				929F20D82BB44CC900863B19 /* Global */,
 				92AB02E92B8A3F92002C34EE /* Room */,
 				92772AAC2B8369E9007772E4 /* User */,
@@ -379,7 +382,6 @@
 		92772AAC2B8369E9007772E4 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				921F358B2B4893D500A6B2F4 /* NoUserView.swift */,
 				924E6D842B477B0D00780EF4 /* UserImage.swift */,
 				92E55CDB2BF84888006124B2 /* UserProfile.swift */,
 				92E55CE12BF85152006124B2 /* RoomsAndTasks.swift */,
@@ -412,6 +414,7 @@
 				92B87C592BB5D91100401366 /* SecondaryButton.swift */,
 				92E55CE32BF8542E006124B2 /* DividerSpacer.swift */,
 				92501E172BFBC69000EA8D91 /* NoDataSelected.swift */,
+				92AB02E72B8A3E77002C34EE /* NoRoomView.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -419,11 +422,18 @@
 		92AB02E92B8A3F92002C34EE /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				92AB02E72B8A3E77002C34EE /* NoRoomView.swift */,
 				92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */,
 				92E55CEB2BF874CF006124B2 /* UsersAndTasks.swift */,
 			);
 			path = Room;
+			sourceTree = "<group>";
+		};
+		92E178BA2C123EF800F9E2B1 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				92E178BB2C123F0A00F9E2B1 /* DataType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		92F6A0812B3478CB0075879F = {
@@ -449,6 +459,7 @@
 		92F6A08C2B3478CB0075879F /* iChores */ = {
 			isa = PBXGroup;
 			children = (
+				92E178BA2C123EF800F9E2B1 /* Enum */,
 				9298A4B82B72635600633775 /* DS */,
 				92772AAD2B836A0E007772E4 /* App */,
 				9248577E2B403E17006065DD /* Module */,
@@ -626,6 +637,8 @@
 				920981592BDCEA3F0028C4C0 /* User+CoreDataClass.swift in Sources */,
 				920A14CD2C03194E003D3915 /* RoomDetailViewModel.swift in Sources */,
 				9209815A2BDCEA3F0028C4C0 /* User+CoreDataProperties.swift in Sources */,
+				922A530B2C11D99C00FA8B3A /* Components.swift in Sources */,
+				92E178BC2C123F0A00F9E2B1 /* DataType.swift in Sources */,
 				92AD0FF82C02871200F44C7B /* AddUserViewModel.swift in Sources */,
 				92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */,
 				92F6B7762BDA8D9900515A09 /* Room+CoreDataProperties.swift in Sources */,
@@ -648,7 +661,6 @@
 				923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */,
 				921F358E2B489CF000A6B2F4 /* ButtonModifier.swift in Sources */,
 				920A14CB2C031941003D3915 /* RoomListViewModel.swift in Sources */,
-				921F358C2B4893D500A6B2F4 /* NoUserView.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				9297DD762B73E12200452A8B /* UserRepository.swift in Sources */,
 				92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */,

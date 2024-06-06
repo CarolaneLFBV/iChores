@@ -1,14 +1,15 @@
 import SwiftUI
 
-struct DividerSpacer: View {
-    let height: CGFloat
-    
-    var body: some View {
-        spacer
+extension Components {
+    struct DividerSpacer: View {
+        let height: CGFloat
     }
-    
-    var spacer: some View {
+}
+
+extension Components.DividerSpacer {
+    var body: some View {
         Spacer()
             .frame(height: height)
     }
 }
+

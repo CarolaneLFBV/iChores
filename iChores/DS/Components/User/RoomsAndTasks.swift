@@ -11,7 +11,7 @@ struct RoomsAndTasks: View {
                 userRoomArray
             }
             
-            DividerSpacer(height: 40)
+            Components.DividerSpacer(height: 40)
 
             if user.userChoreArray.isEmpty {
                 noChoreData
@@ -37,7 +37,7 @@ extension RoomsAndTasks {
     var noChoreData: some View {
         VStack(alignment: .leading) {
             userChoreTitle
-            NoDataSelected().noChoreSelected
+            Components.NoDataSelected(dataType: .chore)
                 .homeBorder()
         }
     }
@@ -45,7 +45,7 @@ extension RoomsAndTasks {
     var noRoomData: some View {
         VStack(alignment: .leading) {
             userRoomTitle
-            NoDataSelected().noRoomSelected
+            Components.NoDataSelected(dataType: .room)
                 .homeBorder()
         }
     }

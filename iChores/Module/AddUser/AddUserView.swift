@@ -13,12 +13,12 @@ struct AddUserView: View {
         VStack {
             profilePicture
             
-            DividerSpacer(height: 40)
+            Components.DividerSpacer(height: 40)
                     
             nameField
                 
             HStack {
-                SecondaryButton()
+                Components.SecondaryButton()
                 createButton
             }
         }

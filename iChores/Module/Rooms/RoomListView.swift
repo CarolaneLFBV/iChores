@@ -21,7 +21,7 @@ extension RoomListView {
     var roomList: some View {
         VStack {
             if roomListViewModel.rooms.isEmpty {
-                NoRoomView()
+                Components.NoDataFoundView(dataType: .room)
             } else {
                 lazyGridView
             }
@@ -47,7 +47,7 @@ extension RoomListView {
                                     Button {
                                         roomListViewModel.delete(room)
                                     } label: {
-                                        ListDeleteButton()
+                                        Components.ListDeleteButton()
                                     }
                                 }
                             }

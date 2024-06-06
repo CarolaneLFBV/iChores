@@ -21,7 +21,7 @@ extension UserListView {
     private var userList: some View {
         VStack {
             if userListViewModel.users.isEmpty {
-                NoUserView()
+                Components.NoDataFoundView(dataType: .user)
             } else {
                 lazyGridView
             }
@@ -47,7 +47,7 @@ extension UserListView {
                                     Button {
                                         userListViewModel.delete(user)
                                     } label: {
-                                        ListDeleteButton()
+                                        Components.ListDeleteButton()
                                     }
                                 }
                             })

@@ -12,7 +12,7 @@ struct RoomDetailView: View {
         VStack {
             header
             
-            DividerSpacer(height: 40)
+            Components.DividerSpacer(height: 40)
             
             if roomDetailViewModel.isEditingRoom {
                 roomEdition
@@ -63,7 +63,7 @@ extension RoomDetailView {
             TextField("Room's name", text: $roomDetailViewModel.modifiedName)
                 .textFieldStyle()
             
-            DividerSpacer(height: 40)
+            Components.DividerSpacer(height: 40)
 
             UsersAndTasks(room: room)
             

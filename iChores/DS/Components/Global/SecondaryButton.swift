@@ -1,8 +1,12 @@
 import SwiftUI
 
-struct SecondaryButton: View {
-    @Environment(\.dismiss) var dismiss
-    
+extension Components {
+    struct SecondaryButton: View {
+        @Environment(\.dismiss) var dismiss
+    }
+}
+
+extension Components.SecondaryButton {
     var body: some View {
         Button {
             dismiss()
@@ -11,7 +15,5 @@ struct SecondaryButton: View {
                 .padding()
         }
         .secondaryButtonStyle()
-        
     }
 }
-

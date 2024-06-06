@@ -18,6 +18,9 @@
         }
       }
     },
+    "Add a room with the + button" : {
+
+    },
     "Add Room" : {
       "localizations" : {
         "fr" : {
@@ -93,6 +96,7 @@
       }
     },
     "Create a new room with the + button" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -103,6 +107,7 @@
       }
     },
     "Create a new user with the + button" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -162,6 +167,7 @@
       }
     },
     "No Rooms found" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -172,6 +178,7 @@
       }
     },
     "No Users found" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {

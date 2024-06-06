@@ -13,7 +13,7 @@ struct AddChoreView: View {
             roomPicker
             userPicker
             
-            DividerSpacer(height: 16)
+            Components.DividerSpacer(height: 16)
             
             createButton
         }
@@ -32,7 +32,7 @@ extension AddChoreView {
     
     private var roomPicker: some View {
         Picker("Room", selection: $selectedRoom) {
-            NoDataSelected().noRoomSelected
+            Components.NoDataSelected(dataType: .room)
                 .tag(nil as Room?)
             
             ForEach(addChoreViewModel.rooms, id: \.idRoom) { room in
@@ -46,7 +46,7 @@ extension AddChoreView {
     
     private var userPicker: some View {
         Picker("Belongs to...", selection: $selectedUser) {
-            NoDataSelected().noUserSelected
+            Components.NoDataSelected(dataType: .user)
                 .tag(nil as User?)
             
             ForEach(addChoreViewModel.users, id: \.idUser) { user in
