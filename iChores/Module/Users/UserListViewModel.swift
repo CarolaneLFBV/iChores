@@ -23,6 +23,7 @@ final class UserListViewModel {
         
     func delete(_ user: User) {
         userRepository.delete(user)
+        loadData()
     }
 
 }

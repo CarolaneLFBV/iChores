@@ -44,7 +44,7 @@
 		92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E12B8A35A0002C34EE /* RoomRepository.swift */; };
 		92AB02E42B8A364C002C34EE /* AddRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E32B8A364C002C34EE /* AddRoomView.swift */; };
 		92AB02E62B8A3CAA002C34EE /* RoomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E52B8A3CAA002C34EE /* RoomDetailView.swift */; };
-		92AB02E82B8A3E77002C34EE /* NoRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E72B8A3E77002C34EE /* NoRoomView.swift */; };
+		92AB02E82B8A3E77002C34EE /* NoDataFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB02E72B8A3E77002C34EE /* NoDataFoundView.swift */; };
 		92AD0FF82C02871200F44C7B /* AddUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD0FF72C02871200F44C7B /* AddUserViewModel.swift */; };
 		92B87C5A2BB5D91100401366 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B87C592BB5D91100401366 /* SecondaryButton.swift */; };
 		92C8D2302B7A545100BC83B4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 92C8D22F2B7A545100BC83B4 /* Localizable.xcstrings */; };
@@ -123,7 +123,7 @@
 		92AB02E12B8A35A0002C34EE /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
 		92AB02E32B8A364C002C34EE /* AddRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomView.swift; sourceTree = "<group>"; };
 		92AB02E52B8A3CAA002C34EE /* RoomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailView.swift; sourceTree = "<group>"; };
-		92AB02E72B8A3E77002C34EE /* NoRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRoomView.swift; sourceTree = "<group>"; };
+		92AB02E72B8A3E77002C34EE /* NoDataFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataFoundView.swift; sourceTree = "<group>"; };
 		92AD0FF72C02871200F44C7B /* AddUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewModel.swift; sourceTree = "<group>"; };
 		92B87C592BB5D91100401366 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		92C8D22F2B7A545100BC83B4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 				92B87C592BB5D91100401366 /* SecondaryButton.swift */,
 				92E55CE32BF8542E006124B2 /* DividerSpacer.swift */,
 				92501E172BFBC69000EA8D91 /* NoDataSelected.swift */,
-				92AB02E72B8A3E77002C34EE /* NoRoomView.swift */,
+				92AB02E72B8A3E77002C34EE /* NoDataFoundView.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -642,7 +642,7 @@
 				92AD0FF82C02871200F44C7B /* AddUserViewModel.swift in Sources */,
 				92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */,
 				92F6B7762BDA8D9900515A09 /* Room+CoreDataProperties.swift in Sources */,
-				92AB02E82B8A3E77002C34EE /* NoRoomView.swift in Sources */,
+				92AB02E82B8A3E77002C34EE /* NoDataFoundView.swift in Sources */,
 				9223FB3F2B3F2C5400426148 /* FileManager+Image.swift in Sources */,
 				92E55CE42BF8542E006124B2 /* DividerSpacer.swift in Sources */,
 				920A14C92C031936003D3915 /* AddRoomViewModel.swift in Sources */,

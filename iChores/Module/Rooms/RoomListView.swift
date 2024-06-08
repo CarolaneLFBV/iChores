@@ -41,7 +41,7 @@ extension RoomListView {
             LazyVGrid(columns: columns) {
                 ForEach(roomListViewModel.rooms, id: \.idRoom) { room in
                     NavigationLink(destination: RoomDetailView(room: room)) {
-                        RoomProfile(room: room, vertical: true)
+                        Components.RoomProfile(room: room, vertical: true)
                             .overlay(alignment: .topTrailing) {
                                 if roomListViewModel.isEditingRoomsList {
                                     Button {

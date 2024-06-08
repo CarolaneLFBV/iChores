@@ -85,7 +85,7 @@ extension RoomDetailView {
     
     var header: some View {
         VStack {
-            RoomProfile(room: room, vertical: true)
+            Components.RoomProfile(room: room, vertical: true)
             Text("Type: \(room.type)")
                 .font(.caption)
         }

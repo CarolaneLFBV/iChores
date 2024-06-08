@@ -1,42 +1,40 @@
 import SwiftUI
 
-struct RoomProfile: View {
-    let room: Room
-    let vertical: Bool
-    
+extension Components {
+    struct RoomProfile: View {
+        let room: Room
+        let vertical: Bool
+    }
+}
+
+
+extension Components.RoomProfile {
     var body: some View {
-        VStack {
+        Group {
             if vertical {
-                verticalProfile
+                VStack {
+                    profileImage
+                    profileText
+                }
             } else {
-                horizontalProfile
+                HStack {
+                    profileImage
+                    profileText
+                }
             }
         }
     }
     
-    var verticalProfile: some View {
-        VStack {
-            Image(systemName: room.roomImageName)
-                .resizable()
-                .padding()
-                .imageSizeStyle(width: 95, height: 95, contentMode: .fit)
-                .imageBorderStyle()
-
-            
-            Text(room.name)
-                .font(.title3)
-        }
+    private var profileImage: some View {
+        Image(systemName: room.roomImageName)
+            .resizable()
+            .padding()
+            .imageSizeStyle(width: vertical ? 95 : 40, height: vertical ? 95 : 40, contentMode: .fit)
+            .imageBorderStyle()
     }
     
-    var horizontalProfile: some View {
-        HStack {
-            Image(systemName: room.roomImageName)
-                .resizable()
-                .imageSizeStyle(width: 40, height: 40, contentMode: .fit)
-
-            
-            Text(room.name)
-                .font(.title3)
-        }
+    private var profileText: some View {
+        Text(room.name)
+            .font(.title3)
     }
 }

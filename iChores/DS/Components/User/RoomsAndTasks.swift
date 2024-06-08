@@ -68,7 +68,7 @@ extension RoomsAndTasks {
             
             ScrollView(.horizontal) {
                 ForEach(user.userRoomArray, id: \.self) { room in
-                    RoomProfile(room: room, vertical: true)
+                    Components.RoomProfile(room: room, vertical: true)
                 }
             }
         }

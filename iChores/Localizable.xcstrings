@@ -188,9 +188,6 @@
         }
       }
     },
-    "None" : {
-
-    },
     "Ok" : {
       "extractionState" : "stale",
       "localizations" : {

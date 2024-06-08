@@ -36,7 +36,7 @@ extension AddChoreView {
                 .tag(nil as Room?)
             
             ForEach(addChoreViewModel.rooms, id: \.idRoom) { room in
-                RoomProfile(room: room, vertical: false)
+                Components.RoomProfile(room: room, vertical: false)
                     .tag(room as Room?)
             }
         }
