@@ -10,10 +10,14 @@ struct UserListView: View {
     ]
     
     var body: some View {
-        userList
-            .task {
-                userListViewModel.loadData()
-            }
+        ZStack {
+            Color("AppBackgroundColor")
+            userList
+                .task {
+                    userListViewModel.loadData()
+                }
+        }
+        .ignoresSafeArea()
     }
 }
 

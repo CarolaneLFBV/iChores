@@ -10,19 +10,23 @@ struct AddUserView: View {
     @State private var userImage: UIImage?
     
     var body: some View {
-        VStack {
-            profilePicture
-            
-            Components.DividerSpacer(height: 40)
-                    
-            nameField
+        ZStack {
+            Color("AppBackgroundColor")
+            VStack {
+                profilePicture
                 
-            HStack {
-                Components.SecondaryButton()
-                createButton
+                Components.DividerSpacer(height: 40)
+                        
+                nameField
+                    
+                HStack {
+                    Components.SecondaryButton()
+                    createButton
+                }
             }
+            .padding()
         }
-        .padding()
+        .ignoresSafeArea()
     }
 }
 

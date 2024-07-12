@@ -10,19 +10,23 @@ struct AddRoomView: View {
     @State private var selectedUser: User?
     
     var body: some View {
-        VStack {
-            nameField
-            typePicker
-            userPicker
-            
-            Components.DividerSpacer(height: 40)
-            
-            createButton
+        ZStack {
+            Color("AppBackgroundColor")
+            VStack {
+                nameField
+                typePicker
+                userPicker
+                
+                Components.DividerSpacer(height: 40)
+                
+                createButton
+            }
+            .padding()
+            .task {
+                addRoomViewModel.loadData()
+            }
         }
-        .padding()
-        .task {
-            addRoomViewModel.loadData()
-        }
+        .ignoresSafeArea()
     }
 }
 

@@ -36,7 +36,7 @@ struct ContextMenuButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .background(.primary)
+            .background(Color("AppPrimaryColor"))
             .clipShape(Circle())
             .padding([.trailing, .bottom])
     }

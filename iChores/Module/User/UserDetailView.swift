@@ -7,14 +7,18 @@ struct UserDetailView: View {
     let user: User
     
     var body: some View {
-        VStack {
-            if userDetailViewModel.isEditingUser {
-                userEdition
-            } else {
-                userDetail
+        ZStack {
+            Color("AppBackgroundColor")
+            VStack {
+                if userDetailViewModel.isEditingUser {
+                    userEdition
+                } else {
+                    userDetail
+                }
             }
+            .padding()
         }
-        .padding()
+        .ignoresSafeArea()
     }
 }
 

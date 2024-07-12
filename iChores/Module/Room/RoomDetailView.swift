@@ -9,18 +9,22 @@ struct RoomDetailView: View {
     let room: Room
     
     var body: some View {
-        VStack {
-            header
-            
-            Components.DividerSpacer(height: 40)
-            
-            if roomDetailViewModel.isEditingRoom {
-                roomEdition
-            } else {
-                roomDetail
+        ZStack {
+            Color("AppBackgroundColor")
+            VStack {
+                header
+                
+                Components.DividerSpacer(height: 40)
+                
+                if roomDetailViewModel.isEditingRoom {
+                    roomEdition
+                } else {
+                    roomDetail
+                }
             }
+            .padding()
         }
-        .padding()
+        .ignoresSafeArea()
     }
 }
 

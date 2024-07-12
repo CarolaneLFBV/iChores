@@ -11,16 +11,16 @@ extension Components.NoDataFoundView {
         VStack {
             Image(systemName: dataType.imageName)
                 .font(.title)
-                .foregroundColor(.gray.opacity(0.7))
+                .foregroundColor(Color("AppPrimaryColor"))
             
             Components.DividerSpacer(height: 8)
             
             Text(dataType.noDataFoundText)
-                .font(.title2)
+                .font(.title)
                 .bold()
             
             Text("Add a room with the + button")
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color("AppPrimaryColor"))
         }
     }
 }

@@ -27,6 +27,7 @@
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
+		923931F42C41823A0019F108 /* AppBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931F32C41823A0019F108 /* AppBackgroundModifier.swift */; };
 		923C7DD02BB6F4E90079C269 /* ChoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */; };
 		923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD32BB6F72A0079C269 /* AddChoreView.swift */; };
 		924E6D852B477B0D00780EF4 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D842B477B0D00780EF4 /* UserImage.swift */; };
@@ -106,6 +107,7 @@
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
+		923931F32C41823A0019F108 /* AppBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundModifier.swift; sourceTree = "<group>"; };
 		923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRepository.swift; sourceTree = "<group>"; };
 		923C7DD32BB6F72A0079C269 /* AddChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreView.swift; sourceTree = "<group>"; };
 		924E6D842B477B0D00780EF4 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				921F358D2B489CF000A6B2F4 /* ButtonModifier.swift */,
 				921F35912B48A65B00A6B2F4 /* TextFieldModifier.swift */,
 				928EF6162BFC87A100154A68 /* ConfirmationAlert.swift */,
+				923931F32C41823A0019F108 /* AppBackgroundModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				92AB02E42B8A364C002C34EE /* AddRoomView.swift in Sources */,
 				92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */,
 				920981552BDCEA140028C4C0 /* Chore+CoreDataClass.swift in Sources */,
+				923931F42C41823A0019F108 /* AppBackgroundModifier.swift in Sources */,
 				928EF6172BFC87A100154A68 /* ConfirmationAlert.swift in Sources */,
 				92E55CDA2BF84734006124B2 /* BorderModifier.swift in Sources */,
 				920981562BDCEA140028C4C0 /* Chore+CoreDataProperties.swift in Sources */,

@@ -11,6 +11,7 @@ struct HomeView: View {
             }
             contextMenuButton
         }
+        .applyAppBackground()
         .task {
             homeViewModel.loadData()
         }
@@ -49,11 +50,11 @@ extension HomeView {
                     NavigationLink(destination: AddRoomView(), label: {
                         Label("Create Room", systemImage: "square.split.bottomrightquarter.fill")
                     })
-//                    if !homeViewModel.users.isEmpty && !homeViewModel.rooms.isEmpty {
-                        NavigationLink(destination: AddChoreView(), label: {
-                            Label("Create Task", systemImage: "circle.inset.filled")
-                        })
-//                    }
+                    //                    if !homeViewModel.users.isEmpty && !homeViewModel.rooms.isEmpty {
+                    NavigationLink(destination: AddChoreView(), label: {
+                        Label("Create Task", systemImage: "circle.inset.filled")
+                    })
+                    //                    }
                 } label: {
                     Image(systemName: "plus")
                         .foregroundStyle(colorScheme == .dark ? .black : .white)
