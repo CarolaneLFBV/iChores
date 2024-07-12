@@ -166,6 +166,9 @@
         }
       }
     },
+    "Next" : {
+
+    },
     "No Rooms found" : {
       "extractionState" : "stale",
       "localizations" : {
