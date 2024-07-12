@@ -22,5 +22,6 @@ final class RoomListViewModel {
     
     func delete(_ room: Room) {
         roomRepository.delete(room)
+        loadData()
     }
 }

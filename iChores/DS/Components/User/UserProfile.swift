@@ -21,6 +21,5 @@ struct UserProfile: View {
             Text(user.name)
                 .font(.title3)
         }
-        .padding(.all, 4)
     }
 }

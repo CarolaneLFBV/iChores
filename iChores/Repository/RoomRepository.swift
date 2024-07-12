@@ -22,11 +22,11 @@ class RoomRepository {
         }
     }
 
-    func update() {
+    func update(context: NSManagedObjectContext) {
         do {
-            try moc.save()
+            try context.save()
         } catch {
-            print("An error has occured while updating the room: \(error.localizedDescription)")
+            print("Erroe while updating: \(error.localizedDescription)")
         }
     }
     

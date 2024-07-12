@@ -3,6 +3,7 @@ import CoreData
 
 @Observable
 final class RoomDetailViewModel {
+    var moc = DataController.shared.viewContext
     var roomRepository = RoomRepository()
     var room: Room?
     var isEditingRoom: Bool = false
@@ -20,7 +21,7 @@ final class RoomDetailViewModel {
     }
     
     func update(_ room: Room) {
-        roomRepository.update()
+        roomRepository.update(context: moc)
         isEditingRoom = false
     }
     

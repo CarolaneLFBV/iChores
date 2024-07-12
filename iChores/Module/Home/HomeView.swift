@@ -21,7 +21,7 @@ struct HomeView: View {
 
 extension HomeView {
     private var userSection: some View {
-        VStack {
+        VStack(alignment: .leading) {
             ForEach(homeViewModel.users, id: \.idUser) { user in
                 VStack(alignment: .leading) {
                     UserProfile(user: user).horizontal
@@ -30,7 +30,6 @@ extension HomeView {
                         ChoreRowView(chore: chore)
                     }
                 }
-                .homeBorder()
             }
         }
         .padding()
@@ -50,11 +49,11 @@ extension HomeView {
                     NavigationLink(destination: AddRoomView(), label: {
                         Label("Create Room", systemImage: "square.split.bottomrightquarter.fill")
                     })
-                    if !homeViewModel.users.isEmpty && !homeViewModel.rooms.isEmpty {
+//                    if !homeViewModel.users.isEmpty && !homeViewModel.rooms.isEmpty {
                         NavigationLink(destination: AddChoreView(), label: {
                             Label("Create Task", systemImage: "circle.inset.filled")
                         })
-                    }
+//                    }
                 } label: {
                     Image(systemName: "plus")
                         .foregroundStyle(colorScheme == .dark ? .black : .white)

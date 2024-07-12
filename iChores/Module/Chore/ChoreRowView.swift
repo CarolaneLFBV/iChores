@@ -12,7 +12,6 @@ struct ChoreRowView: View {
                 Spacer()
                 Text(chore.choreToRoom.name)
             }
-            .padding(.all, 4)
         }
     }
 }

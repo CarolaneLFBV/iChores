@@ -46,11 +46,11 @@ class UserRepository {
         }
     }
     
-    func update() {
+    func update(context: NSManagedObjectContext) {
         do {
-            try moc.save()
+            try context.save()
         } catch {
-            print("aaler")
+            print("Erroe while updating: \(error.localizedDescription)")
         }
     }
     

@@ -3,6 +3,7 @@ import CoreData
 
 @Observable
 final class UserDetailViewModel {
+    var moc = DataController.shared.viewContext
     var user: User?
     var isEditingUser: Bool = false
     var showingDeleteAlert: Bool = false
@@ -22,7 +23,7 @@ final class UserDetailViewModel {
     
     func update(_ user: User) {
         user.name = modifiedName
-        userRepository.update()
+        userRepository.update(context: moc)
         self.isEditingUser.toggle()
     }
     
