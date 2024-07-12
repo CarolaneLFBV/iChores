@@ -146,6 +146,9 @@
         }
       }
     },
+    "Get Started!" : {
+
+    },
     "Home" : {
       "localizations" : {
         "fr" : {
@@ -165,9 +168,6 @@
           }
         }
       }
-    },
-    "Next" : {
-
     },
     "No Rooms found" : {
       "extractionState" : "stale",
