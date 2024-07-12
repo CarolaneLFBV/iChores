@@ -11,6 +11,8 @@ struct RoomDetailView: View {
     var body: some View {
         ZStack {
             Color("AppBackgroundColor")
+                .ignoresSafeArea()
+
             VStack {
                 header
                 
@@ -24,7 +26,6 @@ struct RoomDetailView: View {
             }
             .padding()
         }
-        .ignoresSafeArea()
     }
 }
 

@@ -11,7 +11,8 @@ struct UserProfile: View {
         VStack {
             UserImage(user: user, size: 95)
             Text(user.name)
-                .font(.title3)
+                .font(.title2)
+                
         }
     }
     

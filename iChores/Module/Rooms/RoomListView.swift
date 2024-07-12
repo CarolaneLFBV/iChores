@@ -12,12 +12,13 @@ struct RoomListView: View {
     var body: some View {
         ZStack {
             Color("AppBackgroundColor")
+                .ignoresSafeArea()
+
             roomList
                 .task {
                     roomListViewModel.loadData()
                 }
         }
-        .ignoresSafeArea()
     }
 }
 

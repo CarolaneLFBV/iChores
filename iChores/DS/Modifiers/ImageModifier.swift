@@ -6,7 +6,7 @@ struct ImageBorder: ViewModifier {
         content
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(.primary, lineWidth: 3)
+                    .stroke(Color("AppPrimaryColor"), lineWidth: 3)
             )
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }

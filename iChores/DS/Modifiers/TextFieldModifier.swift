@@ -4,9 +4,12 @@ struct TextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity)
-            .padding(.all, 16)
-            .background(.gray.opacity(0.2))
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color("AppPrimaryColor"), lineWidth: 1)
+            )
+            
     }
 }
 

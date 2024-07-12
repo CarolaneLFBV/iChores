@@ -6,12 +6,14 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
+            Color("AppBackgroundColor")
+                .ignoresSafeArea()
+        
             ScrollView {
                 userSection
             }
             contextMenuButton
         }
-        .applyAppBackground()
         .task {
             homeViewModel.loadData()
         }
@@ -33,6 +35,7 @@ extension HomeView {
                 }
             }
         }
+        .frame(maxWidth: .infinity)
         .padding()
     }
     

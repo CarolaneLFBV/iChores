@@ -28,6 +28,7 @@ extension Components.RoomProfile {
     private var profileImage: some View {
         Image(systemName: room.roomImageName)
             .resizable()
+            .scaledToFit()
             .padding()
             .imageSizeStyle(width: vertical ? 95 : 40, height: vertical ? 95 : 40, contentMode: .fit)
             .imageBorderStyle()

@@ -14,12 +14,18 @@ struct UsersAndTasks: View {
                 Text("Chores")
                     .font(.headline)
                 
-                ScrollView(.vertical) {
-                    ForEach(room.roomChoreArray, id: \.self) { chore in
-                        HStack {
-                            Text(chore.title)
-                            Spacer()
-                            Text("\(chore.choreToRoom.name)")
+                VStack {
+                    if room.roomChoreArray.isEmpty {
+                        Components.NoDataSelected(dataType: .chore)
+                    } else {
+                        ScrollView(.vertical) {
+                            ForEach(room.roomChoreArray, id: \.self) { chore in
+                                HStack {
+                                    Text(chore.title)
+                                    Spacer()
+                                    Text("\(chore.choreToRoom.name)")
+                                }
+                            }
                         }
                     }
                 }

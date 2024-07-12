@@ -43,15 +43,18 @@ extension AddUserView {
                         .padding()
                 }
             }
+            .foregroundStyle(Color("AppPrimaryColor"))
             .imageSizeStyle(width: 95, height: 95, contentMode: .fit)
             .imageBorderStyle()
             .onTapGesture {
                 addUserViewModel.showingImagePicker = true
             }
             
+            Components.DividerSpacer(height: 20)
+            
             Text("Tap to change the picture")
                 .font(.caption)
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color("AppPrimaryColor"))
         }
         .sheet(isPresented: $addUserViewModel.showingImagePicker) {
             ImagePicker(image: self.$userImage)

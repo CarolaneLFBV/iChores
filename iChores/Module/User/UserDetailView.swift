@@ -9,6 +9,8 @@ struct UserDetailView: View {
     var body: some View {
         ZStack {
             Color("AppBackgroundColor")
+                .ignoresSafeArea()
+
             VStack {
                 if userDetailViewModel.isEditingUser {
                     userEdition
@@ -18,7 +20,6 @@ struct UserDetailView: View {
             }
             .padding()
         }
-        .ignoresSafeArea()
     }
 }
 
