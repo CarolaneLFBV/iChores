@@ -9,7 +9,7 @@ struct BorderModifier: ViewModifier {
             .background(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(lineWidth: 2)
-                    .foregroundColor(.primary)
+                    .foregroundColor(Color("AppPrimaryColor"))
             )
     }
 }

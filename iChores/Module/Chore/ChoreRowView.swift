@@ -8,11 +8,19 @@ struct ChoreRowView: View {
         VStack {
             HStack {
                 Image(systemName: chore.isDone ? "checkmark.square" : "square")
+                
                 Text(chore.title)
+                
                 Spacer()
+                
                 Text(chore.choreToRoom.name)
+                    .padding(.all, 4)
+                    .background(Color("AppPrimaryColor"))
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .foregroundColor(Color("AppWhiteColor"))
             }
         }
+        
     }
 }
 

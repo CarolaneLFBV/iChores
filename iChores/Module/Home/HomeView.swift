@@ -29,12 +29,15 @@ extension HomeView {
                 VStack(alignment: .leading) {
                     UserProfile(user: user).horizontal
                     
+                    Components.DividerSpacer(height: 15)
+                    
                     ForEach(user.userChoreArray, id: \.self) { chore in
                         ChoreRowView(chore: chore)
                     }
                 }
             }
         }
+        .homeBorder()
         .frame(maxWidth: .infinity)
         .padding()
     }

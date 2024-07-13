@@ -12,7 +12,9 @@ struct AddRoomView: View {
     var body: some View {
         ZStack {
             Color("AppBackgroundColor")
-            VStack {
+                .ignoresSafeArea()
+
+            VStack(alignment: .leading) {
                 nameField
                 typePicker
                 userPicker
@@ -26,7 +28,6 @@ struct AddRoomView: View {
                 addRoomViewModel.loadData()
             }
         }
-        .ignoresSafeArea()
     }
 }
 
@@ -37,27 +38,39 @@ extension AddRoomView {
     }
     
     private var userPicker: some View {
-        Picker("Belongs to...", selection: $selectedUser) {
-            Components.NoDataSelected(dataType: .user)
-                .tag(nil as User?)
+        HStack {
+            Text("Belongs to...")
             
-            ForEach(addRoomViewModel.users, id: \.idUser) { user in
-                UserProfile(user: user).horizontal
-                .tag(user as User?)
+            Spacer()
+            
+            Picker("Pick a user", selection: $selectedUser) {
+                Components.NoDataSelected(dataType: .user)
+                    .tag(nil as User?)
+                
+                ForEach(addRoomViewModel.users, id: \.idUser) { user in
+                    UserProfile(user: user).horizontal
+                    .tag(user as User?)
+                }
             }
         }
-        .pickerStyle(.navigationLink)
         .textFieldStyle()
+        .foregroundStyle(Color("AppPrimaryColor"))
     }
     
     private var typePicker: some View {
-        Picker("Room", selection: $selectedRoom) {
-            ForEach(typeRoom, id: \.self) { type in
-                Text(type)
+        HStack {
+            Text("Type of Room")
+            
+            Spacer()
+            
+            Picker("Type of Room", selection: $selectedRoom) {
+                ForEach(typeRoom, id: \.self) { type in
+                    Text(type)
+                }
             }
         }
-        .pickerStyle(.navigationLink)
         .textFieldStyle()
+        .foregroundStyle(Color("AppPrimaryColor"))
     }
     
     private var createButton: some View {

@@ -18,7 +18,7 @@ struct UserProfile: View {
     
     var horizontal: some View {
         HStack {
-            UserImage(user: user, size: 45)
+            UserImage(user: user, size: 50)
             Text(user.name)
                 .font(.title3)
         }

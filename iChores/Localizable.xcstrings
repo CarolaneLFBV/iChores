@@ -210,6 +210,9 @@
         }
       }
     },
+    "Pick a user" : {
+
+    },
     "Profile" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -302,6 +305,9 @@
       }
     },
     "This action cannot be undone." : {
+
+    },
+    "Type of Room" : {
 
     },
     "Type: %@" : {
