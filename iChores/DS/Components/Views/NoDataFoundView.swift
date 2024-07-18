@@ -19,8 +19,8 @@ extension Components.NoDataFoundView {
                 .font(.title)
                 .bold()
             
-            Text("Add a room with the + button")
-                .foregroundStyle(Color("AppPrimaryColor"))
+            Text(dataType.addData)
         }
+        .foregroundStyle(Color("AppPrimaryColor"))
     }
 }

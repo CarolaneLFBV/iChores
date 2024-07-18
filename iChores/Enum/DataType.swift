@@ -31,4 +31,15 @@ extension DataType {
             return "No Chores Found"
         }
     }
+    
+    var addData: String {
+        switch self {
+        case .room:
+            return "Add a room with the + button"
+        case .user:
+            return "Add a user with the + button"
+        case .chore:
+            return "Add a chore with the + button"
+        }
+    }
 }
