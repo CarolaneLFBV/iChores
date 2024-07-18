@@ -27,10 +27,13 @@
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
+		923931E62C4165450019F108 /* OnBoardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931E52C4165450019F108 /* OnBoardingItem.swift */; };
+		923931E82C4165CC0019F108 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931E72C4165CC0019F108 /* OnBoardingView.swift */; };
+		923931EC2C4166CE0019F108 /* onBoardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931EB2C4166CE0019F108 /* onBoardingButton.swift */; };
 		923C7DD02BB6F4E90079C269 /* ChoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */; };
 		923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C7DD32BB6F72A0079C269 /* AddChoreView.swift */; };
 		924E6D852B477B0D00780EF4 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E6D842B477B0D00780EF4 /* UserImage.swift */; };
-		92501E182BFBC69000EA8D91 /* NoDataSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92501E172BFBC69000EA8D91 /* NoDataSelected.swift */; };
+		92501E182BFBC69000EA8D91 /* NoDataSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92501E172BFBC69000EA8D91 /* NoDataSelectedView.swift */; };
 		926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926079582B3F45830082F88A /* User+SwiftUI.swift */; };
 		9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9260795B2B3F5E2E0082F88A /* ImageModifier.swift */; };
 		928EF6172BFC87A100154A68 /* ConfirmationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928EF6162BFC87A100154A68 /* ConfirmationAlert.swift */; };
@@ -106,10 +109,13 @@
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
+		923931E52C4165450019F108 /* OnBoardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingItem.swift; sourceTree = "<group>"; };
+		923931E72C4165CC0019F108 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		923931EB2C4166CE0019F108 /* onBoardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingButton.swift; sourceTree = "<group>"; };
 		923C7DCF2BB6F4E90079C269 /* ChoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRepository.swift; sourceTree = "<group>"; };
 		923C7DD32BB6F72A0079C269 /* AddChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreView.swift; sourceTree = "<group>"; };
 		924E6D842B477B0D00780EF4 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
-		92501E172BFBC69000EA8D91 /* NoDataSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataSelected.swift; sourceTree = "<group>"; };
+		92501E172BFBC69000EA8D91 /* NoDataSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataSelectedView.swift; sourceTree = "<group>"; };
 		926079582B3F45830082F88A /* User+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+SwiftUI.swift"; sourceTree = "<group>"; };
 		9260795B2B3F5E2E0082F88A /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
 		928EF6162BFC87A100154A68 /* ConfirmationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationAlert.swift; sourceTree = "<group>"; };
@@ -178,10 +184,12 @@
 		921F358A2B4893C000A6B2F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				92E55CE32BF8542E006124B2 /* DividerSpacer.swift */,
 				922A530A2C11D99C00FA8B3A /* Components.swift */,
-				929F20D82BB44CC900863B19 /* Global */,
-				92AB02E92B8A3F92002C34EE /* Room */,
-				92772AAC2B8369E9007772E4 /* User */,
+				923931E92C41665A0019F108 /* Buttons */,
+				929F20D82BB44CC900863B19 /* Views */,
+				923931EA2C4166840019F108 /* Profile */,
+				92772AAC2B8369E9007772E4 /* Image */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -292,6 +300,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		923931E42C4164FE0019F108 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				923931E52C4165450019F108 /* OnBoardingItem.swift */,
+				923931E72C4165CC0019F108 /* OnBoardingView.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		923931E92C41665A0019F108 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				929F20D92BB44CDA00863B19 /* ListDeleteButton.swift */,
+				92B87C592BB5D91100401366 /* SecondaryButton.swift */,
+				923931EB2C4166CE0019F108 /* onBoardingButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		923931EA2C4166840019F108 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */,
+				92E55CDB2BF84888006124B2 /* UserProfile.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		923C7DCE2BB6F4CC0079C269 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,19 +415,18 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		92772AAC2B8369E9007772E4 /* User */ = {
+		92772AAC2B8369E9007772E4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
 				924E6D842B477B0D00780EF4 /* UserImage.swift */,
-				92E55CDB2BF84888006124B2 /* UserProfile.swift */,
-				92E55CE12BF85152006124B2 /* RoomsAndTasks.swift */,
 			);
-			path = User;
+			path = Image;
 			sourceTree = "<group>";
 		};
 		92772AAD2B836A0E007772E4 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				923931E42C4164FE0019F108 /* OnBoarding */,
 				92F6A08D2B3478CB0075879F /* iChoresApp.swift */,
 				92F6A08F2B3478CB0075879F /* ContentView.swift */,
 			);
@@ -407,25 +442,15 @@
 			path = DS;
 			sourceTree = "<group>";
 		};
-		929F20D82BB44CC900863B19 /* Global */ = {
+		929F20D82BB44CC900863B19 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				929F20D92BB44CDA00863B19 /* ListDeleteButton.swift */,
-				92B87C592BB5D91100401366 /* SecondaryButton.swift */,
-				92E55CE32BF8542E006124B2 /* DividerSpacer.swift */,
-				92501E172BFBC69000EA8D91 /* NoDataSelected.swift */,
+				92E55CEB2BF874CF006124B2 /* UsersAndTasks.swift */,
+				92E55CE12BF85152006124B2 /* RoomsAndTasks.swift */,
+				92501E172BFBC69000EA8D91 /* NoDataSelectedView.swift */,
 				92AB02E72B8A3E77002C34EE /* NoDataFoundView.swift */,
 			);
-			path = Global;
-			sourceTree = "<group>";
-		};
-		92AB02E92B8A3F92002C34EE /* Room */ = {
-			isa = PBXGroup;
-			children = (
-				92E55CDF2BF84FDF006124B2 /* RoomProfile.swift */,
-				92E55CEB2BF874CF006124B2 /* UsersAndTasks.swift */,
-			);
-			path = Room;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		92E178BA2C123EF800F9E2B1 /* Enum */ = {
@@ -660,14 +685,17 @@
 				920A14C32C030F0D003D3915 /* UserDetailViewModel.swift in Sources */,
 				923C7DD42BB6F72A0079C269 /* AddChoreView.swift in Sources */,
 				921F358E2B489CF000A6B2F4 /* ButtonModifier.swift in Sources */,
+				923931E62C4165450019F108 /* OnBoardingItem.swift in Sources */,
 				920A14CB2C031941003D3915 /* RoomListViewModel.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
+				923931EC2C4166CE0019F108 /* onBoardingButton.swift in Sources */,
 				9297DD762B73E12200452A8B /* UserRepository.swift in Sources */,
 				92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */,
 				926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */,
 				92AB02E62B8A3CAA002C34EE /* RoomDetailView.swift in Sources */,
 				922C251B2B3DDEF900896D7E /* DataController.swift in Sources */,
 				923C7DD02BB6F4E90079C269 /* ChoreRepository.swift in Sources */,
+				923931E82C4165CC0019F108 /* OnBoardingView.swift in Sources */,
 				92946D302B3F01EC001F0D2E /* SettingsView.swift in Sources */,
 				922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */,
 				921F35922B48A65B00A6B2F4 /* TextFieldModifier.swift in Sources */,
@@ -676,7 +704,7 @@
 				9260795C2B3F5E2E0082F88A /* ImageModifier.swift in Sources */,
 				92E55CE02BF84FDF006124B2 /* RoomProfile.swift in Sources */,
 				922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */,
-				92501E182BFBC69000EA8D91 /* NoDataSelected.swift in Sources */,
+				92501E182BFBC69000EA8D91 /* NoDataSelectedView.swift in Sources */,
 				92E55CE22BF85152006124B2 /* RoomsAndTasks.swift in Sources */,
 				929F20DA2BB44CDA00863B19 /* ListDeleteButton.swift in Sources */,
 				922A53092C11916000FA8B3A /* HomeViewModel.swift in Sources */,
