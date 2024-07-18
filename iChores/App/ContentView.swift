@@ -44,7 +44,7 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gear")
                 }
             }
+            .accentColor(Color("AppPrimaryColor"))
         }
-        .accentColor(Color("AppPrimaryColor"))
     }
 }

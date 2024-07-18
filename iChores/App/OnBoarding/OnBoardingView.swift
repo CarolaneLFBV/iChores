@@ -24,13 +24,11 @@ struct OnBoardingView: View {
                   Text(onBoardingItem.title)
                       .fontWeight(.heavy)
                       .font(.system(size: 40))
-                      .foregroundColor(.white)
                       .multilineTextAlignment(.center)
                   
                   Text(onBoardingItem.headline)
                       .fontWeight(.light)
                       .font(.system(size: 18))
-                      .foregroundColor(.white)
                       .padding(.bottom,15)
                       .multilineTextAlignment(.center)
                   
@@ -42,13 +40,11 @@ struct OnBoardingView: View {
               }
               .padding(.horizontal,15)
               .frame(maxWidth: .infinity, maxHeight: .infinity,alignment: .center)
-              .background(
-                  LinearGradient(colors: onBoardingItem.gradientColors, startPoint: .top, endPoint: .bottom)
-              )
+              .background(onBoardingItem.backgroundColor)
           }
     }
 }
 
 #Preview {
-    OnBoardingView(onBoardingItem: OnBoardingItem(title: "Title", headline: "Headline", image: "cleaning", gradientColors: [Color("primaryColor")]), isLastItem: true)
+    OnBoardingView(onBoardingItem: OnBoardingItem(title: "Title", headline: "Headline", image: "cleaning", backgroundColor: Color("AppBackgroundColor")), isLastItem: true)
 }

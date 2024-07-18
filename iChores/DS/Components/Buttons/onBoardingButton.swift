@@ -23,7 +23,6 @@ struct onBoardingButton: View {
             .background(
                 Capsule().strokeBorder(lineWidth: 2)
             )
-            .foregroundColor(.white)
         }
         .buttonStyle(.plain)
     }
