@@ -27,6 +27,8 @@
 		922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251D2B3DE0E400896D7E /* UserDetailView.swift */; };
 		922C25202B3DE56000896D7E /* Image+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */; };
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
+		923454872C4BD8CE00DA5E0A /* ChoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923454862C4BD8CE00DA5E0A /* ChoreListView.swift */; };
+		923454892C4BE84E00DA5E0A /* ChoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923454882C4BE84E00DA5E0A /* ChoreListViewModel.swift */; };
 		923931E62C4165450019F108 /* OnBoardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931E52C4165450019F108 /* OnBoardingItem.swift */; };
 		923931E82C4165CC0019F108 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931E72C4165CC0019F108 /* OnBoardingView.swift */; };
 		923931EC2C4166CE0019F108 /* onBoardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931EB2C4166CE0019F108 /* onBoardingButton.swift */; };
@@ -109,6 +111,8 @@
 		922C251D2B3DE0E400896D7E /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		922C251F2B3DE56000896D7E /* Image+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ImagePicker.swift"; sourceTree = "<group>"; };
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
+		923454862C4BD8CE00DA5E0A /* ChoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListView.swift; sourceTree = "<group>"; };
+		923454882C4BE84E00DA5E0A /* ChoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListViewModel.swift; sourceTree = "<group>"; };
 		923931E52C4165450019F108 /* OnBoardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingItem.swift; sourceTree = "<group>"; };
 		923931E72C4165CC0019F108 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		923931EB2C4166CE0019F108 /* onBoardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingButton.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 		922A52FE2C10BB1D00FA8B3A /* Chores */ = {
 			isa = PBXGroup;
 			children = (
+				923454862C4BD8CE00DA5E0A /* ChoreListView.swift */,
+				923454882C4BE84E00DA5E0A /* ChoreListViewModel.swift */,
 			);
 			path = Chores;
 			sourceTree = "<group>";
@@ -673,6 +679,7 @@
 				920A14C92C031936003D3915 /* AddRoomViewModel.swift in Sources */,
 				92F6A0902B3478CB0075879F /* ContentView.swift in Sources */,
 				92E55CEC2BF874CF006124B2 /* UsersAndTasks.swift in Sources */,
+				923454872C4BD8CE00DA5E0A /* ChoreListView.swift in Sources */,
 				92AB02E42B8A364C002C34EE /* AddRoomView.swift in Sources */,
 				92946D2C2B3F019B001F0D2E /* HomeView.swift in Sources */,
 				920981552BDCEA140028C4C0 /* Chore+CoreDataClass.swift in Sources */,
@@ -689,6 +696,7 @@
 				920A14CB2C031941003D3915 /* RoomListViewModel.swift in Sources */,
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				923931EC2C4166CE0019F108 /* onBoardingButton.swift in Sources */,
+				923454892C4BE84E00DA5E0A /* ChoreListViewModel.swift in Sources */,
 				9297DD762B73E12200452A8B /* UserRepository.swift in Sources */,
 				92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */,
 				926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */,

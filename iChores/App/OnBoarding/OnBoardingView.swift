@@ -1,10 +1,3 @@
-//
-//  OnBoardingView.swift
-//  iChores
-//
-//  Created by Carolane Lefebvre on 12/07/2024.
-//
-
 import SwiftUI
 
 struct OnBoardingView: View {

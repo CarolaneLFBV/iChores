@@ -10,9 +10,23 @@ struct HomeView: View {
                 .ignoresSafeArea()
         
             ScrollView {
-                userSection
+                ForEach(homeViewModel.chores, id: \.idChore) { chore in
+                    VStack {
+                        Text(chore.title)
+
+                    }
+                }
             }
             contextMenuButton
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Label("Settings", systemImage: "gear")
+                }
+            }
         }
         .task {
             homeViewModel.loadData()
@@ -56,11 +70,9 @@ extension HomeView {
                     NavigationLink(destination: AddRoomView(), label: {
                         Label("Create Room", systemImage: "square.split.bottomrightquarter.fill")
                     })
-                    //                    if !homeViewModel.users.isEmpty && !homeViewModel.rooms.isEmpty {
                     NavigationLink(destination: AddChoreView(), label: {
                         Label("Create Task", systemImage: "circle.inset.filled")
                     })
-                    //                    }
                 } label: {
                     Image(systemName: "plus")
                         .foregroundStyle(colorScheme == .dark ? .black : .white)

@@ -17,13 +17,6 @@ struct ContentView: View {
         } else {
             TabView {
                 NavigationStack {
-                    HomeView()
-                }
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-                
-                NavigationStack {
                     RoomListView()
                 }
                 .tabItem {
@@ -35,6 +28,20 @@ struct ContentView: View {
                 }
                 .tabItem {
                     Label("Users", systemImage: "person.2")
+                }
+                
+                NavigationStack {
+                    HomeView()
+                }
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+                
+                NavigationStack {
+                    ChoreListView()
+                }
+                .tabItem {
+                    Label("Chores", systemImage: "list.bullet")
                 }
                 
                 NavigationStack {
