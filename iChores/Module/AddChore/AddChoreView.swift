@@ -8,18 +8,23 @@ struct AddChoreView: View {
     @State private var selectedRoom: Room?
     
     var body: some View {
-        VStack {
-            titleField
-            roomPicker
-            userPicker
+        ZStack {
+            Color("AppBackgroundColor")
+                .ignoresSafeArea()
             
-            Components.DividerSpacer(height: 16)
-            
-            createButton
-        }
-        .padding()
-        .task {
-            addChoreViewModel.loadData()
+            VStack {
+                titleField
+                roomPicker
+                userPicker
+                
+                Components.DividerSpacer(height: 16)
+                
+                createButton
+            }
+            .padding()
+            .task {
+                addChoreViewModel.loadData()
+            }
         }
     }
 }
@@ -50,7 +55,7 @@ extension AddChoreView {
                 .tag(nil as User?)
             
             ForEach(addChoreViewModel.users, id: \.idUser) { user in
-                UserProfile(user: user).horizontal
+                Components.UserProfile(user: user, vertical: false)
                     .tag(user as User?)
             }
         }

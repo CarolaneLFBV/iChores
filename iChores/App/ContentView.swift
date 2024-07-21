@@ -17,20 +17,6 @@ struct ContentView: View {
         } else {
             TabView {
                 NavigationStack {
-                    RoomListView()
-                }
-                .tabItem {
-                    Label("Rooms", systemImage: "square.split.bottomrightquarter")
-                }
-                
-                NavigationStack {
-                    UserListView()
-                }
-                .tabItem {
-                    Label("Users", systemImage: "person.2")
-                }
-                
-                NavigationStack {
                     HomeView()
                 }
                 .tabItem {
@@ -45,11 +31,19 @@ struct ContentView: View {
                 }
                 
                 NavigationStack {
-                    SettingsView()
+                    RoomListView()
                 }
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label("Rooms", systemImage: "square.split.bottomrightquarter")
                 }
+                
+                NavigationStack {
+                    UserListView()
+                }
+                .tabItem {
+                    Label("Users", systemImage: "person.2")
+                }
+                
             }
             .accentColor(Color("AppPrimaryColor"))
         }

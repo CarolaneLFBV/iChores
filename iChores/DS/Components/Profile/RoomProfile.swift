@@ -13,29 +13,32 @@ extension Components.RoomProfile {
         Group {
             if vertical {
                 VStack {
-                    profileImage
-                    profileText
+                    Components.RoomImage(room: room, size: vertical ? 95 : 40)
+                    profileRoomText
                 }
             } else {
                 HStack {
-                    profileImage
-                    profileText
+                    Components.RoomImage(room: room, size: vertical ? 95 : 40)
+                    profileRoomText
                 }
             }
         }
     }
     
-    private var profileImage: some View {
-        Image(systemName: room.roomImageName)
-            .resizable()
-            .scaledToFit()
-            .padding()
-            .imageSizeStyle(width: vertical ? 95 : 40, height: vertical ? 95 : 40, contentMode: .fit)
-            .imageBorderStyle()
-    }
-    
-    private var profileText: some View {
+    private var profileRoomText: some View {
         Text(room.name)
             .font(.title3)
+    }
+    
+    var choreRoomImage: some View {
+        HStack(spacing: 0) {
+            Image(systemName: room.roomImageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 20, height: 20)
+                .padding(.all, 4)
+                .padding(.trailing, 4)
+            Text(room.name)
+        }
     }
 }

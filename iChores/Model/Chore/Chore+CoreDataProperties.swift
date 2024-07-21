@@ -11,8 +11,8 @@ extension Chore {
     @NSManaged public var idChore: UUID
     @NSManaged public var isDone: Bool
     @NSManaged public var title: String
-    @NSManaged public var choreToRoom: Room
-    @NSManaged public var choreToUser: User
+    @NSManaged public var choreToRoom: Room?
+    @NSManaged public var choreToUser: User?
 
 }
 

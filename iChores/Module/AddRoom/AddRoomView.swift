@@ -48,8 +48,8 @@ extension AddRoomView {
                     .tag(nil as User?)
                 
                 ForEach(addRoomViewModel.users, id: \.idUser) { user in
-                    UserProfile(user: user).horizontal
-                    .tag(user as User?)
+                    Components.UserProfile(user: user, vertical: false)
+                        .tag(user as User?)
                 }
             }
         }

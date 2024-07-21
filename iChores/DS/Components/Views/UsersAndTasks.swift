@@ -23,7 +23,7 @@ struct UsersAndTasks: View {
                                 HStack {
                                     Text(chore.title)
                                     Spacer()
-                                    Text("\(chore.choreToRoom.name)")
+                                    Text("\(chore.choreToRoom?.name ?? "N/A")")
                                 }
                             }
                         }

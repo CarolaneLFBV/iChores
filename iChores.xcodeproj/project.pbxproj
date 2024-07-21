@@ -29,6 +29,8 @@
 		922C25222B3DE75100896D7E /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922C25212B3DE75100896D7E /* AddUserView.swift */; };
 		923454872C4BD8CE00DA5E0A /* ChoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923454862C4BD8CE00DA5E0A /* ChoreListView.swift */; };
 		923454892C4BE84E00DA5E0A /* ChoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923454882C4BE84E00DA5E0A /* ChoreListViewModel.swift */; };
+		9234548B2C4C3D3600DA5E0A /* RoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234548A2C4C3D3600DA5E0A /* RoomImage.swift */; };
+		9234548D2C4D602800DA5E0A /* TagModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234548C2C4D602800DA5E0A /* TagModifier.swift */; };
 		923931E62C4165450019F108 /* OnBoardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931E52C4165450019F108 /* OnBoardingItem.swift */; };
 		923931E82C4165CC0019F108 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931E72C4165CC0019F108 /* OnBoardingView.swift */; };
 		923931EC2C4166CE0019F108 /* onBoardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923931EB2C4166CE0019F108 /* onBoardingButton.swift */; };
@@ -113,6 +115,8 @@
 		922C25212B3DE75100896D7E /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		923454862C4BD8CE00DA5E0A /* ChoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListView.swift; sourceTree = "<group>"; };
 		923454882C4BE84E00DA5E0A /* ChoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListViewModel.swift; sourceTree = "<group>"; };
+		9234548A2C4C3D3600DA5E0A /* RoomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomImage.swift; sourceTree = "<group>"; };
+		9234548C2C4D602800DA5E0A /* TagModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModifier.swift; sourceTree = "<group>"; };
 		923931E52C4165450019F108 /* OnBoardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingItem.swift; sourceTree = "<group>"; };
 		923931E72C4165CC0019F108 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		923931EB2C4166CE0019F108 /* onBoardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingButton.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 			children = (
 				92E55CE32BF8542E006124B2 /* DividerSpacer.swift */,
 				922A530A2C11D99C00FA8B3A /* Components.swift */,
+				928EF6162BFC87A100154A68 /* ConfirmationAlert.swift */,
 				923931E92C41665A0019F108 /* Buttons */,
 				929F20D82BB44CC900863B19 /* Views */,
 				923931EA2C4166840019F108 /* Profile */,
@@ -380,7 +385,7 @@
 				9260795B2B3F5E2E0082F88A /* ImageModifier.swift */,
 				921F358D2B489CF000A6B2F4 /* ButtonModifier.swift */,
 				921F35912B48A65B00A6B2F4 /* TextFieldModifier.swift */,
-				928EF6162BFC87A100154A68 /* ConfirmationAlert.swift */,
+				9234548C2C4D602800DA5E0A /* TagModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				924E6D842B477B0D00780EF4 /* UserImage.swift */,
+				9234548A2C4C3D3600DA5E0A /* RoomImage.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				9223FB3F2B3F2C5400426148 /* FileManager+Image.swift in Sources */,
 				92E55CE42BF8542E006124B2 /* DividerSpacer.swift in Sources */,
 				920A14C92C031936003D3915 /* AddRoomViewModel.swift in Sources */,
+				9234548B2C4C3D3600DA5E0A /* RoomImage.swift in Sources */,
 				92F6A0902B3478CB0075879F /* ContentView.swift in Sources */,
 				92E55CEC2BF874CF006124B2 /* UsersAndTasks.swift in Sources */,
 				923454872C4BD8CE00DA5E0A /* ChoreListView.swift in Sources */,
@@ -716,6 +723,7 @@
 				92E55CE22BF85152006124B2 /* RoomsAndTasks.swift in Sources */,
 				929F20DA2BB44CDA00863B19 /* ListDeleteButton.swift in Sources */,
 				922A53092C11916000FA8B3A /* HomeViewModel.swift in Sources */,
+				9234548D2C4D602800DA5E0A /* TagModifier.swift in Sources */,
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
 				92946D2A2B3F0114001F0D2E /* UserListView.swift in Sources */,
 				92F86F9D2C035B1100E7B0A8 /* EditChoreViewModel.swift in Sources */,

@@ -1,9 +1,14 @@
 import SwiftUI
 
-struct UserImage: View {
-    let user: User
-    let size: CGFloat
-    
+extension Components {
+    struct UserImage: View {
+        let user: User
+        let size: CGFloat
+        
+    }
+}
+
+extension Components.UserImage {
     var body: some View {
         Group {
             if let userImage = user.getImage() {

@@ -26,7 +26,7 @@ struct UserDetailView: View {
 extension UserDetailView {
     private var userEdition: some View {
         ScrollView {
-            UserImage(user: user, size: 95)
+            Components.UserImage(user: user, size: 95)
             
             TextField("Name", text: $userDetailViewModel.modifiedName)
                 .textFieldStyle()
@@ -58,7 +58,7 @@ extension UserDetailView {
     
     private var userDetail: some View {
         VStack {
-            UserProfile(user: user)
+            Components.UserProfile(user: user, vertical: true)
             Components.DividerSpacer(height: 40)
             RoomsAndTasks(user: user)
         }

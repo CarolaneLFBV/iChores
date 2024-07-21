@@ -1,26 +1,42 @@
 import SwiftUI
 
-struct UserProfile: View {
-    let user: User
-    
-    var body: some View {
-        vertical
+extension Components {
+    struct UserProfile: View {
+        let user: User
+        let vertical: Bool
     }
-    
-    var vertical: some View {
-        VStack {
-            UserImage(user: user, size: 95)
-            Text(user.name)
-                .font(.title2)
-                
+}
+
+extension Components.UserProfile {
+    var body: some View {
+        Group {
+            if vertical {
+                VStack {
+                    profileUserImage
+                    profileUserText
+                }
+            } else {
+                HStack {
+                    profileUserImage
+                    profileUserText
+                }
+            }
         }
     }
     
-    var horizontal: some View {
+    private var profileUserImage: some View {
+        Components.UserImage(user: user, size: vertical ? 95 : 50)
+    }
+    
+    private var profileUserText: some View {
+        Text(user.name)
+            .font(.title3)
+    }
+    
+    var choreProfileUser: some View {
         HStack {
-            UserImage(user: user, size: 50)
+            Components.UserImage(user: user, size: 30)
             Text(user.name)
-                .font(.title3)
         }
     }
 }

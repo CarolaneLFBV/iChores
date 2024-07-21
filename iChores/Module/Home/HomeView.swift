@@ -13,7 +13,6 @@ struct HomeView: View {
                 ForEach(homeViewModel.chores, id: \.idChore) { chore in
                     VStack {
                         Text(chore.title)
-
                     }
                 }
             }
@@ -41,7 +40,7 @@ extension HomeView {
         VStack(alignment: .leading) {
             ForEach(homeViewModel.users, id: \.idUser) { user in
                 VStack(alignment: .leading) {
-                    UserProfile(user: user).horizontal
+                    Components.UserProfile(user: user, vertical: false)
                     
                     Components.DividerSpacer(height: 15)
                     

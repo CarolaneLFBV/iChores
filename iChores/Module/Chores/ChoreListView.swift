@@ -13,28 +13,30 @@ struct ChoreListView: View {
             Color("AppBackgroundColor")
                 .ignoresSafeArea()
             
-            ScrollView {
-                choreList
-            }
+            choreOptions
+                .task {
+                    choreListViewModel.loadData()
+                }
         }
+        .navigationTitle("Chores")
     }
 }
 
 extension ChoreListView {
-    private var choreList: some View {
+    private var choreOptions: some View {
         VStack {
             if choreListViewModel.chores.isEmpty {
                 Components.NoDataFoundView(dataType: .chore)
             } else {
-                lazyGridView
+                choreList
             }
         }
     }
     
-    private var lazyGridView: some View {
-        LazyVGrid(columns: columns) {
+    private var choreList: some View {
+        ScrollView {
             ForEach(choreListViewModel.chores, id: \.idChore) { chore in
-                Text(chore.title)
+                ChoreRowView(chore: chore)
             }
         }
     }

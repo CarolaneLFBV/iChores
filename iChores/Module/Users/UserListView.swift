@@ -45,7 +45,7 @@ extension UserListView {
             LazyVGrid(columns: columns, content: {
                 ForEach(userListViewModel.users, id: \.idUser) { user in
                     NavigationLink(destination: UserDetailView(user: user)) {
-                        UserProfile(user: user)
+                        Components.UserProfile(user: user, vertical: true)
                             .padding()
                             .overlay(alignment: .topTrailing, content: {
                                 if userListViewModel.isEditingUsersList {
