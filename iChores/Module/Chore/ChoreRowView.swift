@@ -8,8 +8,14 @@ struct ChoreRowView: View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: chore.isDone ? "checkmark.square" : "square")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color("AppPrimaryColor"))
                 
                 Text(chore.title)
+                    .font(.title3)
+                    .foregroundStyle(Color("AppPrimaryColor"))
             }
             
             Spacer()
