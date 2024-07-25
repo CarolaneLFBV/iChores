@@ -32,7 +32,7 @@ extension UserListView {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink(destination: AddUserView()) {
                     Label("Add User", systemImage: "plus")
                 }

@@ -2,7 +2,7 @@ import SwiftUI
 import CoreData
 
 @Observable
-final class EditChoreViewModel {
+final class ChoreRowViewModel {
     var choreRepository = ChoreRepository()
     
     func delete(_ chore: Chore) {

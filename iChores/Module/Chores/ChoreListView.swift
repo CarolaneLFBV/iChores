@@ -31,6 +31,13 @@ extension ChoreListView {
                 choreList
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink(destination: AddChoreView(), label: {
+                    Label("Add Chore", systemImage: "plus")
+                })
+            }
+        }
     }
     
     private var choreList: some View {

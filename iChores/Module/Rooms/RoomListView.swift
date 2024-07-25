@@ -33,7 +33,7 @@ extension RoomListView {
         }
         .padding()
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink(destination: AddRoomView(), label: {
                     Label("Add Room", systemImage: "plus")
                 })

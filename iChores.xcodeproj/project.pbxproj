@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51ABB4602C52C8E20022375D /* ChoreRoomAssignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABB45F2C52C8E20022375D /* ChoreRoomAssignView.swift */; };
+		51ABB4622C52CA170022375D /* ChoreRoomAssignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABB4612C52CA170022375D /* ChoreRoomAssignViewModel.swift */; };
+		51ABB4672C52CAAA0022375D /* ChoreUserAssignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABB4662C52CAAA0022375D /* ChoreUserAssignViewModel.swift */; };
+		51ABB4692C52CACB0022375D /* ChoreUserAssignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ABB4682C52CACB0022375D /* ChoreUserAssignView.swift */; };
 		920981552BDCEA140028C4C0 /* Chore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920981532BDCEA140028C4C0 /* Chore+CoreDataClass.swift */; };
 		920981562BDCEA140028C4C0 /* Chore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920981542BDCEA140028C4C0 /* Chore+CoreDataProperties.swift */; };
 		920981592BDCEA3F0028C4C0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920981572BDCEA3F0028C4C0 /* User+CoreDataClass.swift */; };
@@ -72,7 +76,7 @@
 		92F6B7752BDA8D9900515A09 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B76F2BDA8D9900515A09 /* Room+CoreDataClass.swift */; };
 		92F6B7762BDA8D9900515A09 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6B7702BDA8D9900515A09 /* Room+CoreDataProperties.swift */; };
 		92F86F9B2C035A7B00E7B0A8 /* AddChoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F86F9A2C035A7B00E7B0A8 /* AddChoreViewModel.swift */; };
-		92F86F9D2C035B1100E7B0A8 /* EditChoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F86F9C2C035B1100E7B0A8 /* EditChoreViewModel.swift */; };
+		92F86F9D2C035B1100E7B0A8 /* ChoreRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F86F9C2C035B1100E7B0A8 /* ChoreRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51ABB45F2C52C8E20022375D /* ChoreRoomAssignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRoomAssignView.swift; sourceTree = "<group>"; };
+		51ABB4612C52CA170022375D /* ChoreRoomAssignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRoomAssignViewModel.swift; sourceTree = "<group>"; };
+		51ABB4662C52CAAA0022375D /* ChoreUserAssignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreUserAssignViewModel.swift; sourceTree = "<group>"; };
+		51ABB4682C52CACB0022375D /* ChoreUserAssignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreUserAssignView.swift; sourceTree = "<group>"; };
 		920981532BDCEA140028C4C0 /* Chore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+CoreDataClass.swift"; sourceTree = "<group>"; };
 		920981542BDCEA140028C4C0 /* Chore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		920981572BDCEA3F0028C4C0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -161,7 +169,7 @@
 		92F6B76F2BDA8D9900515A09 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataClass.swift"; sourceTree = "<group>"; };
 		92F6B7702BDA8D9900515A09 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		92F86F9A2C035A7B00E7B0A8 /* AddChoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreViewModel.swift; sourceTree = "<group>"; };
-		92F86F9C2C035B1100E7B0A8 /* EditChoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChoreViewModel.swift; sourceTree = "<group>"; };
+		92F86F9C2C035B1100E7B0A8 /* ChoreRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51ABB45A2C52B8FF0022375D /* ChoreRowView */ = {
+			isa = PBXGroup;
+			children = (
+				9209815B2BDCF55C0028C4C0 /* ChoreRowView.swift */,
+				92F86F9C2C035B1100E7B0A8 /* ChoreRowViewModel.swift */,
+			);
+			path = ChoreRowView;
+			sourceTree = "<group>";
+		};
+		51ABB45E2C52C8D50022375D /* ChoreRoomAssign */ = {
+			isa = PBXGroup;
+			children = (
+				51ABB45F2C52C8E20022375D /* ChoreRoomAssignView.swift */,
+				51ABB4612C52CA170022375D /* ChoreRoomAssignViewModel.swift */,
+			);
+			path = ChoreRoomAssign;
+			sourceTree = "<group>";
+		};
+		51ABB4632C52CA740022375D /* ChoreUserAssign */ = {
+			isa = PBXGroup;
+			children = (
+				51ABB4662C52CAAA0022375D /* ChoreUserAssignViewModel.swift */,
+				51ABB4682C52CACB0022375D /* ChoreUserAssignView.swift */,
+			);
+			path = ChoreUserAssign;
+			sourceTree = "<group>";
+		};
 		921F358A2B4893C000A6B2F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +406,10 @@
 				9260795E2B3F76480082F88A /* Room */,
 				922A53052C10BC4D00FA8B3A /* AddRoom */,
 				922A52FE2C10BB1D00FA8B3A /* Chores */,
+				51ABB45A2C52B8FF0022375D /* ChoreRowView */,
 				9260795F2B3F764C0082F88A /* Chore */,
+				51ABB45E2C52C8D50022375D /* ChoreRoomAssign */,
+				51ABB4632C52CA740022375D /* ChoreUserAssign */,
 				922A53062C10BC6E00FA8B3A /* AddChore */,
 				922A53042C10BC0C00FA8B3A /* Settings */,
 			);
@@ -411,8 +449,6 @@
 		9260795F2B3F764C0082F88A /* Chore */ = {
 			isa = PBXGroup;
 			children = (
-				9209815B2BDCF55C0028C4C0 /* ChoreRowView.swift */,
-				92F86F9C2C035B1100E7B0A8 /* EditChoreViewModel.swift */,
 			);
 			path = Chore;
 			sourceTree = "<group>";
@@ -616,7 +652,7 @@
 				};
 			};
 			buildConfigurationList = 92F6A0852B3478CB0075879F /* Build configuration list for PBXProject "iChores" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -672,6 +708,7 @@
 				92A4062B2BAC30E9005AF534 /* Room+SwiftUI.swift in Sources */,
 				92E55CDC2BF84888006124B2 /* UserProfile.swift in Sources */,
 				920981592BDCEA3F0028C4C0 /* User+CoreDataClass.swift in Sources */,
+				51ABB4692C52CACB0022375D /* ChoreUserAssignView.swift in Sources */,
 				920A14CD2C03194E003D3915 /* RoomDetailViewModel.swift in Sources */,
 				9209815A2BDCEA3F0028C4C0 /* User+CoreDataProperties.swift in Sources */,
 				922A530B2C11D99C00FA8B3A /* Components.swift in Sources */,
@@ -704,6 +741,7 @@
 				92F6A08E2B3478CB0075879F /* iChoresApp.swift in Sources */,
 				923931EC2C4166CE0019F108 /* onBoardingButton.swift in Sources */,
 				923454892C4BE84E00DA5E0A /* ChoreListViewModel.swift in Sources */,
+				51ABB4602C52C8E20022375D /* ChoreRoomAssignView.swift in Sources */,
 				9297DD762B73E12200452A8B /* UserRepository.swift in Sources */,
 				92AB02E22B8A35A0002C34EE /* RoomRepository.swift in Sources */,
 				926079592B3F45830082F88A /* User+SwiftUI.swift in Sources */,
@@ -721,12 +759,14 @@
 				922C24FA2B3DC61600896D7E /* iChores.xcdatamodeld in Sources */,
 				92501E182BFBC69000EA8D91 /* NoDataSelectedView.swift in Sources */,
 				92E55CE22BF85152006124B2 /* RoomsAndTasks.swift in Sources */,
+				51ABB4622C52CA170022375D /* ChoreRoomAssignViewModel.swift in Sources */,
 				929F20DA2BB44CDA00863B19 /* ListDeleteButton.swift in Sources */,
 				922A53092C11916000FA8B3A /* HomeViewModel.swift in Sources */,
+				51ABB4672C52CAAA0022375D /* ChoreUserAssignViewModel.swift in Sources */,
 				9234548D2C4D602800DA5E0A /* TagModifier.swift in Sources */,
 				922C251E2B3DE0E400896D7E /* UserDetailView.swift in Sources */,
 				92946D2A2B3F0114001F0D2E /* UserListView.swift in Sources */,
-				92F86F9D2C035B1100E7B0A8 /* EditChoreViewModel.swift in Sources */,
+				92F86F9D2C035B1100E7B0A8 /* ChoreRowViewModel.swift in Sources */,
 				92F86F9B2C035A7B00E7B0A8 /* AddChoreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -893,7 +933,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iChores/Preview Content\"";
-				DEVELOPMENT_TEAM = 2VP2J2SZVR;
+				DEVELOPMENT_TEAM = 6DJTCJY48F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -928,7 +968,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iChores/Preview Content\"";
-				DEVELOPMENT_TEAM = 2VP2J2SZVR;
+				DEVELOPMENT_TEAM = 6DJTCJY48F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
